@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="0.3">
+    <table name="btProgressbar">
+        <field name="bID" type="I">
+            <unsigned/>
+            <key/>
+        </field>
+        
+        <field name="isInlineLabel" type="L">
+            <default value="0"/>
+            <unsigned/>
+        </field>
+        
+        <field name="isThick" type="L">
+            <default value="1"/>
+            <unsigned/>
+        </field>
+        
+        <field name="hasAnimation" type="L">
+            <default value="1"/>
+            <unsigned/>
+        </field>
+        
+        <field name="animationDuration" type="I2">
+            <default value="300"/>
+            <unsigned/>
+        </field>
+        
+        <field name="label" type="C" size="255">
+            <unsigned/>
+        </field>
+        
+        <field name="value" type="I1">
+            <default value="0"/>
+            <unsigned/>
+        </field>
+        
+        <field name="barColor" type="C" size="40">
+            <default value="#000000"/>
+            <unsigned/>
+        </field>
+        
+        <field name="labelColor" type="C" size="40">
+            <default value="#000000"/>
+            <unsigned/>
+        </field>
+        
+        <field name="backgroundColor" type="C" size="40">
+            <default value="transparent"/>
+            <unsigned/>
+        </field>
+    </table>
+</schema>

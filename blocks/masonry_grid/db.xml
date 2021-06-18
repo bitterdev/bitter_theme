@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="0.3">
+    <table name="btMasonryGrid">
+        <field name="bID" type="I">
+            <unsigned/>
+            <key/>
+        </field>
+        
+        <field name="backgroundColorNormal" type="C" length="40" />
+        <field name="textColorNormal" type="C" length="40" />
+        <field name="backgroundColorActive" type="C" length="40" />
+        <field name="textColorActive" type="C" length="40" />
+        <field name="disableNoDescription" type="I2" />
+        <field name="disableViewAll" type="I2" />
+    </table>
+    
+    <table name="btMasonryGridFileSets">
+        <field name="id" type="I">
+            <unsigned/>
+            <key/>
+            <autoincrement/>
+        </field>
+        
+        <field name="bID" type="I">
+            <unsigned/>
+        </field>
+        
+        <field name="fileSetId" type="I">
+            <unsigned/>
+        </field>
+    </table>
+</schema>

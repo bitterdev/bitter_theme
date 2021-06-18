@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="0.3">
+    <table name="btImageCarousel">
+        <field name="bID" type="I">
+            <unsigned/>
+            <key/>
+        </field>
+        
+        <field name="fileSetId" type="I">
+            <unsigned/>
+        </field>
+        
+        <field name="thumbnailType" type="C" length="255" default="" />
+        
+        <field name="speed" type="I2" default="300">
+            <unsigned/>
+        </field>
+        
+        <field name="autoplaySpeed" type="I2" default="300">
+            <unsigned/>
+        </field>
+        
+        <field name="infinite" type="I1" default="0">
+            <unsigned/>
+        </field>
+        
+        <field name="dots" type="I1" default="1">
+            <unsigned/>
+        </field>
+        
+        <field name="autoplay" type="I1" default="0">
+            <unsigned/>
+        </field>
+    </table>
+    
+    <table name="btImageCarouselBreakpoints">
+        <field name="id" type="I">
+            <unsigned/>
+            <key/>
+            <autoincrement/>
+        </field>
+        
+        <field name="bID" type="I">
+            <unsigned/>
+        </field>
+        
+        <field name="breakpoint" type="I2">
+            <unsigned/>
+        </field>
+        
+        <field name="slidesToShow" type="I2">
+            <unsigned/>
+        </field>
+        
+        <field name="slidesToScroll" type="I2">
+            <unsigned/>
+        </field>
+    </table>
+</schema>

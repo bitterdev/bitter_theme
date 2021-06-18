@@ -1,0 +1,167 @@
+/**
+ * @project:   Bitter Theme
+ *
+ * @author     Fabian Bitter (fabian@bitter.de)
+ * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * @version    X.X.X
+ */
+
+.ccm-page {
+  .ccm-block-express-form, .ccm-block-type-form, form {
+    clear: both;
+    margin: 0;
+  }
+
+  fieldset {
+    display: block;
+    width: 100%;
+
+    legend {
+      margin-bottom: 5px;
+    }
+  }
+
+  .ccm-captcha-image {
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+
+  .alert, div.alert-error {
+    margin-bottom: 15px;
+    border-radius: 0;
+
+    &.alert-success {
+      color: #3c763d !important;
+      background-color: #dff0d8 !important;
+      border-color: #d6e9c6 !important;
+    }
+
+    &.alert-danger {
+      color: #a94442 !important;
+      background-color: #f2dede !important;
+      border-color: #ebccd1 !important;
+    }
+  }
+
+  label, label.control-label {
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #555;
+    padding: 0 0 5px;
+    font-weight: 400 !important;
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    font: normal normal normal 14px/1 FontAwesome;
+    display: inline-block;
+    height: 0;
+    width: 0;
+  }
+
+  .checkbox input[type=checkbox]::before {
+    content: "\f096";
+    letter-spacing: 10px;
+  }
+
+  .checkbox input[type=checkbox]:checked::before {
+    letter-spacing: 5px;
+    color: @bitter-theme-accent-color;
+    content: "\f046";
+  }
+
+  .radio input[type=radio]::before {
+    content: "\f10c";
+    letter-spacing: 10px;
+  }
+
+  .radio input[type=radio]:checked::before {
+    letter-spacing: 5px;
+    color: @bitter-theme-accent-color;
+    content: "\f192";
+  }
+
+  .checkbox, .radio {
+    margin-top: 0;
+    margin-bottom: 5px;
+
+    input {
+      margin-top: 7px;
+    }
+  }
+
+  input.ccm-input-text, .form-control {
+    border-radius: 0;
+    box-shadow: none !important;
+    display: block;
+    width: 100%;
+    border: 1px solid #d1d1d1 !important;
+    background-color: #ffffff;
+    color: #555;
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding: 0 8px;
+    outline: none;
+
+    &:focus, &:active {
+      border-color: @bitter-theme-accent-color !important;
+    }
+  }
+
+  textarea {
+    border-radius: 0;
+    box-shadow: none !important;
+    display: block;
+    width: 100%;
+    border: 1px solid #d1d1d1 !important;
+    background-color: #ffffff;
+    color: #555;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: none;
+    min-height: 130px;
+    line-height: 1.7em !important;
+    padding: 0 8px;
+
+    &:focus, &:active {
+      border-color: @bitter-theme-accent-color !important;
+    }
+  }
+
+  .btn, .btn.btn-success {
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    min-width: 200px;
+    border: none;
+    background-color: #ececec;
+    color: @bitter-theme-accent-color;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+
+    &.btn-block {
+      min-width: 0;
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: darken(#ececec, 5%);
+      color: @bitter-theme-accent-color;
+    }
+
+    &.btn-primary, &.ccm-input-submit {
+      background-color: @bitter-theme-accent-color;
+      color: #ffffff !important;
+
+      &:hover {
+        background-color: lighten(@bitter-theme-accent-color, 5%);
+      }
+    }
+  }
+}

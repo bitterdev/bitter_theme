@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema version="0.3">
+    <table name="btCounter">
+        <field name="bID" type="I">
+            <unsigned/>
+            <key/>
+        </field>
+        
+        <field name="backgroundColor" type="C">
+            <default value="transparent"/>
+        </field>
+        
+        <field name="textColor" type="C">
+            <default value="#000000"/>
+        </field>
+        
+        <field name="time" type="I">
+            <unsigned/>
+            <default value="1000"/>
+        </field>
+    </table>
+</schema>

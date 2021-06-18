@@ -1,0 +1,45 @@
+/**
+ * @project:   Bitter Theme
+ *
+ * @author     Fabian Bitter (fabian@bitter.de)
+ * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * @version    X.X.X
+ */
+
+.ccm-page {
+  .image-carousel .slick-list .slick-slide {
+    outline: none;
+  }
+
+  .image-carousel img {
+    margin: 0 auto;
+    padding: 15px;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-carousel .slick-dots li button::before {
+    opacity: 1;
+    font-size: 11px;
+  }
+
+  .slick-dots li button::before {
+    background-color: #f9f9f9;
+    border-radius: 50%;
+    color: transparent !important;
+    width: 15px;
+    height: 15px;
+  }
+
+  .slick-dots li.slick-active button::before,
+  .slick-dots li button:hover::before,
+  .slick-dots li button:focus::before {
+    background-color: @bitter-theme-accent-color;
+  }
+
+  .hidden {
+    zoom: 1;
+    filter: alpha(opacity=0);
+    opacity: 0;
+  }
+}

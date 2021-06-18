@@ -1,0 +1,59 @@
+/**
+ * @project:   Bitter Theme
+ *
+ * @author     Fabian Bitter (fabian@bitter.de)
+ * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * @version    X.X.X
+ */
+@import "presets/defaults.less";
+@import "fonts/defaults.less";
+@import "elements/header.less";
+@import "elements/footer.less";
+@import "elements/form.less";
+@import "elements/content.less";
+@import "elements/shop.less";
+@import "elements/image_slider.less";
+@import "elements/image_carousel.less";
+@import "elements/accordion.less";
+
+html {
+  height: 100%;
+
+  .ccm-page {
+    font-family: "Open Sans";
+    font-size: 11pt;
+    line-height: 20pt;
+    color: #555;
+  }
+
+  main.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    img {
+      width: 75%;
+      height: auto;
+      display: block;
+      margin: auto;
+      margin-bottom: 25px;
+    }
+  }
+
+  @supports (display: flex) {
+    .ccm-page {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+
+      main {
+        flex: 1 1 0%;
+      }
+    }
+  }
+}

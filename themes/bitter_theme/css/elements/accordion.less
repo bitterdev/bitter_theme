@@ -1,0 +1,57 @@
+/**
+ * @project:   Bitter Theme
+ *
+ * @author     Fabian Bitter (fabian@bitter.de)
+ * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * @version    X.X.X
+ */
+
+.ccm-page {
+  .panel-default {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    > .panel-heading {
+      height: 45px;
+      padding: 0 15px;
+      border-radius: 0;
+      color: @bitter-theme-accent-color;
+      background-color: #ededed;
+      border: none;
+
+      a {
+        line-height: 45px;
+        width: 100%;
+        display: block;
+        text-decoration: none;
+
+        &::after {
+          content: "\f107";
+          display: inline-block;
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          position: absolute;
+          right: 30px;
+          line-height: 45px;
+        }
+
+        &[aria-expanded="true"]::after {
+          content: "\f106";
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .panel-body {
+      padding: 15px 0;
+      border: none;
+    }
+  }
+}
