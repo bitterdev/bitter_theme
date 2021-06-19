@@ -32,6 +32,31 @@
             });
         }
 
+        $(".counter-container").each(function () {
+            var duration = $(this).data("duration");
+
+            $(this).find(".counter").each(function () {
+                var $targetElement = $(this).find(".counter-value");
+                var targetValue = parseInt($targetElement.data("target-value"));
+                var frameDuration = 1000 / 60;
+                var totalFrames = Math.round(duration / frameDuration);
+                var frame = 0;
+
+                var counterTimer = setInterval(function () {
+                    frame++;
+
+                    var progress = (frame / totalFrames) * (2 - (frame / totalFrames));
+                    var counterValue = Math.round(targetValue * progress);
+
+                    $targetElement.html(counterValue);
+
+                    if (frame === totalFrames) {
+                        clearInterval(counterTimer);
+                    }
+                }, frameDuration);
+            });
+        });
+
         if ($("main").hasClass("centered")) {
             particlesJS("ccm-page-container", {
                 "particles": {
@@ -39,20 +64,26 @@
                         "value": 80,
                         "density": {
                             "enable": true,
-                            "value_area": 700 } },
+                            "value_area": 700
+                        }
+                    },
 
 
                     "color": {
-                        "value": getComputedStyle(document.documentElement).getPropertyValue('--bitter-theme-accent-color').trim() },
+                        "value": getComputedStyle(document.documentElement).getPropertyValue('--bitter-theme-accent-color').trim()
+                    },
 
                     "shape": {
                         "type": "circle",
                         "stroke": {
                             "width": 0,
-                            "color": "#000000" },
+                            "color": "#000000"
+                        },
 
                         "polygon": {
-                            "nb_sides": 5 } },
+                            "nb_sides": 5
+                        }
+                    },
 
 
                     "opacity": {
@@ -62,7 +93,9 @@
                             "enable": false,
                             "speed": 0.1,
                             "opacity_min": 0.1,
-                            "sync": false } },
+                            "sync": false
+                        }
+                    },
 
 
                     "size": {
@@ -72,7 +105,9 @@
                             "enable": false,
                             "speed": 10,
                             "size_min": 0.1,
-                            "sync": false } },
+                            "sync": false
+                        }
+                    },
 
 
                     "line_linked": {
@@ -80,7 +115,8 @@
                         "distance": 150,
                         "color": getComputedStyle(document.documentElement).getPropertyValue('--bitter-theme-accent-color').trim(),
                         "opacity": 0.4,
-                        "width": 1 },
+                        "width": 1
+                    },
 
                     "move": {
                         "enable": true,
@@ -93,8 +129,10 @@
                         "attract": {
                             "enable": false,
                             "rotateX": 600,
-                            "rotateY": 1200 } } },
-
+                            "rotateY": 1200
+                        }
+                    }
+                },
 
 
                 "interactivity": {
@@ -102,19 +140,24 @@
                     "events": {
                         "onhover": {
                             "enable": true,
-                            "mode": "grab" },
+                            "mode": "grab"
+                        },
 
                         "onclick": {
                             "enable": true,
-                            "mode": "push" },
+                            "mode": "push"
+                        },
 
-                        "resize": true },
+                        "resize": true
+                    },
 
                     "modes": {
                         "grab": {
                             "distance": 140,
                             "line_linked": {
-                                "opacity": 1 } },
+                                "opacity": 1
+                            }
+                        },
 
 
                         "bubble": {
@@ -122,21 +165,27 @@
                             "size": 40,
                             "duration": 2,
                             "opacity": 8,
-                            "speed": 3 },
+                            "speed": 3
+                        },
 
                         "repulse": {
                             "distance": 200,
-                            "duration": 0.4 },
+                            "duration": 0.4
+                        },
 
                         "push": {
-                            "particles_nb": 4 },
+                            "particles_nb": 4
+                        },
 
                         "remove": {
-                            "particles_nb": 2 } } },
+                            "particles_nb": 2
+                        }
+                    }
+                },
 
 
-
-                "retina_detect": true });
+                "retina_detect": true
+            });
         }
     });
 })(jQuery);

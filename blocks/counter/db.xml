@@ -1,22 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema version="0.3">
+<schema
+        xmlns="http://www.concrete5.org/doctrine-xml/0.5"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.concrete5.org/doctrine-xml/0.5 http://concrete5.github.io/doctrine-xml/doctrine-xml-0.5.xsd">
+
     <table name="btCounter">
-        <field name="bID" type="I">
+        <field name="bID" type="integer">
             <unsigned/>
             <key/>
         </field>
-        
-        <field name="backgroundColor" type="C">
-            <default value="transparent"/>
-        </field>
-        
-        <field name="textColor" type="C">
-            <default value="#000000"/>
-        </field>
-        
-        <field name="time" type="I">
+
+        <field name="duration" type="integer">
             <unsigned/>
             <default value="1000"/>
         </field>
+    </table>
+
+    <table name="btCounterItems">
+        <field name="id" type="integer">
+            <unsigned/>
+            <autoincrement/>
+            <key/>
+        </field>
+
+        <field name="bID" type="integer">
+            <unsigned/>
+        </field>
+
+        <field name="value" type="integer"/>
+        <field name="description" type="text"/>
     </table>
 </schema>

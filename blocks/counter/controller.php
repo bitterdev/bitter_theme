@@ -10,133 +10,142 @@
 
 namespace Concrete\Package\BitterTheme\Block\Counter;
 
-defined("C5_EXECUTE") or die("Access Denied.");
-
 use Concrete\Core\Block\BlockController;
-use Concrete\Package\Counter\Src\CounterItems;
-use Core;
+use Concrete\Core\Database\Connection\Connection;
+use Concrete\Core\Error\ErrorList\ErrorList;
 
-class Controller extends BlockController {
-
-    public $helpers = array(
-        'form',
-    );
-
-    public $btFieldsRequired = array(
-        'backgroundColor',
-        'textColor',
-        'time'
-    );
-
-    protected $btExportFileColumns = array();
+class Controller extends BlockController
+{
     protected $btTable = 'btCounter';
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 500;
-    protected $btCacheBlockRecord = true;
-    protected $btCacheBlockOutput = true;
-    protected $btCacheBlockOutputLifetime = 300;
-    protected $btCacheBlockOutputOnPost = true;
-    protected $btCacheBlockOutputForRegisteredUsers = true;
+    protected $btCacheBlockOutputLifeduration = 300;
 
-    public function getBlockTypeDescription() {
-        return t("Block element for animating numbers on your website.");
+    public function getBlockTypeDescription()
+    {
+        return t("Display animated numbers on your website.");
     }
 
-    public function getBlockTypeName() {
-        return t("Counter Up");
+    public function getBlockTypeName()
+    {
+        return t("Counter");
     }
 
-    public function view() {
-        $this->requireAsset("javascript", "jquery");
-
-        $items = CounterItems::getInstance()->getItems($this->bID);
-
-        $this->set("items", $items);
+    public function view()
+    {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $this->set("items", $db->fetchAll("SELECT * FROM btCounterItems WHERE bID = ?", [$this->bID]));
     }
 
-    public function add() {
-        $this->requireAsset("javascript", "mustache.js");
-
-        $this->set("items", array());
+    public function add()
+    {
+        $this->set("items", []);
+        $this->set("duration", 1000);
     }
 
-    public function getSearchableContent() {
+    public function getSearchableContent()
+    {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $items = $db->fetchAll("SELECT * FROM btCounterItems WHERE bID = ?", [$this->bID]);
+
         $content = "";
 
-        $items = CounterItems::getInstance()->getItems($this->bID);
-
         if (is_array($items)) {
-            foreach($items as $item) {
-                $content .= ($content != "" ? " " : "") . $item->getCounterDescription();
+            foreach ($items as $item) {
+                $content .= sprintf(
+                    "%s%s",
+                    ($content != "" ? " " : ""),
+                    strip_tags($item["description"])
+                );
             }
         }
 
         return $content;
     }
 
-    public function edit() {
-        $this->requireAsset("javascript", "mustache.js");
-
-        $items = CounterItems::getInstance()->getItemsAsArray($this->bID);
-
-        $this->set("items", $items);
+    public function edit()
+    {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $this->set("items", $db->fetchAll("SELECT * FROM btCounterItems WHERE bID = ?", [$this->bID]));
     }
 
-    public function delete() {
-        CounterItems::getInstance()->removeItems($this->bID);
+    public function delete()
+    {
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $db->executeQuery("DELETE FROM btCounterItems WHERE bID = ?", [$this->bID]);
+
+        parent::delete();
     }
 
-    public function save($args) {
+    public function save($args)
+    {
         parent::save($args);
 
-        CounterItems::getInstance()->setItems($this->bID, $args["items"]);
-    }
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $db->executeQuery("DELETE FROM btCounterItems WHERE bID = ?", [$this->bID]);
 
-    /**
-     * @param string $color
-     *
-     * @return boolean
-     */
-    private function isValidColor($color) {
-        $allColors = array('transparent', 'aliceblue', 'antiquewhite', 'aqua', 'aquamarine', 'azure', 'beige', 'bisque', 'black', 'blanchedalmond', 'blue', 'blueviolet', 'brown', 'burlywood', 'cadetblue', 'chartreuse', 'chocolate', 'coral', 'cornflowerblue', 'cornsilk', 'crimson', 'cyan', 'darkblue', 'darkcyan', 'darkgoldenrod', 'darkgray', 'darkgreen', 'darkkhaki', 'darkmagenta', 'darkolivegreen', 'darkorange', 'darkorchid', 'darkred', 'darksalmon', 'darkseagreen', 'darkslateblue', 'darkslategray', 'darkturquoise', 'darkviolet', 'deeppink', 'deepskyblue', 'dimgray', 'dodgerblue', 'firebrick', 'floralwhite', 'forestgreen', 'fuchsia', 'gainsboro', 'ghostwhite', 'gold', 'goldenrod', 'gray', 'green', 'greenyellow', 'honeydew', 'hotpink', 'indianred', 'indigo', 'ivory', 'khaki', 'lavender', 'lavenderblush', 'lawngreen', 'lemonchiffon', 'lightblue', 'lightcoral', 'lightcyan', 'lightgoldenrodyellow', 'lightgreen', 'lightgrey', 'lightpink', 'lightsalmon', 'lightseagreen', 'lightskyblue', 'lightslategray', 'lightsteelblue', 'lightyellow', 'lime', 'limegreen', 'linen', 'magenta', 'maroon', 'mediumaquamarine', 'mediumblue', 'mediumorchid', 'mediumpurple', 'mediumseagreen', 'mediumslateblue', 'mediumspringgreen', 'mediumturquoise', 'mediumvioletred', 'midnightblue', 'mintcream', 'mistyrose', 'moccasin', 'navajowhite', 'navy', 'oldlace', 'olive', 'olivedrab', 'orange', 'orangered', 'orchid', 'palegoldenrod', 'palegreen', 'paleturquoise', 'palevioletred', 'papayawhip', 'peachpuff', 'peru', 'pink', 'plum', 'powderblue', 'purple', 'red', 'rosybrown', 'royalblue', 'saddlebrown', 'salmon', 'sandybrown', 'seagreen', 'seashell', 'sienna', 'silver', 'skyblue', 'slateblue', 'slategray', 'snow', 'springgreen', 'steelblue', 'tan', 'teal', 'thistle', 'tomato', 'turquoise', 'violet', 'wheat', 'white', 'whitesmoke', 'yellow', 'yellowgreen');
-
-        if (in_array(strtolower($color), $allColors)) {
-            return true;
-        } else if (preg_match('/^#[a-f0-9]{6}$/i', $color)) {
-            return true;
-        } else if (preg_match('/^[a-f0-9]{6}$/i', $color)) {
-            return true;
+        if (is_array($args["items"])) {
+            foreach ($args["items"] as $item) {
+                /** @noinspection SqlDialectInspection */
+                /** @noinspection SqlNoDataSourceInspection */
+                /** @noinspection PhpUnhandledExceptionInspection */
+                $db->executeQuery("INSERT INTO btCounterItems (bID, `value`, description) VALUES (?, ?, ?)", [
+                    $this->bID,
+                    $item["value"],
+                    $item["description"]
+                ]);
+            }
         }
-
-        return false;
     }
 
-    public function duplicate($newBID) {
+    public function duplicate($newBID)
+    {
         parent::duplicate($newBID);
 
-        CounterItems::getInstance()->duplicateItems($this->bID, $newBID);
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+
+        $copyFields = '`value`, description';
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        /** @noinspection PhpUnhandledExceptionInspection */
+        $db->executeUpdate("INSERT INTO btCounterItems (bID, {$copyFields}) SELECT ?, {$copyFields} FROM btCounterItems WHERE bID = ?", [
+                $newBID,
+                $this->bID
+            ]
+        );
     }
 
-    public function validate($args) {
-        $e = Core::make('helper/validation/error');
+    public function validate($args): ErrorList
+    {
+        $errorList = new ErrorList();
 
-        if (!$args['backgroundColor'] || !$this->isValidColor($args['backgroundColor'])) {
-            $e->add(t('You must specify a valid background color.'));
-        }
-
-        if (!$args['textColor'] || !$this->isValidColor($args['textColor'])) {
-            $e->add(t('You must specify a valid text color.'));
-        }
-
-        if (!$args['time'] || !is_numeric($args['time']) || intval($args['time']) < 0) {
-            $e->add(t('You must specify a valid time.'));
+        if (!$args['duration'] || !is_numeric($args['duration']) || intval($args['duration']) < 0) {
+            $errorList->add(t('You must specify a valid duration.'));
         }
 
         if (isset($args["items"]) && is_array($args["items"])) {
             $missingCounterValue = false;
 
-            foreach($args["items"] as $item) {
-                if (intval($item["counterValue"]) === 0) {
+            foreach ($args["items"] as $item) {
+                if (intval($item["value"]) === 0) {
                     $missingCounterValue = true;
 
                     break;
@@ -144,11 +153,11 @@ class Controller extends BlockController {
             }
 
             if ($missingCounterValue) {
-                $e->add(t('You must specify a valid counter value.'));
+                $errorList->add(t('You must specify a valid counter value.'));
             }
         }
 
-        return $e;
+        return $errorList;
     }
 
 }

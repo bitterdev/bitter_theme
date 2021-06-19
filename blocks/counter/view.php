@@ -10,29 +10,30 @@
 
 defined('C5_EXECUTE') or die('Access denied');
 
+use Concrete\Core\Page\Page;
+
+/** @var int $duration */
+/** @var array $items */
+
+$c = Page::getCurrentPage();
 ?>
 
-<?php if (is_object(Page::getCurrentPage()) && Page::getCurrentPage()->isEditMode()): ?>
+<?php if ($c instanceof Page && $c->isEditMode()): ?>
     <div class="ccm-edit-mode-disabled-item">
-        <?php echo t('Counter Up is disabled in edit mode.') ?>
+        <?php echo t('Counter is disabled in edit mode.') ?>
     </div>
 <?php else: ?>
-    <div class="counter count-of-items-<?php echo count($items); ?>"
-         data-duration="<?php echo intval($time); ?>"
-         style="background-color: <?php echo $backgroundColor; ?>; color: <?php echo $textColor; ?>;">
-        
-        <div class="counter-items">
-            <?php foreach ($items as $item): ?>
-                <div class="counter-item">
-                    <span class="counter-value">
-                        <?php echo intval($item->getCounterValue()); ?>
-                    </span>
+    <div class="counter-container" data-duration="<?php echo h($duration); ?>">
+        <?php foreach ($items as $item): ?>
+            <div class="counter">
+                <h3 class="counter-value" data-target-value="<?php echo h($item["value"]); ?>">
+                    0
+                </h3>
 
-                    <p>
-                        <?php echo $item->getCounterDescription(); ?>
-                    </p>
-                </div>
-            <?php endforeach; ?>
-        </div>
+                <p>
+                    <?php echo $item["description"]; ?>
+                </p>
+            </div>
+        <?php endforeach; ?>
     </div>
 <?php endif; ?>
