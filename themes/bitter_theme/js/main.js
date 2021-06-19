@@ -57,6 +57,15 @@
             });
         });
 
+        $(".progressbar").each(function () {
+            var duration = $(this).data("duration");
+            var targetValue = $(this).data("target-value");
+
+            $(this).find(".filled").animate({
+                "width": targetValue + "%"
+            }, duration);
+        });
+
         if ($("main").hasClass("centered")) {
             particlesJS("ccm-page-container", {
                 "particles": {

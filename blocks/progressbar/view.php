@@ -10,32 +10,28 @@
 
 defined('C5_EXECUTE') or die('Access denied');
 
+use Concrete\Core\Page\Page;
+
+/** @var string $label */
+/** @var int $value */
+/** @var int $duration */
+
+$c = Page::getCurrentPage();
 ?>
 
-<?php if (is_object(Page::getCurrentPage()) && Page::getCurrentPage()->isEditMode()): ?>
+<?php if ($c instanceof Page && $c->isEditMode()) { ?>
     <div class="ccm-edit-mode-disabled-item">
         <?php echo t('Progressbar is disabled in edit mode.') ?>
     </div>
-<?php else: ?>
-    <div class="progressbar-addon-container <?php echo $isThick ? "thick" : ""; ?> <?php echo $hasAnimation ? 'animated' : ''; ?>" 
-         data-duration="<?php echo $animationDuration; ?>"
-         data-value="<?php echo $value; ?>">
-        <?php if($isInlineLabel): ?>
-            <div class="progressbar inline" style="background-color: <?php echo $backgroundColor; ?>">
-                <div class="progressbar-filled" style="background-color: <?php echo $barColor; ?>; width: <?php echo $value; ?>%;"></div>
-                
-                <span class="progressbar-label" style="color: <?php echo $labelColor; ?>">
-                    <?php echo $label; ?>
-                </span>
-            </div>
-        <?php else: ?>
-            <span class="progressbar-label" style="color: <?php echo $labelColor; ?>">
-                <?php echo $label; ?>
-            </span>
-        
-            <div class="progressbar <?php echo $isThick ? "thick" : "thin"; ?>" style="background-color: <?php echo $backgroundColor; ?>">
-                <div class="progressbar-filled" style="background-color: <?php echo $barColor; ?>; width: <?php echo $value; ?>%;"></div>
-            </div>
-        <?php endif; ?>
+<?php } else { ?>
+    <div class="progressbar"
+         data-duration="<?php echo h($duration); ?>"
+         data-target-value="<?php echo h($value); ?>">
+
+        <?php echo $label; ?>
+
+        <div class="value">
+            <div class="filled"></div>
+        </div>
     </div>
-<?php endif; ?>
+<?php } ?>

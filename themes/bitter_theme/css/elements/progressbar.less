@@ -1,0 +1,30 @@
+/**
+ * @project:   Bitter Theme
+ *
+ * @author     Fabian Bitter (fabian@bitter.de)
+ * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * @version    X.X.X
+ */
+
+.ccm-page {
+  .progressbar {
+    margin-bottom: 15px;
+
+    .value {
+      display: block;
+      width: 100%;
+      height: 35px;
+      position: relative;
+      background-color: #ececec;
+
+      .filled {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 35px;
+        width: 0;
+        background-color: @bitter-theme-accent-color;
+      }
+    }
+  }
+}

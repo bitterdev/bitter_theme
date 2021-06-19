@@ -17,7 +17,7 @@ use Concrete\Theme\Concrete\PageTheme;
 class Controller extends Package
 {
     protected $pkgHandle = 'bitter_theme';
-    protected $pkgVersion = '2.0.2';
+    protected $pkgVersion = '2.0.3';
     protected $appVersionRequired = '8.5.4';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderRegistries = [
