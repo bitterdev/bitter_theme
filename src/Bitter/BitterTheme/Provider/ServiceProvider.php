@@ -10,6 +10,7 @@
 
 namespace Bitter\BitterTheme\Provider;
 
+use Bitter\BitterTheme\RouteList;
 use Concrete\Core\Application\Application;
 use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
@@ -19,8 +20,13 @@ use Concrete\Core\Html\Service\Navigation;
 use Concrete\Core\Http\Response;
 use Concrete\Core\Http\ResponseFactory;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Routing\Router;
+use Concrete\Core\User\Group\Group;
+use Concrete\Core\User\User;
+use Gajus\Dindent\Indenter;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Concrete\Core\Page\Theme\ThemeRouteCollection;
+use Symfony\Component\EventDispatcher\GenericEvent;
 
 class ServiceProvider extends Provider
 {
@@ -54,8 +60,40 @@ class ServiceProvider extends Provider
         $this->registerPageSelectorRedirect();
         $this->registerThemePaths();
         $this->disableAccountMenu();
+        $this->initializeRoutes();
+        $this->beautifyHtmlOutput();
     }
 
+    private function beautifyHtmlOutput()
+    {
+        $this->eventDispatcher->addListener('on_page_output', function ($event) {
+            /** @var $event GenericEvent */
+            $htmlCode = $event->getArgument('contents');
+
+            $u = new User();
+
+            $adminGroup = Group::getByName("Administrators");
+
+            /** @var $c Page */
+            $c = Page::getCurrentPage();
+
+            if (!($u->isSuperUser() || (is_object($adminGroup) && $u->inGroup($adminGroup)) ||
+                ($c instanceof Page && ($c->isEditMode())))) {
+                $htmlBeautifier = new Indenter();
+                $htmlCode = $htmlBeautifier->indent($htmlCode);
+            }
+
+            $event->setArgument('contents', $htmlCode);
+        });
+    }
+
+    private function initializeRoutes()
+    {
+        /** @var Router $router */
+        $router = $this->app->make("router");
+        $list = new RouteList();
+        $list->loadRoutes($router);
+    }
 
     private function disableAccountMenu()
     {

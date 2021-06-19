@@ -17,7 +17,7 @@ use Concrete\Theme\Concrete\PageTheme;
 class Controller extends Package
 {
     protected $pkgHandle = 'bitter_theme';
-    protected $pkgVersion = '2.0.3';
+    protected $pkgVersion = '2.0.5';
     protected $appVersionRequired = '8.5.4';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderRegistries = [
@@ -36,6 +36,10 @@ class Controller extends Package
 
     public function on_start()
     {
+        if (file_exists($this->getPackagePath() . '/vendor/autoload.php')) {
+            require_once($this->getPackagePath() . '/vendor/autoload.php');
+        }
+
         /** @var ServiceProvider $serviceProvider */
         $serviceProvider = $this->app->make(ServiceProvider::class);
         $serviceProvider->register();
@@ -47,5 +51,18 @@ class Controller extends Package
         if (is_object($pageTheme)) {
             $pageTheme->applyToSite();
         }
+    }
+
+    public function install()
+    {
+        $pkg = parent::install();
+        $this->installContentFile("data.xml");
+        return $pkg;
+    }
+
+    public function upgrade()
+    {
+        parent::upgrade();
+        $this->installContentFile("data.xml");
     }
 }

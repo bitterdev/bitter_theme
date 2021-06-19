@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+    <themes>
+        <theme handle="bitter_theme" activated="1" package="bitter_theme"/>
+    </themes>
+    <singlepages>
+        <page name="Bitter Theme" path="/dashboard/bitter_theme"
+              filename="/dashboard/bitter_theme.php"
+              pagetype="" description=""
+              package="bitter_theme">
+        </page>
+        <page name="Settings" path="/dashboard/bitter_theme/settings"
+              filename="/dashboard/bitter_theme/settings.php" pagetype="" description=""
+              package="bitter_theme">
+        </page>
+    </singlepages>
+</concrete5-cif>
