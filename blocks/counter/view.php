@@ -26,9 +26,9 @@ $c = Page::getCurrentPage();
     <div class="counter-container" data-duration="<?php echo h($duration); ?>">
         <?php foreach ($items as $item): ?>
             <div class="counter">
-                <h3 class="counter-value" data-target-value="<?php echo h($item["value"]); ?>">
+                <h2 class="counter-value" data-target-value="<?php echo h($item["value"]); ?>">
                     0
-                </h3>
+                </h2>
 
                 <p>
                     <?php echo $item["description"]; ?>

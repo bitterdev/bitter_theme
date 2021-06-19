@@ -12,6 +12,7 @@ namespace Concrete\Package\BitterTheme\Block\Accordion;
 
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Database\Connection\Connection;
+use Concrete\Core\Editor\CkeditorEditor;
 use Concrete\Core\Error\ErrorList\ErrorList;
 
 class Controller extends BlockController
@@ -42,12 +43,14 @@ class Controller extends BlockController
 
     public function add()
     {
+        $this->app->make(CkeditorEditor::class);
         $this->requireAsset('editor/ckeditor4');
         $this->set("items", []);
     }
 
     public function edit()
     {
+        $this->app->make(CkeditorEditor::class);
         $this->requireAsset('editor/ckeditor4');
         /** @var Connection $db */
         $db = $this->app->make(Connection::class);

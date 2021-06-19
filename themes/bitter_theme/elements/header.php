@@ -114,7 +114,7 @@ $this->inc("elements/header_top.php"); ?>
         </nav>
     </header>
 
-<?php if ($c instanceof Page && $c->getCurrentPage()->getCollectionId() != Page::getHomePageID()) { ?>
+<?php if ($c instanceof Page && !($c->getCurrentPage()->getCollectionId() == Page::getHomePageID() || $c->getAttribute("exclude_breadcrumb_nav"))) { ?>
     <section>
         <div class="container">
             <div class="row">
