@@ -117,6 +117,8 @@ class ServiceProvider extends Provider
                 ['css', 'slick-theme']
             ]
         );
+
+        $assetList->register('javascript', 'particles', "assets/particles/particles.js", ["version" => "2.0.0", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
     }
 
     private function registerPageSelectorRedirect()

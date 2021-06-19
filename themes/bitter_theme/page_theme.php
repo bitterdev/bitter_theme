@@ -25,6 +25,7 @@ class PageTheme extends Theme
         $this->requireAsset('css', 'font-awesome');
         $this->requireAsset('javascript', 'respond');
         $this->requireAsset('javascript', 'html5-shiv');
+        $this->requireAsset('javascript', 'particles');
         $this->providesAsset('javascript', 'bootstrap/*');
         $this->requireAsset('core/lightbox');
         $this->requireAsset('jquery/ui');

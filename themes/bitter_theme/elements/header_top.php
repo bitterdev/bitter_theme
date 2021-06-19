@@ -44,4 +44,4 @@ $htmlHelper = $app->make(Html::class);
 </head>
 
 <body>
-<div class="<?php echo $c->getPageWrapperClass() ?>">
+<div id="ccm-page-container" class="<?php echo $c->getPageWrapperClass() ?>">
