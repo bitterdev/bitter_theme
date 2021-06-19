@@ -81,7 +81,7 @@ class ServiceProvider extends Provider
         $assetList = AssetList::getInstance();
 
         $assetList->register('javascript', 'bootstrap', "assets/bootstrap/js/bootstrap.min.js", ["version" => "3.3.7", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
-        $assetList->register('css', 'bootstrap', "assets/bootstrap/css/bootstrap.min.css", ["version" => "3.3.7", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+        $assetList->register('css', 'bootstrap', "assets/bootstrap/css/bootstrap.min.css", ["version" => "3.3.7", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
 
         $assetList->registerGroup(
             "bootstrap",
@@ -93,7 +93,7 @@ class ServiceProvider extends Provider
         );
 
         $assetList->register('javascript', 'mmenu-light', "assets/mmenu-light/mmenu-light.js", ["version" => "4.0.3", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
-        $assetList->register('css', 'mmenu-light', "assets/mmenu-light/mmenu-light.css", ["version" => "4.0.3", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+        $assetList->register('css', 'mmenu-light', "assets/mmenu-light/mmenu-light.css", ["version" => "4.0.3", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
 
         $assetList->registerGroup(
             "mmenu-light",
@@ -105,8 +105,8 @@ class ServiceProvider extends Provider
         );
 
         $assetList->register('javascript', 'slick', "assets/slick/slick.min.js", ["version" => "1.8.1", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
-        $assetList->register('css', 'slick', "assets/slick/slick.css", ["version" => "1.8.1", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
-        $assetList->register('css', 'slick-theme', "assets/slick/slick-theme.css", ["version" => "1.8.1", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+        $assetList->register('css', 'slick', "assets/slick/slick.css", ["version" => "1.8.1", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
+        $assetList->register('css', 'slick-theme', "assets/slick/slick-theme.css", ["version" => "1.8.1", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
 
         $assetList->registerGroup(
             "slick",
@@ -119,6 +119,32 @@ class ServiceProvider extends Provider
         );
 
         $assetList->register('javascript', 'particles', "assets/particles/particles.js", ["version" => "2.0.0", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+
+        $assetList->register('javascript', 'macy', "assets/macy/macy.js", ["version" => "2.0.0", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+
+        $assetList->register('javascript', 'photoswipe', "assets/photoswipe/photoswipe.min.js", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+        $assetList->register('css', 'photoswipe', "assets/photoswipe/photoswipe.css", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
+
+        $assetList->registerGroup(
+            "photoswipe",
+
+            [
+                ['javascript', 'photoswipe'],
+                ['css', 'photoswipe']
+            ]
+        );
+
+        $assetList->register('css', 'photoswipe/default-skin', "assets/photoswipe/default-skin/default-skin.css", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
+        $assetList->register('javascript', 'photoswipe/default-skin', "assets/photoswipe/photoswipe-ui-default.min.js", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
+
+        $assetList->registerGroup(
+            "photoswipe/default-skin",
+
+            [
+                ['javascript', 'photoswipe/default-skin'],
+                ['css', 'photoswipe/default-skin']
+            ]
+        );
     }
 
     private function registerPageSelectorRedirect()

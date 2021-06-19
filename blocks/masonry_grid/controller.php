@@ -11,90 +11,51 @@
 namespace Concrete\Package\BitterTheme\Block\MasonryGrid;
 
 use Concrete\Core\Block\BlockController;
-use Concrete\Core\File\Set\SetList as FileSetList;
+use Concrete\Core\Cache\Level\ExpensiveCache;
+use Concrete\Core\Database\Connection\Connection;
+use Concrete\Core\File\Image\BasicThumbnailer;
+use Concrete\Core\File\Set\Set;
+use Concrete\Core\File\Set\SetList;
 use Concrete\Core\File\Type\Type as FileType;
 use Concrete\Core\File\FileList;
-use FileSet;
-use Database;
-use Core;
-use Config;
 
 class Controller extends BlockController
 {
-
-    public $helpers = array(
-        'form',
-    );
-
-    protected $btExportFileColumns = array();
     protected $btTable = 'btMasonryGrid';
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 500;
-    protected $btCacheBlockRecord = true;
-    protected $btCacheBlockOutput = true;
     protected $btCacheBlockOutputLifetime = 300;
-    protected $btCacheBlockOutputOnPost = true;
-    protected $btCacheBlockOutputForRegisteredUsers = false;
 
-    private $db;
-    private $securityHelper;
-
-    /**
-     * @param BlockType $obj |Block $obj
-     */
-    public function __construct($obj = null)
-    {
-        parent::__construct($obj);
-
-        $this->db = Database::connection();
-
-        $this->securityHelper = Core::make('helper/security');
-    }
-
-    public function getBlockTypeDescription()
+    public function getBlockTypeDescription(): string
     {
         return t("Easily display your file sets from the file manager in a grid!");
     }
 
-    public function getBlockTypeName()
+    public function getBlockTypeName(): string
     {
         return t("Masonry Grid");
     }
 
     public function add()
     {
-        $this->set("backgroundColorNormal", "transparent");
-        $this->set("textColorNormal", "#75ca2a");
-        $this->set("backgroundColorActive", "#75ca2a");
-        $this->set("textColorActive", "#ffffff");
-
-        $this->addOrEdit();
+        $this->set("fileSets", $this->getAllAvailableFileSets());
+        $this->set("selectedFileSets", array_keys($this->getSelectedFileSets()));
     }
 
 
     public function edit()
     {
-        $this->addOrEdit();
-    }
-
-    public function registerViewAssets($outputContent = '')
-    {
-        parent::registerViewAssets($outputContent);
-
-        $this->requireAsset('javascript', 'jquery');
-        $this->requireAsset('javascript', 'macy');
-        $this->requireAsset('photoswipe');
-        $this->requireAsset('photoswipe/default-skin');
+        $this->set("fileSets", $this->getAllAvailableFileSets());
+        $this->set("selectedFileSets", array_keys($this->getSelectedFileSets()));
     }
 
     public function view()
     {
-
         $this->set("fileSets", $this->getSelectedFileSets());
         $this->set("images", $this->getImages());
     }
 
-    public function getSearchableContent()
+    public function getSearchableContent(): string
     {
         $content = "";
 
@@ -111,55 +72,54 @@ class Controller extends BlockController
 
     public function delete()
     {
-        parent::delete();
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
 
-        $this->db->executeQuery("DELETE FROM btMasonryGridFileSets WHERE bID = ?", array($this->bID));
+        /** @noinspection PhpUnhandledExceptionInspection */
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $db->executeQuery("DELETE FROM btMasonryGridFileSets WHERE bID = ?", [$this->bID]);
+
+        parent::delete();
     }
 
     public function save($args)
     {
-        if (!isset($args["disableNoDescription"])) {
-            $args["disableNoDescription"] = 0;
-        }
-
-        if (!isset($args["disableViewAll"])) {
-            $args["disableViewAll"] = 0;
-        }
-
         parent::save($args);
 
-        $this->db->executeQuery("DELETE FROM btMasonryGridFileSets WHERE bID = ?", array($this->bID));
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
 
-        if (is_array($this->post("fileSets"))) {
-            foreach ($this->post("fileSets") as $index => $fileSetId) {
-                $this->db->executeQuery(
+        /** @noinspection PhpUnhandledExceptionInspection */
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $db->executeQuery("DELETE FROM btMasonryGridFileSets WHERE bID = ?", array($this->bID));
+
+        if (is_array($this->request->request->get("fileSets"))) {
+            foreach ($this->request->request->get("fileSets") as $fileSetId) {
+                /** @noinspection PhpUnhandledExceptionInspection */
+                /** @noinspection SqlDialectInspection */
+                /** @noinspection SqlNoDataSourceInspection */
+                $db->executeQuery(
                     "INSERT INTO btMasonryGridFileSets (bID, fileSetId) VALUES (?, ?)",
 
-                    array(
+                    [
                         $this->bID,
-                        $this->securityHelper->sanitizeInt($fileSetId)
-                    )
+                        (int)$fileSetId
+                    ]
                 );
             }
         }
 
-        // Clear Cache
-
-        if (version_compare(APP_VERSION, '8.0', '>=')) {
-            /** @var $cache \Concrete\Core\Cache\Level\ExpensiveCache */
-            $cache = $this->app->make('cache/expensive');
-            $cacheItem = $cache->getItem('bitter.masonry_grid.images_' . $this->getBlockIdentifier());
-            $cacheItem->clear();
-        } else {
-            /** @var $cache \Concrete\Core\Cache\Level\ExpensiveCache */
-            $cache = \Core::make('cache/expensive');
-            $cacheItem = $cache->getItem('bitter.masonry_grid.images_' . $this->getBlockIdentifier());
-            $cacheItem->clear();
-        }
+        /** @var $cache ExpensiveCache */
+        $cache = $this->app->make(ExpensiveCache::class);
+        $cacheItem = $cache->getItem('bitter_theme.masonry_grid.images_' . $this->getBlockIdentifier());
+        $cacheItem->clear();
     }
 
-    private function getBlockIdentifier()
+    private function getBlockIdentifier(): string
     {
+        /** @noinspection PhpDeprecationInspection */
         return $this->getBlockObject()->getProxyBlock()
             ? $this->getBlockObject()->getProxyBlock()->getInstance()->getIdentifier()
             : $this->getIdentifier();
@@ -169,43 +129,46 @@ class Controller extends BlockController
     {
         parent::duplicate($newBID);
 
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+
         foreach ($this->getSelectedFileSets() as $fileSetId => $fileSetName) {
-            $this->db->executeQuery(
+            /** @noinspection PhpUnhandledExceptionInspection */
+            /** @noinspection SqlDialectInspection */
+            /** @noinspection SqlNoDataSourceInspection */
+            $db->executeQuery(
                 "INSERT INTO btMasonryGridFileSets (bID, fileSetId) VALUES (?, ?)",
 
-                array(
+                [
                     $newBID,
-                    $this->securityHelper->sanitizeInt($fileSetId)
-                )
+                    (int)$fileSetId
+                ]
             );
         }
-    }
-
-    private function addOrEdit()
-    {
-        $this->set("fileSets", $this->getAllAvailableFileSets());
-        $this->set("selectedFileSets", array_keys($this->getSelectedFileSets()));
     }
 
     /**
      * @return array
      */
-    private function getSelectedFileSets()
+    private function getSelectedFileSets(): array
     {
-        $fileSets = array();
+        $fileSets = [];
 
-        $rows = $this->db->fetchAll(
+        /** @var Connection $db */
+        $db = $this->app->make(Connection::class);
+
+        /** @noinspection SqlDialectInspection */
+        /** @noinspection SqlNoDataSourceInspection */
+        $rows = $db->fetchAll(
             "SELECT fileSetId FROM btMasonryGridFileSets WHERE bID = ?",
-
-            array(
+            [
                 $this->bID
-            )
+            ]
         );
 
         if (is_array($rows)) {
             foreach ($rows as $row) {
-                $fileSetId = $this->securityHelper->sanitizeInt($row["fileSetId"]);
-
+                $fileSetId = (int)$row["fileSetId"];
                 $fileSets[$fileSetId] = $this->getFileSetName($fileSetId);
             }
         }
@@ -213,146 +176,96 @@ class Controller extends BlockController
         return $fileSets;
     }
 
-    /**
-     * @param integer $fileSetId
-     *
-     * @return string
-     */
-    private function getFileSetName($fileSetId)
+    private function getFileSetName($fileSetId): string
     {
-        $fileSet = FileSet::getByID($fileSetId);
+        $fileSet = Set::getByID($fileSetId);
 
-        if (is_object($fileSet)) {
+        if ($fileSet instanceof Set) {
             return $fileSet->getFileSetName();
         } else {
             return "";
         }
     }
 
-    /**
-     * @param integer $fileSetId
-     *
-     * @return string
-     */
-    private function getAllImagesInFileSet($fileSetId)
+    private function getAllImagesInFileSet($fileSetId): array
     {
-        $files = array();
+        $files = [];
 
-        $fileSet = FileSet::getByID($fileSetId);
+        $fileSet = Set::getByID($fileSetId);
 
-        if (is_object($fileSet)) {
+        if ($fileSet instanceof Set) {
             $fileList = new FileList();
-
-            if (version_compare(Config::get('concrete.version'), '8.2', '>=')) {
-                $fileList->ignorePermissions();
-            }
-
+            $fileList->ignorePermissions();
             $fileList->filterBySet($fileSet);
             $fileList->filterByType(FileType::T_IMAGE);
             $fileList->sortByFileSetDisplayOrder();
-
-            if ($this->numberFiles > 0) {
-                $fileList->setItemsPerPage($this->numberFiles);
-            } else {
-                $fileList->setItemsPerPage(10000);
-            }
-
+            $fileList->setItemsPerPage(10000);
             $files = $fileList->getResults();
         }
 
         return $files;
     }
 
-
     /**
      * @return array
      */
-    private function getLiveImages()
+    private function getImages(): array
     {
-        $images = array();
+        $images = [];
 
-        $imageHelper = Core::make('helper/image');
+        $ttl = 24 * 60 * 60 * 30;
 
-        foreach (array_keys($this->getSelectedFileSets()) as $fileSetId => $fileSetName) {
-            foreach ($this->getAllImagesInFileSet($fileSetName) as $fileObject) {
-                $fileId = $fileObject->getFileID();
+        /** @var $cache ExpensiveCache */
+        $cache = $this->app->make('cache/expensive');
 
-                if (isset($images[$fileId]) === false) {
-                    $images[$fileId] = array(
-                        "fileId" => $fileId,
-                        "fileObject" => $fileObject,
-                        "title" => $fileObject->getTitle(),
-                        "description" => strlen($fileObject->getDescription()) > 0 ? $fileObject->getDescription() : ($this->disableNoDescription ? "" : t("No description available.")),
-                        "url" => $fileObject->getURL(),
-                        "width" => intval($fileObject->getAttribute('width')),
-                        "height" => intval($fileObject->getAttribute('height')),
-                        "ratio" => intval($fileObject->getAttribute('width')) / intval($fileObject->getAttribute('height')),
-                        "fileSets" => array($fileSetName),
-                        "thumbnail" => $imageHelper->getThumbnail($fileObject, 600, 600 * intval($fileObject->getAttribute('width')) / intval($fileObject->getAttribute('height')), false)->src
-                    );
-                } else {
-                    array_push($images[$fileId]["fileSets"], $fileSetId);
+        $cacheItem = $cache->getItem('bitter_theme.masonry_grid.images_' . $this->getBlockIdentifier());
+
+        if ($cacheItem->isMiss()) {
+            /** @var BasicThumbnailer $imageHelper */
+            $imageHelper = $this->app->make(BasicThumbnailer::class);
+
+            foreach (array_keys($this->getSelectedFileSets()) as $fileSetId => $fileSetName) {
+                foreach ($this->getAllImagesInFileSet($fileSetName) as $fileObject) {
+                    $fileId = $fileObject->getFileID();
+
+                    if (isset($images[$fileId]) === false) {
+                        $images[$fileId] = [
+                            "fileId" => $fileId,
+                            "fileObject" => $fileObject,
+                            "title" => $fileObject->getTitle(),
+                            "description" => strlen($fileObject->getDescription()) > 0 ? $fileObject->getDescription() : t("No description available."),
+                            "url" => $fileObject->getURL(),
+                            "width" => (int)$fileObject->getAttribute('width'),
+                            "height" => (int)$fileObject->getAttribute('height'),
+                            "ratio" => (int)$fileObject->getAttribute('width') / (int)$fileObject->getAttribute('height'),
+                            "fileSets" => array($fileSetName),
+                            "thumbnail" => $imageHelper->getThumbnail($fileObject, 600, 600 * (int)$fileObject->getAttribute('width') / (int)$fileObject->getAttribute('height'), false)->src
+                        ];
+                    } else {
+                        array_push($images[$fileId]["fileSets"], $fileSetId);
+                    }
                 }
             }
-        }
 
-        return $images;
-    }
-
-    /**
-     * @return array
-     */
-    private function getImages()
-    {
-        $ttl = 24 * 60 * 60 * 30; // 1 month
-
-        if (version_compare(APP_VERSION, '8.0', '>=')) {
-
-            /** @var $cache \Concrete\Core\Cache\Level\ExpensiveCache */
-            $cache = $this->app->make('cache/expensive');
-
-            $cacheItem = $cache->getItem('bitter.masonry_grid.images_' . $this->getBlockIdentifier());
-
-            if ($cacheItem->isMiss()) {
-                $cacheItem->lock();
-                $images = $this->getLiveImages();
-                $cache->save($cacheItem->set($images)->expiresAfter($ttl));
-            } else {
-                $images = $cacheItem->get();
-            }
+            $cacheItem->lock();
+            $cache->save($cacheItem->set($images)->expiresAfter($ttl));
         } else {
-
-            /** @var $cache \Concrete\Core\Cache\Level\ExpensiveCache */
-            $cache = \Core::make('cache/expensive');
-
-            $cacheItem = $cache->getItem('bitter.masonry_grid.images_' . $this->getBlockIdentifier());
-
-            if ($cacheItem->isMiss()) {
-                $cacheItem->lock();
-                $images = $this->getLiveImages();
-                $cacheItem->set($images, $ttl); // expire after 300 seconds
-            } else {
-                $images = $cacheItem->get();
-            }
+            $images = $cacheItem->get();
         }
 
         return $images;
     }
 
-    /**
-     * @return array
-     */
-    private function getAllAvailableFileSets()
+    private function getAllAvailableFileSets(): array
     {
-        $fileSets = array();
+        $fileSets = [];
 
-        $fileSetList = new FileSetList();
+        $fileSetList = new SetList();
 
-        foreach ($fileSetList->get(1000, 0) as $fileSet) {
+        foreach ($fileSetList->get(1000) as $fileSet) {
             $fileSets[$fileSet->getFileSetID()] = $fileSet->getFileSetName();
         }
 
         return $fileSets;
     }
-
 }

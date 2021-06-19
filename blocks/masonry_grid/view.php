@@ -10,48 +10,62 @@
 
 defined('C5_EXECUTE') or die('Access denied');
 
+use Concrete\Core\Page\Page;
+use Concrete\Core\Support\Facade\Application;
+use Concrete\Core\Utility\Service\Identifier;
 
+/** @var array $images */
+/** @var array $fileSets */
+/** @var array $selectedFileSets */
+
+$app = Application::getFacadeApplication();
+/** @var Identifier $identifier */
+$identifier = $app->make(Identifier::class);
+
+$c = Page::getCurrentPage();
+
+$id = "masonry-grid-" . $identifier->getString();
 ?>
 
-<?php if (is_object(Page::getCurrentPage()) && Page::getCurrentPage()->isEditMode()): ?>
+<?php if ($c instanceof Page && $c->isEditMode()) { ?>
     <div class="ccm-edit-mode-disabled-item">
-        <?php echo t('Block is disabled in edit mode.') ?>
+        <?php echo t('Masonry Grid is disabled in edit mode.') ?>
     </div>
-<?php else: ?>
-    <?php $uid = uniqid(); ?>
-
-    <div id="masonry-grid-<?php echo $uid; ?>" class="masonry-grid">
-        <?php if (count($fileSets) > 1): ?>
+<?php } else { ?>
+    <div id="<?php echo $id; ?>" class="masonry-grid">
+        <?php if (count($fileSets) > 1) { ?>
             <ul class="filter">
-                <?php if (!$disableViewAll): ?>
-                    <li class="active" data-file-set-id="">
-                        <?php echo t("View All"); ?>
-                    </li>
-                <?php endif; ?>
+                <li class="active" data-file-set-id="">
+                    <?php echo t("View All"); ?>
+                </li>
 
                 <?php $firstIteration = true; ?>
-                <?php foreach($fileSets as $fileSetId => $fileSetName): ?>
-                    <?php
-                        $className = "";
 
-                        if ($disableViewAll && $firstIteration) {
-                            $className = "active";
-                            $firstIteration = false;
-                        }
+                <?php foreach ($fileSets as $fileSetId => $fileSetName) { ?>
+                    <?php
+                    $className = "";
+
+                    if ($firstIteration) {
+                        $className = "active";
+                        $firstIteration = false;
+                    }
                     ?>
 
-                    <li data-file-set-id="<?php echo $fileSetId; ?>" class="<?php echo $className; ?>">
+                    <li data-file-set-id="<?php echo h($fileSetId); ?>" class="<?php echo h($className); ?>">
                         <?php echo $fileSetName; ?>
                     </li>
-                <?php endforeach; ?>
+                <?php } ?>
             </ul>
-        <?php endif; ?>
+        <?php } ?>
 
-        <div class="images" itemscope itemtype="http://schema.org/ImageGallery">
-            <?php foreach($images as $image): ?>
-                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="image" data-file-set-ids="<?php echo implode(", ", $image["fileSets"]); ?>">
-                    <a href="<?php echo $image["url"]; ?>" itemprop="contentUrl" data-size="<?php echo sprintf("%sx%s", $image["width"], $image["height"]); ?>">
-                        <img src="<?php echo $image["thumbnail"]; ?>" itemprop="thumbnail" alt="<?php echo addslashes($image["description"]); ?>" />
+        <div class="images" itemscope itemtype="https://schema.org/ImageGallery">
+            <?php foreach ($images as $image): ?>
+                <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject" class="image"
+                        data-file-set-ids="<?php echo h(implode(", ", $image["fileSets"])); ?>">
+                    <a href="<?php echo h($image["url"]); ?>" itemprop="contentUrl"
+                       data-size="<?php echo h(sprintf("%sx%s", $image["width"], $image["height"])); ?>">
+                        <img src="<?php echo h($image["thumbnail"]); ?>" itemprop="thumbnail"
+                             alt="<?php echo h($image["description"]); ?>"/>
                     </a>
 
                     <figcaption itemprop="caption description">
@@ -68,24 +82,11 @@ defined('C5_EXECUTE') or die('Access denied');
         </div>
     </div>
 
-    <style type="text/css">
-        #masonry-grid-<?php echo $uid; ?> .filter li {
-            background-color: <?php echo $backgroundColorNormal; ?>;
-            color: <?php echo $textColorNormal; ?>;
-        }
-
-        #masonry-grid-<?php echo $uid; ?> .filter li:hover,
-        #masonry-grid-<?php echo $uid; ?> .filter li.active {
-            background-color: <?php echo $backgroundColorActive; ?>;
-            color: <?php echo $textColorActive; ?>;
-        }
-    </style>
-
     <script type="text/javascript">
-        (function($) {
-            $(document).ready(function() {
+        (function ($) {
+            $(document).ready(function () {
                 masonryGrid({
-                    bID: '<?php echo $uid; ?>',
+                    bID: '#<?php echo $id; ?>',
                     i18n: {
                         close: "<?php echo t("Close (Esc)"); ?>",
                         share: "<?php echo t("Share"); ?>",
@@ -98,4 +99,4 @@ defined('C5_EXECUTE') or die('Access denied');
             });
         })(jQuery);
     </script>
-<?php endif; ?>
+<?php } ?>

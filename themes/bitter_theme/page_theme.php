@@ -29,5 +29,8 @@ class PageTheme extends Theme
         $this->providesAsset('javascript', 'bootstrap/*');
         $this->requireAsset('core/lightbox');
         $this->requireAsset('jquery/ui');
+        $this->requireAsset('javascript', 'macy');
+        $this->requireAsset('photoswipe');
+        $this->requireAsset('photoswipe/default-skin');
     }
 }

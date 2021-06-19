@@ -12,12 +12,12 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
     // (children of gallerySelector)
     var parseThumbnailElements = function (el) {
         var thumbElements = el.childNodes,
-                numNodes = thumbElements.length,
-                items = [],
-                figureEl,
-                linkEl,
-                size,
-                item;
+            numNodes = thumbElements.length,
+            items = [],
+            figureEl,
+            linkEl,
+            size,
+            item;
 
         for (var i = 0; i < numNodes; i++) {
 
@@ -40,7 +40,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
             };
 
 
-
             if (figureEl.children.length > 1) {
                 // <figcaption> content
                 item.title = figureEl.children[1].innerHTML;
@@ -52,7 +51,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
             }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
-            
+
             if ($(figureEl).is(":visible")) {
                 items.push(item);
             }
@@ -85,10 +84,10 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
         var clickedGallery = clickedListItem.parentNode,
-                childNodes = clickedListItem.parentNode.childNodes,
-                numChildNodes = childNodes.length,
-                nodeIndex = 0,
-                index;
+            childNodes = clickedListItem.parentNode.childNodes,
+            numChildNodes = childNodes.length,
+            nodeIndex = 0,
+            index;
 
         for (var i = 0; i < numChildNodes; i++) {
             if (childNodes[i].nodeType !== 1) {
@@ -105,7 +104,6 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
         }
 
 
-
         if (index >= 0) {
             // open PhotoSwipe if valid index found
             openPhotoSwipe(index, clickedGallery);
@@ -116,7 +114,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
     // parse picture index and gallery index from URL (#&pid=1&gid=2)
     var photoswipeParseHash = function () {
         var hash = window.location.hash.substring(1),
-                params = {};
+            params = {};
 
         if (hash.length < 5) {
             return params;
@@ -143,12 +141,12 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 
     var openPhotoSwipe = function (index, galleryElement, disableAnimation, fromURL) {
         var pswpElement = document.querySelectorAll('.pswp')[0],
-                gallery,
-                options,
-                items;
+            gallery,
+            options,
+            items;
 
         items = parseThumbnailElements(galleryElement);
-        
+
         // define options (if needed)
         options = {
 
@@ -158,8 +156,8 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
             getThumbBoundsFn: function (index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
                 var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                        rect = thumbnail.getBoundingClientRect();
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    rect = thumbnail.getBoundingClientRect();
 
                 return {x: rect.left, y: rect.top + pageYScroll, w: rect.width};
             }
@@ -210,11 +208,11 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
     // Parse URL and open gallery if it contains #&pid=3&gid=1
     var hashData = photoswipeParseHash();
     if (hashData.pid && hashData.gid) {
-        openPhotoSwipe(hashData.pid, galleryElements[ hashData.gid - 1 ], true, true);
+        openPhotoSwipe(hashData.pid, galleryElements[hashData.gid - 1], true, true);
     }
 };
 
-var masonryGrid = function(settings) {
+var masonryGrid = function (settings) {
     if ($(".pswp").length === 0) {
         $("body").append(
             "<div class=\"pswp\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">" +
@@ -254,10 +252,10 @@ var masonryGrid = function(settings) {
         );
     }
 
-    var $el = $('#masonry-grid-' + settings.bID);
+    var $el = $(settings.bID);
 
     $el.data("masonry", new Macy({
-        container: '#masonry-grid-' + settings.bID + ' .images',
+        container: settings.bID + ' .images',
         trueOrder: true,
         waitForImages: true,
         margin: {
@@ -284,13 +282,13 @@ var masonryGrid = function(settings) {
         }
     }));
 
-    $el.find(".filter li").bind("click", function() {
+    $el.find(".filter li").bind("click", function () {
         var fileSetId = $(this).data("fileSetId");
 
         if (fileSetId === "") {
             $el.find(".image").removeClass("hidden");
         } else {
-            $el.find(".image").each(function() {
+            $el.find(".image").each(function () {
                 var fileSetIds = $(this).data("fileSetIds");
 
                 if (typeof fileSetIds === "number" && parseInt(fileSetIds) === parseInt(fileSetId)) {
@@ -309,14 +307,14 @@ var masonryGrid = function(settings) {
 
         $el.data("masonry").reInit();
 
-        $('#masonry-grid-' + settings.bID + ' .images').each(function() {
+        $(settings.bID + ' .images').each(function () {
             $(this).removeAttr("data-pswp-uid").unbind();
         });
 
-        initPhotoSwipeFromDOM('#masonry-grid-' + settings.bID + ' .images');
+        initPhotoSwipeFromDOM(settings.bID + ' .images');
     });
 
-    initPhotoSwipeFromDOM('#masonry-grid-' + settings.bID + ' .images');
+    initPhotoSwipeFromDOM(settings.bID + ' .images');
 
     $el.find(".filter li.active").click();
 };
