@@ -421,44 +421,6 @@
                     </block>
                 </blocks>
             </area>
-            <area name="Page Footer">
-                <style>
-                    <backgroundColor/>
-                    <backgroundRepeat/>
-                    <backgroundSize/>
-                    <backgroundPosition/>
-                    <borderWidth/>
-                    <borderColor/>
-                    <borderStyle/>
-                    <borderRadius/>
-                    <baseFontSize/>
-                    <alignment/>
-                    <textColor/>
-                    <linkColor/>
-                    <paddingTop/>
-                    <paddingBottom/>
-                    <paddingLeft/>
-                    <paddingRight/>
-                    <marginTop/>
-                    <marginBottom/>
-                    <marginLeft/>
-                    <marginRight/>
-                    <rotate/>
-                    <boxShadowHorizontal/>
-                    <boxShadowVertical/>
-                    <boxShadowBlur/>
-                    <boxShadowSpread/>
-                    <boxShadowColor/>
-                    <customClass/>
-                    <customID/>
-                    <customElementAttribute/>
-                    <hideOnExtraSmallDevice/>
-                    <hideOnSmallDevice/>
-                    <hideOnMediumDevice/>
-                    <hideOnLargeDevice/>
-                </style>
-                <blocks/>
-            </area>
             <area name="Custom Area 1">
                 <style>
                     <backgroundColor/>
