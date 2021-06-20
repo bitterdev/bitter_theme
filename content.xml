@@ -171,8 +171,8 @@
         <stack name="Header Navigation" type="global_area" path="/header-navigation">
             <area name="Main">
                 <blocks>
-                    <block type="autonav" name="" custom-template="bitter_header_nav" cache-output="1"
-                           cache-output-lifetime="300" cache-output-on-post="1" cache-output-for-registered-users="1">
+                    <block type="autonav" name="" custom-template="bitter_header_nav" cache-output="0"
+                           cache-output-lifetime="300" cache-output-on-post="0" cache-output-for-registered-users="0">
                         <data table="btNavigation">
                             <record>
                                 <orderBy><![CDATA[display_asc]]></orderBy>
