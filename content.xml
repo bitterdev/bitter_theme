@@ -191,9 +191,12 @@
         </stack>
     </stacks>
     <pages>
-        <page name="Home" path="" public-date="2021-06-09 23:46:00" filename="" pagetype="" template="full" user="admin"
+        <page name="Home" path="" public-date="2021-06-09 23:46:00" filename="" pagetype="page" template="full" user="admin"
               description="" package="" root="true">
             <attributes>
+                <attributekey handle="exclude_nav">
+                    <value>0</value>
+                </attributekey>
                 <attributekey handle="main_area_number">
                     <value><![CDATA[2]]></value>
                 </attributekey>
@@ -353,7 +356,7 @@
                                         </style>
                                         <data table="btContentImage">
                                             <record>
-                                                <fID>{ccm:export:file:presentation.png}</fID>
+                                                <fID>{ccm:export:file:placeholder.jpg}</fID>
                                                 <fOnstateID/>
                                                 <cropImage><![CDATA[0]]></cropImage>
                                                 <maxWidth><![CDATA[0]]></maxWidth>
@@ -408,7 +411,7 @@
                                         <data table="btContentLocal">
                                             <record>
                                                 <content><![CDATA[
-                                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p><ul><li>Accordion Pro</li><li>Portfolio Grid</li><li>EU Cookie Law</li><li>Counter Up</li><li>Image Carousel</li><li>Progressbar</li></ul>]]></content>
+                                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p><ul><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li></ul>]]></content>
                                             </record>
                                         </data>
                                     </block>
@@ -564,6 +567,40 @@
                         </arealayout>
                     </block>
                     <block type="image_carousel" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom/>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID>home</customID>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
                         <data table="btImageCarousel">
                             <record>
                                 <fileSetId><![CDATA[1]]></fileSetId>
@@ -573,6 +610,23 @@
                                 <infinite><![CDATA[0]]></infinite>
                                 <dots><![CDATA[1]]></dots>
                                 <autoplay><![CDATA[1]]></autoplay>
+                            </record>
+                        </data>
+                        <data table="btImageCarouselBreakpoints">
+                            <record>
+                                <breakpoint><![CDATA[1024]]></breakpoint>
+                                <slidesToShow><![CDATA[4]]></slidesToShow>
+                                <slidesToScroll><![CDATA[3]]></slidesToScroll>
+                            </record>
+                            <record>
+                                <breakpoint><![CDATA[920]]></breakpoint>
+                                <slidesToShow><![CDATA[2]]></slidesToShow>
+                                <slidesToScroll><![CDATA[2]]></slidesToScroll>
+                            </record>
+                            <record>
+                                <breakpoint><![CDATA[480]]></breakpoint>
+                                <slidesToShow><![CDATA[1]]></slidesToShow>
+                                <slidesToScroll><![CDATA[1]]></slidesToScroll>
                             </record>
                         </data>
                     </block>
@@ -720,7 +774,7 @@
                                         <data table="btContentLocal">
                                             <record>
                                                 <content><![CDATA[
-                                                    <p><strong>Features</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><ul><li>Fully Responsive&nbsp;</li><li>Works on all modern browsers + devices</li><li>Works on version 5.7 + 8</li><li>Includes Sample Content</li><li>Completely Customizable</li></ul>]]></content>
+                                                    <p><strong>Features</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><ul><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li></ul>]]></content>
                                             </record>
                                         </data>
                                     </block>
@@ -971,7 +1025,7 @@
               template="full" user="admin" description="" package="">
             <attributes>
                 <attributekey handle="main_area_number">
-                    <value><![CDATA[4]]></value>
+                    <value><![CDATA[2]]></value>
                 </attributekey>
                 <attributekey handle="exclude_breadcrumb_nav">
                     <value>1</value>
@@ -1080,7 +1134,7 @@
                                         </style>
                                         <data table="btContentImage">
                                             <record>
-                                                <fID>{ccm:export:file:about-us-1.jpeg}</fID>
+                                                <fID>{ccm:export:file:placeholder.jpg}</fID>
                                                 <fOnstateID/>
                                                 <cropImage><![CDATA[0]]></cropImage>
                                                 <maxWidth><![CDATA[0]]></maxWidth>
@@ -1188,6 +1242,24 @@
                                 <duration><![CDATA[1000]]></duration>
                             </record>
                         </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[10]]></value>
+                                <description><![CDATA[Experts]]></description>
+                            </record>
+                        </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[100]]></value>
+                                <description><![CDATA[Customers]]></description>
+                            </record>
+                        </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[150]]></value>
+                                <description><![CDATA[Projects]]></description>
+                            </record>
+                        </data>
                     </block>
                 </blocks>
             </area>
@@ -1240,132 +1312,20 @@
                         <data table="btAccordion">
                             <record/>
                         </data>
-                    </block>
-                </blocks>
-            </area>
-            <area name="Custom Area 3">
-                <style>
-                    <backgroundColor/>
-                    <backgroundRepeat>no-repeat</backgroundRepeat>
-                    <backgroundSize>auto</backgroundSize>
-                    <backgroundPosition>0% 0%</backgroundPosition>
-                    <borderWidth/>
-                    <borderColor/>
-                    <borderStyle/>
-                    <borderRadius/>
-                    <baseFontSize/>
-                    <alignment/>
-                    <textColor/>
-                    <linkColor/>
-                    <paddingTop/>
-                    <paddingBottom/>
-                    <paddingLeft/>
-                    <paddingRight/>
-                    <marginTop/>
-                    <marginBottom/>
-                    <marginLeft/>
-                    <marginRight/>
-                    <rotate/>
-                    <boxShadowHorizontal/>
-                    <boxShadowVertical/>
-                    <boxShadowBlur/>
-                    <boxShadowSpread/>
-                    <boxShadowColor/>
-                    <customClass>area-gray</customClass>
-                    <customID/>
-                    <customElementAttribute/>
-                    <hideOnExtraSmallDevice/>
-                    <hideOnSmallDevice/>
-                    <hideOnMediumDevice/>
-                    <hideOnLargeDevice/>
-                </style>
-                <blocks>
-                    <block type="image_carousel" name="">
-                        <data table="btImageCarousel">
+                        <data table="btAccordionItems">
                             <record>
-                                <fileSetId><![CDATA[2]]></fileSetId>
-                                <thumbnailType><![CDATA[]]></thumbnailType>
-                                <speed><![CDATA[300]]></speed>
-                                <autoplaySpeed><![CDATA[2000]]></autoplaySpeed>
-                                <infinite><![CDATA[0]]></infinite>
-                                <dots><![CDATA[1]]></dots>
-                                <autoplay><![CDATA[1]]></autoplay>
+                                <title><![CDATA[Web]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
+                            </record>
+                            <record>
+                                <title><![CDATA[Print]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
+                            </record>
+                            <record>
+                                <title><![CDATA[Video]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
                             </record>
                         </data>
-                    </block>
-                </blocks>
-            </area>
-            <area name="Custom Area 4">
-                <blocks>
-                    <block type="core_area_layout" name="">
-                        <arealayout type="theme-grid" columns="12">
-                            <columns>
-                                <column span="6" offset="0">
-                                    <block type="image" name="">
-                                        <data table="btContentImage">
-                                            <record>
-                                                <fID>{ccm:export:file:about-us-3.jpeg}</fID>
-                                                <fOnstateID/>
-                                                <cropImage><![CDATA[0]]></cropImage>
-                                                <maxWidth><![CDATA[0]]></maxWidth>
-                                                <maxHeight><![CDATA[0]]></maxHeight>
-                                                <externalLink><![CDATA[]]></externalLink>
-                                                <internalLinkCID/>
-                                                <fileLinkID/>
-                                                <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
-                                                <altText><![CDATA[]]></altText>
-                                                <title><![CDATA[]]></title>
-                                            </record>
-                                        </data>
-                                    </block>
-                                </column>
-                                <column span="6" offset="0">
-                                    <block type="content" name="">
-                                        <style>
-                                            <backgroundColor/>
-                                            <backgroundRepeat>no-repeat</backgroundRepeat>
-                                            <backgroundSize>auto</backgroundSize>
-                                            <backgroundPosition>0% 0%</backgroundPosition>
-                                            <borderWidth/>
-                                            <borderColor/>
-                                            <borderStyle/>
-                                            <borderRadius/>
-                                            <baseFontSize/>
-                                            <alignment/>
-                                            <textColor/>
-                                            <linkColor/>
-                                            <paddingTop/>
-                                            <paddingBottom/>
-                                            <paddingLeft/>
-                                            <paddingRight/>
-                                            <marginTop/>
-                                            <marginBottom/>
-                                            <marginLeft/>
-                                            <marginRight/>
-                                            <rotate/>
-                                            <boxShadowHorizontal/>
-                                            <boxShadowVertical/>
-                                            <boxShadowBlur/>
-                                            <boxShadowSpread/>
-                                            <boxShadowColor/>
-                                            <customClass/>
-                                            <customID/>
-                                            <customElementAttribute/>
-                                            <hideOnExtraSmallDevice/>
-                                            <hideOnSmallDevice/>
-                                            <hideOnMediumDevice/>
-                                            <hideOnLargeDevice/>
-                                        </style>
-                                        <data table="btContentLocal">
-                                            <record>
-                                                <content><![CDATA[
-                                                    <h2>What Customers Say</h2><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.&nbsp;</p>]]></content>
-                                            </record>
-                                        </data>
-                                    </block>
-                                </column>
-                            </columns>
-                        </arealayout>
                     </block>
                 </blocks>
             </area>

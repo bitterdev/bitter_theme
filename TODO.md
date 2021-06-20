@@ -1,4 +1,2 @@
-- Progressbar
-- Counter
-- Masonry Grid
 - Sample Content
+- EU Cookie Law integrieren
