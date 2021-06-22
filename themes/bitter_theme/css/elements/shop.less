@@ -12,6 +12,16 @@
   .product-details,
   .cart {
     margin-top: 0 !important;
+
+    @media (max-width: 767px) {
+      .pull-right {
+        width: 100%;
+      }
+    }
+
+    *:not(.btn) {
+      text-align: left !important;
+    }
   }
 
   .product-list {

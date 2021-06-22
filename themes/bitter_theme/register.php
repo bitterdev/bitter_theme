@@ -236,6 +236,8 @@ $renderer->setContext(new FrontendFormContext());
                     </div>
                 </div>
 
+                <div class="clearfix"></div>
+
                 <div class="col-sm-12">
                     <br>
 
