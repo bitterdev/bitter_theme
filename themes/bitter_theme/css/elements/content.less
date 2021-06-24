@@ -7,6 +7,16 @@
  */
 
 .ccm-page {
+
+  @media (max-width: 767px) {
+    p, h1, h2, h3, h4, h5, h6,
+    ul:not(.ccm-edit-mode-inline-commands),
+    ol:not(.ccm-edit-mode-inline-commands),
+    .progressbar{
+      text-align: center;
+    }
+  }
+
   a {
     color: @bitter-theme-accent-color;
     text-transform: none;
@@ -21,7 +31,16 @@
     ul:not(.ccm-edit-mode-inline-commands),
     ol:not(.ccm-edit-mode-inline-commands) {
       padding-left: 0;
-      margin-left: 15px;
+      margin-left: 20px;
+
+      @media (max-width: 767px) {
+        list-style: none;
+        margin-left: 0;
+
+        li {
+          list-style: none;
+        }
+      }
     }
   }
 }
