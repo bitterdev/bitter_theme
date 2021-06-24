@@ -16,6 +16,7 @@ use Concrete\Core\Entity\Attribute\Key\UserKey;
 use Concrete\Core\Captcha\CaptchaInterface;
 use Concrete\Core\Form\Service\Form;
 use Concrete\Core\Http\Request;
+use Concrete\Core\Page\Page;
 use Concrete\Core\Page\Stack\Stack;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Config\Repository\Repository;
@@ -64,23 +65,21 @@ $renderer->setContext(new FrontendFormContext());
 <main class="centered">
     <div>
         <div class="col-sm-12">
-            <a href="<?php echo Url::to("/"); ?>" >
-                <?php
-                $logoUrl = $pkg->getRelativePath() . "/images/default_logo.svg";
+            <?php
+            $logoUrl = $pkg->getRelativePath() . "/images/default_logo.svg";
 
-                $logoFileId = (int)$config->get("bitter_theme.regular_logo_file_id", 0);
-                $logoFile = File::getByID($logoFileId);
+            $logoFileId = (int)$config->get("bitter_theme.regular_logo_file_id", 0);
+            $logoFile = File::getByID($logoFileId);
 
-                if ($logoFile instanceof FileEntity) {
-                    $logoVersion = $logoFile->getApprovedVersion();
-                    if ($logoVersion instanceof Version) {
-                        $logoUrl = $logoVersion->getRelativePath();
-                    }
+            if ($logoFile instanceof FileEntity) {
+                $logoVersion = $logoFile->getApprovedVersion();
+                if ($logoVersion instanceof Version) {
+                    $logoUrl = $logoVersion->getRelativePath();
                 }
-                ?>
+            }
+            ?>
 
-                <img src="<?php echo h($logoUrl); ?>" alt="<?php echo h(t("Home")); ?>"/>
-            </a>
+            <img src="<?php echo h($logoUrl); ?>" alt="<?php echo h(t("Home")); ?>"/>
         </div>
 
         <div class="col-sm-12">

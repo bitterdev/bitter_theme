@@ -33,6 +33,8 @@ $packageService = $app->make(PackageService::class);
 /** @var PackageController $pkg */
 $pkg = $packageService->getByHandle("bitter_theme")->getController();
 
+$homePage = Page::getByID(Page::getHomePageID(Page::getCurrentPage()));
+
 ?>
 
 <?php /** @noinspection PhpUnhandledExceptionInspection */
@@ -42,7 +44,7 @@ $this->inc("elements/header_top.php"); ?>
         <div class="container hidden-xs">
             <div class="row">
                 <div class="col-sm-6">
-                    <a href="<?php echo Url::to("/"); ?>">
+                    <a href="<?php echo Url::to($homePage); ?>">
                         <?php
                         $logoUrl = $pkg->getRelativePath() . "/images/default_logo.svg";
 
@@ -92,7 +94,8 @@ $this->inc("elements/header_top.php"); ?>
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a href="<?php echo Url::to("/"); ?>" class="navbar-brand">
+
+                    <a href="<?php echo Url::to($homePage); ?>" class="navbar-brand">
                         <?php
                         $logoUrl = $pkg->getRelativePath() . "/images/default_logo_small.svg";
 
