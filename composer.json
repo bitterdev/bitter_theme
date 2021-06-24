@@ -9,6 +9,7 @@
   },
   "require": {
     "ext-json": "*",
-    "gajus/dindent": "^2.0"
+    "gajus/dindent": "^2.0",
+    "ext-simplexml": "*"
   }
 }

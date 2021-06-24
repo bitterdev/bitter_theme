@@ -10,10 +10,16 @@
 
 namespace Bitter\BitterTheme\Provider;
 
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportFileSetsRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualPageRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualSiteRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\ValueInspector\InspectionRoutine\FileSetRoutine;
 use Bitter\BitterTheme\RouteList;
 use Concrete\Core\Application\Application;
 use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
+use Concrete\Core\Backup\ContentImporter\Importer\Manager;
+use Concrete\Core\Backup\ContentImporter\ValueInspector\ValueInspector;
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Foundation\Service\Provider;
 use Concrete\Core\Html\Service\Navigation;
@@ -62,6 +68,20 @@ class ServiceProvider extends Provider
         $this->disableAccountMenu();
         $this->initializeRoutes();
         $this->beautifyHtmlOutput();
+        $this->addImporterRoutines();
+    }
+
+    private function addImporterRoutines()
+    {
+        /** @var Manager $importer */
+        $importer = $this->app->make('import/item/manager');
+        $importer->registerImporterRoutine($this->app->make(ImportMultilingualSiteRoutine::class));
+        $importer->registerImporterRoutine($this->app->make(ImportMultilingualPageRoutine::class));
+        $importer->registerImporterRoutine($this->app->make(ImportFileSetsRoutine::class));
+
+        /** @var ValueInspector $valueInspector */
+        $valueInspector = $this->app->make('import/value_inspector');
+        $valueInspector->registerInspectionRoutine(new FileSetRoutine());
     }
 
     private function beautifyHtmlOutput()
