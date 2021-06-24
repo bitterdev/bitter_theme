@@ -33,7 +33,7 @@ class FileSetItem extends AbstractItem
     public function getFieldValue()
     {
         if ($fileSet = $this->getContentObject()) {
-            return $fileSet->getFileSetName();
+            return $fileSet->getFileSetID();
         }
     }
 }

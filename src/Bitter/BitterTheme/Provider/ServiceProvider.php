@@ -11,14 +11,15 @@
 namespace Bitter\BitterTheme\Provider;
 
 use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportFileSetsRoutine;
-use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualPageRoutine;
-use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualSiteRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualMapPagesRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualLocalesRoutine;
 use Bitter\BitterTheme\Backup\ContentImporter\ValueInspector\InspectionRoutine\FileSetRoutine;
 use Bitter\BitterTheme\RouteList;
 use Concrete\Core\Application\Application;
 use Concrete\Core\Asset\Asset;
 use Concrete\Core\Asset\AssetList;
 use Concrete\Core\Backup\ContentImporter\Importer\Manager;
+use Concrete\Core\Backup\ContentImporter\Importer\Manager as ImporterManager;
 use Concrete\Core\Backup\ContentImporter\ValueInspector\ValueInspector;
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Foundation\Service\Provider;
@@ -73,11 +74,20 @@ class ServiceProvider extends Provider
 
     private function addImporterRoutines()
     {
-        /** @var Manager $importer */
-        $importer = $this->app->make('import/item/manager');
-        $importer->registerImporterRoutine($this->app->make(ImportMultilingualSiteRoutine::class));
-        $importer->registerImporterRoutine($this->app->make(ImportMultilingualPageRoutine::class));
-        $importer->registerImporterRoutine($this->app->make(ImportFileSetsRoutine::class));
+        $this->app->bindshared(
+            'import/item/manager',
+            function ($app) {
+                $importer = $app->make(ImporterManager::class);
+                // need to register this method before the core routines are registered
+                $importer->registerImporterRoutine($this->app->make(ImportFileSetsRoutine::class));
+                foreach($app->make('config')->get('app.importer_routines') as $routine) {
+                    $importer->registerImporterRoutine($app->make($routine));
+                }
+                $importer->registerImporterRoutine($this->app->make(ImportMultilingualLocalesRoutine::class));
+                $importer->registerImporterRoutine($this->app->make(ImportMultilingualMapPagesRoutine::class));
+                return $importer;
+            }
+        );
 
         /** @var ValueInspector $valueInspector */
         $valueInspector = $this->app->make('import/value_inspector');

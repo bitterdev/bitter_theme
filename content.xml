@@ -5,6 +5,51 @@
         <link service="github" url="#"/>
         <link service="twitter" url="#"/>
     </sociallinks>
+
+    <filesets>
+        <fileset name="Best References">
+            <files>
+                <file>{ccm:export:file:placeholder_square_white_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_10.jpg}</file>
+            </files>
+        </fileset>
+        <fileset name="Other Projects">
+            <files>
+                <file>{ccm:export:file:placeholder_square_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_10.jpg}</file>
+            </files>
+        </fileset>
+        <fileset name="concrete5 Projects">
+            <files>
+                <file>{ccm:export:file:placeholder_square_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_10.jpg}</file>
+            </files>
+        </fileset>
+    </filesets>
     <attributekeys>
         <attributekey handle="page_selector_redirect" name="Page Selector Redirect" package="bitter_theme"
                       searchable="1"
@@ -190,7 +235,22 @@
             </area>
         </stack>
     </stacks>
+    <multilingual>
+        <locales>
+            <locale language="de" country="DE" />
+        </locales>
+        <mappages>
+            <mappage source-path="/" target-path="/de" target-path-locale="de_DE" is-home-page="1" />
+            <mappage source-path="/contact" target-path="/de/abc" target-path-locale="de_DE" />
+        </mappages>
+    </multilingual>
     <pages>
+        <page name="Startseite" path="/de" public-date="2021-06-09 23:46:00" filename="" pagetype="page" template="full" user="admin"
+              description="" package="" root="true">
+        </page>
+        <page name="ABC" path="/de/abc" public-date="2021-06-09 23:46:00" filename="" pagetype="page" template="full" user="admin"
+              description="" package="" root="true">
+        </page>
         <page name="Home" path="" public-date="2021-06-09 23:46:00" filename="" pagetype="page" template="full" user="admin"
               description="" package="" root="true">
             <attributes>
@@ -565,7 +625,7 @@
                         </style>
                         <data table="btImageCarousel">
                             <record>
-                                <fileSetId><![CDATA[1]]></fileSetId>
+                                <fileSetId>{ccm:export:file_set:Best References}</fileSetId>
                                 <thumbnailType><![CDATA[]]></thumbnailType>
                                 <speed><![CDATA[300]]></speed>
                                 <autoplaySpeed><![CDATA[2000]]></autoplaySpeed>
@@ -976,8 +1036,13 @@
                         </arealayout>
                     </block>
                     <block type="masonry_grid" name="">
-                        <data table="btMasonryGrid">
-                            <record/>
+                        <data table="btMasonryGridFileSets">
+                            <record>
+                                <fileSetId>{ccm:export:file_set:concrete5 Projects}</fileSetId>
+                            </record>
+                            <record>
+                                <fileSetId>{ccm:export:file_set:Other Projects}</fileSetId>
+                            </record>
                         </data>
                     </block>
                 </blocks>

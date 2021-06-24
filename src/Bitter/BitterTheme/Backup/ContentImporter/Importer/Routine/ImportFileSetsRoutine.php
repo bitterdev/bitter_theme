@@ -41,7 +41,7 @@ class ImportFileSetsRoutine extends AbstractRoutine
 
                 if (isset($item->files)) {
                     foreach ($item->files->children() as $fileItem) {
-                        $file = File::getByID($valueInspector->inspect((string)$fileItem["file"])->getReplacedValue());
+                        $file = File::getByID($valueInspector->inspect((string)$fileItem)->getReplacedValue());
 
                         if ($file instanceof \Concrete\Core\Entity\File\File) {
                             $fileVersion = $file->getApprovedVersion();
