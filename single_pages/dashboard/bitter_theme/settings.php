@@ -12,12 +12,14 @@ defined('C5_EXECUTE') or die('Access denied');
 
 use Concrete\Core\Application\Service\FileManager;
 use Concrete\Core\Form\Service\Form;
+use Concrete\Core\Form\Service\Widget\PageSelector;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Validation\CSRF\Token;
 use Concrete\Core\View\View;
 
 /** @var int $regularLogoFileId */
 /** @var int $smallLogoFileId */
+/** @var int $privacyPageId */
 
 $app = Application::getFacadeApplication();
 /** @var Form $form */
@@ -26,6 +28,8 @@ $form = $app->make(Form::class);
 $token = $app->make(Token::class);
 /** @var FileManager $fileManager */
 $fileManager = $app->make(FileManager::class);
+/** @var PageSelector $pageSelector */
+$pageSelector = $app->make(PageSelector::class);
 
 /** @noinspection PhpUnhandledExceptionInspection */
 View::element('/dashboard/help', null, 'bitter_theme');
@@ -52,6 +56,11 @@ View::element('/dashboard/license_check', ["packageHandle" => "bitter_theme"], '
         <div class="form-group">
             <?php echo $form->label("smallLogoFileId", t("Logo Small")); ?>
             <?php echo $fileManager->image("smallLogoFileId", "smallLogoFileId", t("Please select a file"), $smallLogoFileId); ?>
+        </div>
+
+        <div class="form-group">
+            <?php echo $form->label("privacyPageId", t("Privacy Page")); ?>
+            <?php echo $pageSelector->selectPage("privacyPageId", $privacyPageId); ?>
         </div>
     </fieldset>
 

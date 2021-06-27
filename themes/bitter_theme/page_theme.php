@@ -30,6 +30,7 @@ class PageTheme extends Theme
         $this->requireAsset('core/lightbox');
         $this->requireAsset('jquery/ui');
         $this->requireAsset('javascript', 'macy');
+        $this->requireAsset('javascript', 'underscore');
         $this->requireAsset('photoswipe');
         $this->requireAsset('photoswipe/default-skin');
     }

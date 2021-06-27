@@ -15,7 +15,7 @@
   font-size: 1em;
 
   .Selected, .active {
-    color: @bitter-theme-accent-color;
+    color: var(--bitter-theme-accent-color);
   }
 }
 
@@ -67,7 +67,7 @@
 
             &.active {
               text-decoration: none;
-              color: @bitter-theme-accent-color;
+              color: var(--bitter-theme-accent-color);
             }
           }
         }
@@ -106,7 +106,7 @@
 
           &:hover, &:active, &.nav-selected, &.nav-path-selected, &:focus, &:focus-within {
             & > a {
-              background: @bitter-theme-accent-color;
+              background: var(--bitter-theme-accent-color);
               color: #ffffff;
             }
           }
@@ -119,7 +119,7 @@
             height: 50px;
             line-height: 50px;
             letter-spacing: 0.1px;
-            color: @bitter-theme-accent-color;
+            color: var(--bitter-theme-accent-color);
             font-weight: 300;
             overflow: hidden;
           }
@@ -159,7 +159,7 @@
 
               &:hover, &:active, &.nav-selected, &.nav-path-selected {
                 & > a {
-                  background: @bitter-theme-accent-color;
+                  background: var(--bitter-theme-accent-color);
                   color: #ffffff;
 
                   &.has-suvnav {
@@ -174,7 +174,7 @@
                 display: block;
                 float: left;
                 text-decoration: none;
-                color: @bitter-theme-accent-color;
+                color: var(--bitter-theme-accent-color);
                 font-weight: 300;
                 text-transform: none;
                 line-height: 50px;
@@ -196,7 +196,7 @@
                     text-rendering: auto;
                     -webkit-font-smoothing: antialiased;
                     -moz-osx-font-smoothing: grayscale;
-                    color: @bitter-theme-accent-color;
+                    color: var(--bitter-theme-accent-color);
                     content: "\f0da";
                     float: right;
                     margin: 0;
@@ -235,7 +235,7 @@
     .navbar-default {
       margin-top: -15px;
       margin-bottom: 0;
-      background-color: @bitter-theme-accent-color;
+      background-color: var(--bitter-theme-accent-color);
       border: none;
 
       .navbar-brand {
