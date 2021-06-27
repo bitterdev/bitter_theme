@@ -11,8 +11,7 @@
 namespace Bitter\BitterTheme\Provider;
 
 use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportFileSetsRoutine;
-use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualMapPagesRoutine;
-use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualLocalesRoutine;
+use Bitter\BitterTheme\Backup\ContentImporter\Importer\Routine\ImportMultilingualContentRoutine;
 use Bitter\BitterTheme\Backup\ContentImporter\ValueInspector\InspectionRoutine\FileSetRoutine;
 use Bitter\BitterTheme\RouteList;
 use Concrete\Core\Application\Application;
@@ -83,8 +82,7 @@ class ServiceProvider extends Provider
                 foreach($app->make('config')->get('app.importer_routines') as $routine) {
                     $importer->registerImporterRoutine($app->make($routine));
                 }
-                $importer->registerImporterRoutine($this->app->make(ImportMultilingualLocalesRoutine::class));
-                $importer->registerImporterRoutine($this->app->make(ImportMultilingualMapPagesRoutine::class));
+                $importer->registerImporterRoutine($this->app->make(ImportMultilingualContentRoutine::class));
                 return $importer;
             }
         );

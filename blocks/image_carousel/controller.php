@@ -98,12 +98,16 @@ class Controller extends BlockController
     public function add()
     {
         $this->initDefaults();
-        $this->addOrEdit();
+        $this->set("fileSets", $this->getFileSets());
+        $this->set("thumbnailTypes", $this->getThumbnailTypes());
+        $this->set("breakpoints", $this->getInitialBreakpoints());
     }
 
     public function edit()
     {
-        $this->addOrEdit();
+        $this->set("fileSets", $this->getFileSets());
+        $this->set("breakpoints", $this->getBreakpoints());
+        $this->set("thumbnailTypes", $this->getThumbnailTypes());
     }
 
     /**
@@ -127,12 +131,9 @@ class Controller extends BlockController
 
         $breakpoints = $args["breakpoints"];
 
-        if (is_null($breakpoints)) {
-            $breakpoints = $this->getInitialBreakpoints();
+        if (!is_null($breakpoints)) {
+            $this->setBreakpoints($breakpoints);
         }
-
-        $this->setBreakpoints($breakpoints);
-
 
         // Clear Cache
         /** @var $cache ExpensiveCache */
@@ -221,13 +222,6 @@ class Controller extends BlockController
     {
         parent::duplicate($newBID);
         $this->duplicateBreakpoints($newBID);
-    }
-
-    private function addOrEdit()
-    {
-        $this->set("fileSets", $this->getFileSets());
-        $this->set("breakpoints", $this->getBreakpoints());
-        $this->set("thumbnailTypes", $this->getThumbnailTypes());
     }
 
     /**
@@ -346,18 +340,6 @@ class Controller extends BlockController
     /**
      * @return array
      */
-    private function getBreakpoints()
-    {
-        if ($this->hasBreakpoints() === false) {
-            return $this->getInitialBreakpoints();
-        } else {
-            return $this->loadBreakpoints();
-        }
-    }
-
-    /**
-     * @return array
-     */
     private function getInitialBreakpoints()
     {
         return [
@@ -403,7 +385,7 @@ class Controller extends BlockController
     /**
      * @return array
      */
-    private function loadBreakpoints()
+    private function getBreakpoints()
     {
         /** @var Connection $db */
         $db = $this->app->make(Connection::class);

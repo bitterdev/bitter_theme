@@ -5,7 +5,6 @@
         <link service="github" url="#"/>
         <link service="twitter" url="#"/>
     </sociallinks>
-
     <filesets>
         <fileset name="Best References">
             <files>
