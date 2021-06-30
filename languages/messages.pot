@@ -1,0 +1,819 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bitter_theme 2.0.7\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-06-30T10:18:01+00:00\n"
+"PO-Revision-Date: 2021-06-30T10:18:01+00:00\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher
+msgctxt "TemplateFileName"
+msgid "Bitter Language Switcher"
+msgstr ""
+
+#: packages/bitter_theme/blocks/form/templates/gdpr_form
+msgctxt "TemplateFileName"
+msgid "Gdpr Form"
+msgstr ""
+
+#: packages/bitter_theme/blocks/autonav/templates/bitter_breadcrumb
+msgctxt "TemplateFileName"
+msgid "Bitter Breadcrumb"
+msgstr ""
+
+#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav
+msgctxt "TemplateFileName"
+msgid "Bitter Header Nav"
+msgstr ""
+
+#: packages/bitter_theme/blocks/autonav/templates/bitter_footer_nav
+msgctxt "TemplateFileName"
+msgid "Bitter Footer Nav"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:56
+#: packages/bitter_theme/data.xml:10
+msgctxt "AttributeKeyName"
+msgid "Page Selector Redirect"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:60
+#: packages/bitter_theme/data.xml:14
+msgctxt "AttributeKeyName"
+msgid "Main Area Number"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:61
+#: packages/bitter_theme/data.xml:15
+msgctxt "AttributeKeyName"
+msgid "Exclude Breadcrumb Navigation"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:76
+#: packages/bitter_theme/data.xml:30
+msgctxt "BlockTypeSetName"
+msgid "Bitter Theme"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:85
+msgctxt "PageTemplateName"
+msgid "Blank"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:86
+msgctxt "PageTemplateName"
+msgid "Home"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:88
+msgctxt "PageTemplateName"
+msgid "Left Sidebar"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:90
+msgctxt "PageTemplateName"
+msgid "Right Sidebar"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:93
+#: packages/bitter_theme/content.xml:239
+#: packages/bitter_theme/themes/bitter_theme/elements/header.php:62
+#: packages/bitter_theme/themes/bitter_theme/elements/header.php:113
+#: packages/bitter_theme/themes/bitter_theme/login.php:97
+#: packages/bitter_theme/themes/bitter_theme/register.php:82
+msgid "Home"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:100
+#: packages/bitter_theme/content.xml:121
+msgctxt "PageTypeComposerFormLayoutSetName"
+msgid "Basics"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:114
+msgid "Empty Page"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:123
+msgctxt "PageTypeComposerFormLayoutSetControlCustomLabel"
+msgid "Page Name"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:138
+#: packages/bitter_theme/content.xml:248
+#: packages/bitter_theme/content.xml:856
+#: packages/bitter_theme/content.xml:1045
+#: packages/bitter_theme/content.xml:1346
+#: packages/bitter_theme/content.xml:1493
+#: packages/bitter_theme/content.xml:1522
+#: packages/bitter_theme/content.xml:1551
+msgctxt "AreaName"
+msgid "Main"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:141
+msgctxt "AreaName"
+msgid "Page Header"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:144
+msgctxt "AreaName"
+msgid "Page Footer"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:154
+msgid "Breadcrumb"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:155
+#: packages/bitter_theme/content.xml:175
+#: packages/bitter_theme/content.xml:203
+#: packages/bitter_theme/content.xml:216
+msgid "Main"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:174
+msgid "Footer Copyright"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:202
+msgid "Header Language Switcher"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:215
+msgid "Header Navigation"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:468
+#: packages/bitter_theme/content.xml:1213
+msgctxt "AreaName"
+msgid "Custom Area 1"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:641
+#: packages/bitter_theme/content.xml:1277
+msgctxt "AreaName"
+msgid "Custom Area 2"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:850
+msgid "References"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1036
+msgid "About us"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1345
+msgid "Contact"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1481
+msgid "Legal"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1492
+msgid "Privacy Policy"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1521
+msgid "Legal Information"
+msgstr ""
+
+#: packages/bitter_theme/content.xml:1550
+msgid "Terms of Use"
+msgstr ""
+
+#: packages/bitter_theme/data.xml:42
+#: packages/bitter_theme/controller.php:34
+msgid "Bitter Theme"
+msgstr ""
+
+#: packages/bitter_theme/data.xml:46
+msgid "Settings"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/css/styles.xml:3
+msgctxt "StyleSetName"
+msgid "Full Page"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/css/styles.xml:4
+msgctxt "StyleName"
+msgid "Accent"
+msgstr ""
+
+#: packages/bitter_theme/controller.php:29
+msgid "Powerful Theme for ConcreteCMS."
+msgstr ""
+
+#: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher/view.php:24
+#: packages/bitter_theme/blocks/autonav/templates/bitter_breadcrumb/view.php:84
+#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:30
+msgid "Empty Auto-Nav Block."
+msgstr ""
+
+#: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher/view.php:27
+msgid "Switch Langauge"
+msgstr ""
+
+#: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:97
+msgid "Required"
+msgstr ""
+
+#: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:109
+msgid "privacy policy"
+msgstr ""
+
+#: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:109
+#, php-format
+msgid "I hereby acknowledge that the data collected in this form will be stored for further use and deleted once my inquiry has been processed. See more detailed information on how we use user-data in our %s."
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/controller.php:27
+msgid "Add accordion elements to your site."
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/controller.php:32
+msgid "Accordion"
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/controller.php:157
+msgid "You must specify a valid title for each item."
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/edit.php:33
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:64
+msgid "Title"
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/edit.php:41
+msgid "Body"
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/edit.php:48
+#: packages/bitter_theme/blocks/counter/edit.php:68
+msgid "Remove Item"
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/edit.php:54
+#: packages/bitter_theme/blocks/counter/edit.php:37
+msgid "Add Item"
+msgstr ""
+
+#: packages/bitter_theme/blocks/accordion/view.php:28
+msgid "Accordion is disabled in edit mode."
+msgstr ""
+
+#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:107
+msgid "Log out"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/controller.php:24
+msgid "Add progress bars to your site."
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/controller.php:28
+msgid "Progressbar"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/controller.php:39
+msgid "You must specify a valid animation duration."
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/controller.php:43
+msgid "You must specify a text for the label."
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/controller.php:47
+msgid "You must specify a valid value between 0 and 100."
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/edit.php:27
+#: packages/bitter_theme/blocks/progressbar/form.php:33
+msgid "Label"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/edit.php:32
+#: packages/bitter_theme/blocks/progressbar/form.php:38
+#: packages/bitter_theme/blocks/counter/edit.php:52
+msgid "Value"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/edit.php:38
+#: packages/bitter_theme/blocks/progressbar/form.php:44
+msgid "%"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/edit.php:44
+msgid "Animation Duration"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/edit.php:50
+#: packages/bitter_theme/blocks/progressbar/form.php:90
+#: packages/bitter_theme/blocks/image_carousel/edit.php:56
+#: packages/bitter_theme/blocks/image_carousel/edit.php:68
+msgid "ms"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:21
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:85
+#: packages/bitter_theme/themes/bitter_theme/register.php:229
+msgid "Cancel"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:22
+msgid "Choose"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:24
+msgid "Clear Color Selection"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:52
+msgid "Label color"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:57
+msgid "Bar color"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:62
+msgid "Background color"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:67
+msgid "Label Position"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:68
+msgid "Above"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:68
+msgid "Inline"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:72
+msgid "Thickness"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:73
+msgid "Thin"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:73
+msgid "Thick"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:79
+msgid "Animate"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:80
+msgid "No"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:80
+msgid "Yes"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:84
+msgid "Animation duration"
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/form.php:95
+msgid "The total duration of the animation."
+msgstr ""
+
+#: packages/bitter_theme/blocks/progressbar/view.php:24
+msgid "Progressbar is disabled in edit mode."
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/controller.php:31
+msgid "Easily display your file sets from the file manager in a grid!"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/controller.php:36
+msgid "Masonry Grid"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/controller.php:236
+msgid "No description available."
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/edit.php:21
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:105
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:135
+#: packages/bitter_theme/elements/dashboard/help.php:32
+#: packages/bitter_theme/elements/dashboard/reminder.php:35
+msgid "here"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/edit.php:21
+#, php-format
+msgid "You don't have any file sets. Click %s to create one."
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:32
+msgid "Masonry Grid is disabled in edit mode."
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:39
+msgid "View All"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:91
+msgid "Close (Esc)"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:92
+msgid "Share"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:93
+msgid "Toggle fullscreen"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:94
+msgid "Zoom in/out"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:95
+msgid "Previous (arrow left)"
+msgstr ""
+
+#: packages/bitter_theme/blocks/masonry_grid/view.php:96
+msgid "Next (arrow right)"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/controller.php:26
+msgid "Display animated numbers on your website."
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/controller.php:31
+msgid "Counter"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/controller.php:141
+msgid "You must specify a valid duration."
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/controller.php:156
+msgid "You must specify a valid counter value."
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/edit.php:28
+msgid "Items"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/edit.php:29
+msgid "Options"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/edit.php:43
+msgid "Duration"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/edit.php:60
+msgid "Description"
+msgstr ""
+
+#: packages/bitter_theme/blocks/counter/view.php:23
+msgid "Counter is disabled in edit mode."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:58
+msgid "Display images in a carousel."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:63
+msgid "Image Carousel"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:155
+#: packages/bitter_theme/blocks/image_carousel/edit.php:40
+#: packages/bitter_theme/src/Bitter/BitterTheme/Backup/ContentImporter/ValueInspector/Item/FileSetItem.php:22
+msgid "File Set"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:155
+#: packages/bitter_theme/blocks/image_carousel/controller.php:159
+#: packages/bitter_theme/blocks/image_carousel/controller.php:163
+#: packages/bitter_theme/blocks/image_carousel/controller.php:167
+#: packages/bitter_theme/blocks/image_carousel/controller.php:171
+#: packages/bitter_theme/blocks/image_carousel/controller.php:175
+#: packages/bitter_theme/blocks/image_carousel/controller.php:179
+#: packages/bitter_theme/blocks/image_carousel/controller.php:183
+#, php-format
+msgid "The value for field %s is invalid."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:159
+msgid "Image Type"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:163
+#: packages/bitter_theme/blocks/image_carousel/edit.php:50
+msgid "Speed"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:167
+#: packages/bitter_theme/blocks/image_carousel/edit.php:62
+msgid "Autoplay Speed"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:171
+#: packages/bitter_theme/blocks/image_carousel/edit.php:76
+msgid "Autoplay"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:175
+msgid "Infinite"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:179
+#: packages/bitter_theme/blocks/image_carousel/controller.php:183
+#: packages/bitter_theme/blocks/image_carousel/edit.php:90
+msgid "Show Dots"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:194
+#: packages/bitter_theme/blocks/image_carousel/edit.php:100
+msgid "Breakpoint"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:194
+#: packages/bitter_theme/blocks/image_carousel/controller.php:198
+#: packages/bitter_theme/blocks/image_carousel/controller.php:202
+#, php-format
+msgid "The value for field %s in row %s is invalid."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:198
+#: packages/bitter_theme/blocks/image_carousel/edit.php:104
+msgid "Slides to Show"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:202
+#: packages/bitter_theme/blocks/image_carousel/edit.php:108
+msgid "Slides to Scroll"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:206
+msgid "Breakpoints are missing."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/controller.php:256
+msgid "Original Size"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/edit.php:36
+msgid "File Manager"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/edit.php:36
+#, php-format
+msgid "Go to %s to create a file set."
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/edit.php:45
+msgid "Thumbnail Type"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/edit.php:83
+msgid "Loop Infinite"
+msgstr ""
+
+#: packages/bitter_theme/blocks/image_carousel/view.php:29
+msgid "Image Carousel is disabled in edit mode."
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:48
+msgid "General"
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:52
+msgid "Logo"
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:53
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:58
+msgid "Please select a file"
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:57
+msgid "Logo Small"
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:62
+msgid "Privacy Page"
+msgstr ""
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:69
+msgid "Save"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:96
+msgid "Did you know?"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:102
+#, php-format
+msgid "I have many other add-ons to power up your site. Maybe the following add-on sounds interesting to you? If you want to see a full list with all of my add-ons, please click %s. As an existing customer you will get 10%% discount on your next purchase."
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:120
+msgid "Details"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/did_you_know.php:135
+#, php-format
+msgid "Click %s to hide."
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/help.php:28
+#, php-format
+msgid "If you need support please click %s."
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/help.php:44
+msgid "Support"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/install_post.php:24
+msgid "Thank You for purchasing this add-on!"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/install_post.php:28
+msgid "Follow me on Twitter and Facebook to get the latest news and notifications about updates, new add-ons/themes and special offers."
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/install_post.php:37
+msgid "Follow @fabian_bitter"
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/license_check.php:36
+msgid "You have not connected your site to the Marketplace. To benefit from updates, connect your site to the Marketplace and assign the purchased licenses."
+msgstr ""
+
+#: packages/bitter_theme/elements/dashboard/reminder.php:32
+#, php-format
+msgid "Rate this add-on on concrete5.org and as a thank-you gift you can choose another add-on of mine up to $35. This offer may only be claimed once. Click %s to rate now."
+msgstr ""
+
+#: packages/bitter_theme/controllers/single_page/dashboard/bitter_theme/settings.php:44
+msgid "The settings has been successfully updated."
+msgstr ""
+
+#: packages/bitter_theme/controllers/dialog/support/create_ticket.php:56
+msgid "Ticket Created"
+msgstr ""
+
+#: packages/bitter_theme/controllers/dialog/support/create_ticket.php:57
+msgid "Your ticket has been successfully created."
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:22
+msgid "Bug"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:23
+msgid "Enhancement"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:24
+msgid "Proposal"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:25
+msgid "Task"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:29
+msgid "Trivial"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:30
+msgid "Minor"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:31
+msgid "Major"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:32
+msgid "Critical"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:33
+msgid "Blocker"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:59
+msgid "E-Mail"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:69
+msgid "Content"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:74
+msgid "Type"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:79
+msgid "Priority"
+msgstr ""
+
+#: packages/bitter_theme/views/dialogs/support/create_ticket.php:89
+msgid "Create Ticket"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/elements/header.php:89
+msgid "Toggle Navigation"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:70
+msgid "This website uses cookies to ensure you get the best experience on our website."
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:73
+msgid "Learn more"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:80
+msgid "Deny Cookies"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:84
+msgid "Allow Cookies"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/login.php:128
+msgid "Submit"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/login.php:139
+msgid "You are already logged in."
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/login.php:156
+msgid "or"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/page_forbidden.php:28
+msgid "Forbidden"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/page_forbidden.php:32
+msgid "You are not allowed to access this page."
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/page_not_found.php:28
+msgid "Page not found"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/page_not_found.php:32
+msgid "The requested page could not be found."
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:118
+#: packages/bitter_theme/themes/bitter_theme/register.php:131
+msgid "Return to Home"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:146
+msgid "Username"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:152
+msgid "Email Address"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:157
+msgid "Password"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:163
+msgid "Confirm Password"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:233
+msgid "Create Account"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/register.php:246
+msgid "Already have an account?"
+msgstr ""
+
+#: packages/bitter_theme/themes/bitter_theme/css/presets/defaults.less:8
+msgctxt "PresetName"
+msgid "Default"
+msgstr ""
