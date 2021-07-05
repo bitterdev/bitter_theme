@@ -17,6 +17,7 @@ use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Validation\CSRF\Token;
 use Concrete\Core\View\View;
 
+/** @var bool $enableExtendedFooter */
 /** @var int $regularLogoFileId */
 /** @var int $smallLogoFileId */
 /** @var int $privacyPageId */
@@ -47,6 +48,16 @@ View::element('/dashboard/license_check', ["packageHandle" => "bitter_theme"], '
         <legend>
             <?php echo t("General"); ?>
         </legend>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <?php echo $form->checkbox("enableExtendedFooter", 1, $enableExtendedFooter); ?>
+
+                    <?php echo t("Enable Extended Footer"); ?>
+                </label>
+            </div>
+        </div>
 
         <div class="form-group">
             <?php echo $form->label("regularLogoFileId", t("Logo")); ?>
