@@ -10,9 +10,13 @@
 
 defined('C5_EXECUTE') or die("Access Denied.");
 
+use Bitter\BitterShopSystem\Entity\Product;
+use Bitter\BitterShopSystem\Product\ProductList;
+use Bitter\BitterShopSystem\Product\ProductService;
 use Concrete\Block\Autonav\Controller;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Permission\Checker;
+use Concrete\Core\Search\ItemList\Database\ItemList;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Support\Facade\Url;
 use Concrete\Core\User\User;
@@ -56,6 +60,36 @@ if ($c instanceof Page && $c->isEditMode()) { ?>
         echo '<li class="' . $ni->classes . '">';
         echo '<a href="' . $ni->url . '" target="' . $ni->target . '" class="' . $ni->classes . '" title="' . h($ni->name) . '">' . $ni->name . '</a>';
 
+        /** @var Page $curPage */
+        $curPage = $ni->cObj;
+
+        if ($curPage instanceof Page && !$curPage->isError()) {
+            foreach ($curPage->getBlocks() as $block) {
+                if ($block->getBlockTypeHandle() === "product_list") {
+                    $productList = new ProductList();
+                    $productList->filterByCurrentLocale();
+                    /** @var Product[] $products */
+                    $products = $productList->getResults();
+                    $detailPageId = (int)$block->getController()->get("detailsPageId");
+                    $detailPage = Page::getByID($detailPageId);
+
+                    if (count($products) > 0) {
+                        echo '<ul>';
+
+                        foreach ($products as $product) {
+                            echo '<li>';
+                            echo '<a href="' . Url::to($detailPage, "display_product", $product->getHandle()) . '" title="' . h($product->getName()) . '">' . $product->getName() . '</a>';
+                            echo '</li>';
+                        }
+
+                        echo '</ul>';
+                    }
+
+                    break;
+                }
+            }
+        }
+
         if ($ni->hasSubmenu) {
             echo '<ul>';
         } else {
@@ -95,8 +129,9 @@ if ($c instanceof Page && $c->isEditMode()) { ?>
             ?>
 
             <?php foreach ($accountPages as $cc) { ?>
-                <li class="<?php echo $c->getCollectionID() == $cc->getCollectionID() ? "nav-path-selected nav-selected" : "";?>">
-                    <a href="<?php echo Url::to($cc) ?>" class="<?php echo $c->getCollectionID() == $cc->getCollectionID() ? "nav-path-selected nav-selected" : "";?>">
+                <li class="<?php echo $c->getCollectionID() == $cc->getCollectionID() ? "nav-path-selected nav-selected" : ""; ?>">
+                    <a href="<?php echo Url::to($cc) ?>"
+                       class="<?php echo $c->getCollectionID() == $cc->getCollectionID() ? "nav-path-selected nav-selected" : ""; ?>">
                         <?php echo t($cc->getCollectionName()) ?>
                     </a>
                 </li>
