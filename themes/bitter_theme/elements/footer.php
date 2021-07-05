@@ -26,27 +26,29 @@ $config = $app->make(Repository::class);
 
     <footer>
         <?php if ($config->get("bitter_theme.enable_extended_footer")) { ?>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-4">
-                        <?php
-                        $a = new GlobalArea('Footer Column 1');
-                        $a->display();
-                        ?>
-                    </div>
+            <div class="extended-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <?php
+                            $a = new GlobalArea('Footer Column 1');
+                            $a->display();
+                            ?>
+                        </div>
 
-                    <div class="col-sm-12 col-md-4">
-                        <?php
-                        $a = new GlobalArea('Footer Column 2');
-                        $a->display();
-                        ?>
-                    </div>
+                        <div class="col-sm-12 col-md-4">
+                            <?php
+                            $a = new GlobalArea('Footer Column 2');
+                            $a->display();
+                            ?>
+                        </div>
 
-                    <div class="col-sm-12 col-md-4">
-                        <?php
-                        $a = new GlobalArea('Footer Column 2');
-                        $a->display();
-                        ?>
+                        <div class="col-sm-12 col-md-4">
+                            <?php
+                            $a = new GlobalArea('Footer Column 3');
+                            $a->display();
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
