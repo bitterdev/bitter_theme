@@ -24,7 +24,7 @@ $app = Application::getFacadeApplication();
 $config = $app->make(Repository::class);
 ?>
 
-    <footer>
+    <footer <?php if ($config->get("bitter_theme.enable_extended_footer")) { echo "class=\"extended\""; } ?>>
         <?php if ($config->get("bitter_theme.enable_extended_footer")) { ?>
             <div class="extended-footer">
                 <div class="container">
