@@ -15,7 +15,7 @@ jobs:
           cancelMode: allDuplicates
           cancelFutureDuplicates: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          workflowFileName: main.yml
+          workflowFileName: php.yml
 
       - name: Install project dependencies
         uses: php-actions/composer@v6
