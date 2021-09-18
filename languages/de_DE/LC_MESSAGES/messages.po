@@ -2,16 +2,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bitter_theme 2.0.7\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-18T10:47:40+02:00\n"
+"PO-Revision-Date: 2021-09-18 10:48+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2021-06-30T10:18:01+00:00\n"
-"PO-Revision-Date: 2021-06-30 12:35+0200\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
-"Last-Translator: \n"
-"Language: de\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 2.4\n"
 
 #: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher
 msgctxt "TemplateFileName"
@@ -44,7 +44,6 @@ msgid "Page Selector Redirect"
 msgstr "Seitenumleitung"
 
 #: packages/bitter_theme/content.xml:60 packages/bitter_theme/data.xml:14
-#, fuzzy
 msgctxt "AttributeKeyName"
 msgid "Main Area Number"
 msgstr "Hauptbereichsnummer"
@@ -60,25 +59,21 @@ msgid "Bitter Theme"
 msgstr "Bitter Theme"
 
 #: packages/bitter_theme/content.xml:85
-#, fuzzy
 msgctxt "PageTemplateName"
 msgid "Blank"
 msgstr "Leer"
 
 #: packages/bitter_theme/content.xml:86
-#, fuzzy
 msgctxt "PageTemplateName"
 msgid "Home"
 msgstr "Startseite"
 
 #: packages/bitter_theme/content.xml:88
-#, fuzzy
 msgctxt "PageTemplateName"
 msgid "Left Sidebar"
 msgstr "Linke Seitenleiste"
 
 #: packages/bitter_theme/content.xml:90
-#, fuzzy
 msgctxt "PageTemplateName"
 msgid "Right Sidebar"
 msgstr "Rechte Seitenleiste"
@@ -88,7 +83,6 @@ msgstr "Rechte Seitenleiste"
 #: packages/bitter_theme/themes/bitter_theme/elements/header.php:113
 #: packages/bitter_theme/themes/bitter_theme/login.php:97
 #: packages/bitter_theme/themes/bitter_theme/register.php:82
-#, fuzzy
 msgid "Home"
 msgstr "Startseite"
 
@@ -98,12 +92,10 @@ msgid "Basics"
 msgstr "Allgemein"
 
 #: packages/bitter_theme/content.xml:114
-#, fuzzy
 msgid "Empty Page"
 msgstr "Leere Seite"
 
 #: packages/bitter_theme/content.xml:123
-#, fuzzy
 msgctxt "PageTypeComposerFormLayoutSetControlCustomLabel"
 msgid "Page Name"
 msgstr "Seitenname"
@@ -114,7 +106,6 @@ msgstr "Seitenname"
 #: packages/bitter_theme/content.xml:1493
 #: packages/bitter_theme/content.xml:1522
 #: packages/bitter_theme/content.xml:1551
-#, fuzzy
 msgctxt "AreaName"
 msgid "Main"
 msgstr "Main"
@@ -125,7 +116,6 @@ msgid "Page Header"
 msgstr "Seiten-Kopfbereich"
 
 #: packages/bitter_theme/content.xml:144
-#, fuzzy
 msgctxt "AreaName"
 msgid "Page Footer"
 msgstr "Seiten-Fußbereich"
@@ -152,70 +142,57 @@ msgid "Header Navigation"
 msgstr "Hauptnavigation"
 
 #: packages/bitter_theme/content.xml:468 packages/bitter_theme/content.xml:1213
-#, fuzzy
 msgctxt "AreaName"
 msgid "Custom Area 1"
 msgstr "Benutzerdefinierter Bereich 1"
 
 #: packages/bitter_theme/content.xml:641 packages/bitter_theme/content.xml:1277
-#, fuzzy
 msgctxt "AreaName"
 msgid "Custom Area 2"
 msgstr "Benutzerdefinierter Bereich 2"
 
 #: packages/bitter_theme/content.xml:850
-#, fuzzy
 msgid "References"
 msgstr "Referenzen"
 
 #: packages/bitter_theme/content.xml:1036
-#, fuzzy
 msgid "About us"
 msgstr "Über uns"
 
 #: packages/bitter_theme/content.xml:1345
-#, fuzzy
 msgid "Contact"
 msgstr "Kontakt"
 
 #: packages/bitter_theme/content.xml:1481
-#, fuzzy
 msgid "Legal"
 msgstr "Rechtliches"
 
 #: packages/bitter_theme/content.xml:1492
-#, fuzzy
 msgid "Privacy Policy"
 msgstr "Datenschutzerklärung"
 
 #: packages/bitter_theme/content.xml:1521
-#, fuzzy
 msgid "Legal Information"
 msgstr "Rechtliche Informationen"
 
 #: packages/bitter_theme/content.xml:1550
-#, fuzzy
 msgid "Terms of Use"
 msgstr "Nutzungsbedingungen"
 
 #: packages/bitter_theme/data.xml:42 packages/bitter_theme/controller.php:34
-#, fuzzy
 msgid "Bitter Theme"
 msgstr "Bitteres Thema"
 
 #: packages/bitter_theme/data.xml:46
-#, fuzzy
 msgid "Settings"
 msgstr "Einstellungen"
 
 #: packages/bitter_theme/themes/bitter_theme/css/styles.xml:3
-#, fuzzy
 msgctxt "StyleSetName"
 msgid "Full Page"
 msgstr "Ganze Seite"
 
 #: packages/bitter_theme/themes/bitter_theme/css/styles.xml:4
-#, fuzzy
 msgctxt "StyleName"
 msgid "Accent"
 msgstr "Akzent"
@@ -226,7 +203,7 @@ msgstr "Leistungsstarkes Theme für ConcreteCMS."
 
 #: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher/view.php:24
 #: packages/bitter_theme/blocks/autonav/templates/bitter_breadcrumb/view.php:84
-#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:30
+#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:34
 msgid "Empty Auto-Nav Block."
 msgstr "Leerer Auto-Navigations-Block."
 
@@ -235,17 +212,15 @@ msgid "Switch Langauge"
 msgstr "Sprache wechseln"
 
 #: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:97
-#, fuzzy
 msgid "Required"
 msgstr "Erforderlich"
 
 #: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:109
-#, fuzzy
 msgid "privacy policy"
 msgstr "Datenschutzbestimmungen"
 
 #: packages/bitter_theme/blocks/form/templates/gdpr_form/view.php:109
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "I hereby acknowledge that the data collected in this form will be stored for "
 "further use and deleted once my inquiry has been processed. See more "
@@ -257,55 +232,45 @@ msgstr ""
 "wir Benutzerdaten in unseren %s verwenden."
 
 #: packages/bitter_theme/blocks/accordion/controller.php:27
-#, fuzzy
 msgid "Add accordion elements to your site."
 msgstr "Fügen Sie Ihrer Website Akkordeonelemente hinzu."
 
 #: packages/bitter_theme/blocks/accordion/controller.php:32
-#, fuzzy
 msgid "Accordion"
 msgstr "Akkordeon"
 
 #: packages/bitter_theme/blocks/accordion/controller.php:157
-#, fuzzy
 msgid "You must specify a valid title for each item."
 msgstr "Sie müssen für jedes Element einen gültigen Titel angeben."
 
 #: packages/bitter_theme/blocks/accordion/edit.php:33
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:64
-#, fuzzy
 msgid "Title"
 msgstr "Titel"
 
 #: packages/bitter_theme/blocks/accordion/edit.php:41
-#, fuzzy
 msgid "Body"
 msgstr "Inhalt"
 
 #: packages/bitter_theme/blocks/accordion/edit.php:48
 #: packages/bitter_theme/blocks/counter/edit.php:68
-#, fuzzy
 msgid "Remove Item"
 msgstr "Element entfernen"
 
 #: packages/bitter_theme/blocks/accordion/edit.php:54
 #: packages/bitter_theme/blocks/counter/edit.php:37
-#, fuzzy
 msgid "Add Item"
 msgstr "Artikel hinzufügen"
 
 #: packages/bitter_theme/blocks/accordion/view.php:28
-#, fuzzy
 msgid "Accordion is disabled in edit mode."
 msgstr "Akkordeon ist im Bearbeitungsmodus deaktiviert."
 
-#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:107
-#, fuzzy
+#: packages/bitter_theme/blocks/autonav/templates/bitter_header_nav/view.php:142
 msgid "Log out"
 msgstr "Abmelden"
 
 #: packages/bitter_theme/blocks/progressbar/controller.php:24
-#, fuzzy
 msgid "Add progress bars to your site."
 msgstr "Fügen Sie Ihrer Website Fortschrittsbalken hinzu."
 
@@ -314,41 +279,34 @@ msgid "Progressbar"
 msgstr "Fortschrittsbalken"
 
 #: packages/bitter_theme/blocks/progressbar/controller.php:39
-#, fuzzy
 msgid "You must specify a valid animation duration."
 msgstr "Sie müssen eine gültige Animationsdauer angeben."
 
 #: packages/bitter_theme/blocks/progressbar/controller.php:43
-#, fuzzy
 msgid "You must specify a text for the label."
 msgstr "Sie müssen einen Text für die Beschriftung angeben."
 
 #: packages/bitter_theme/blocks/progressbar/controller.php:47
-#, fuzzy
 msgid "You must specify a valid value between 0 and 100."
 msgstr "Sie müssen einen gültigen Wert zwischen 0 und 100 angeben."
 
 #: packages/bitter_theme/blocks/progressbar/edit.php:27
 #: packages/bitter_theme/blocks/progressbar/form.php:33
-#, fuzzy
 msgid "Label"
 msgstr "Label"
 
 #: packages/bitter_theme/blocks/progressbar/edit.php:32
 #: packages/bitter_theme/blocks/progressbar/form.php:38
 #: packages/bitter_theme/blocks/counter/edit.php:52
-#, fuzzy
 msgid "Value"
 msgstr "Wert"
 
 #: packages/bitter_theme/blocks/progressbar/edit.php:38
 #: packages/bitter_theme/blocks/progressbar/form.php:44
-#, fuzzy
 msgid "%"
 msgstr "%"
 
 #: packages/bitter_theme/blocks/progressbar/edit.php:44
-#, fuzzy
 msgid "Animation Duration"
 msgstr "Dauer der Animation"
 
@@ -356,94 +314,76 @@ msgstr "Dauer der Animation"
 #: packages/bitter_theme/blocks/progressbar/form.php:90
 #: packages/bitter_theme/blocks/image_carousel/edit.php:56
 #: packages/bitter_theme/blocks/image_carousel/edit.php:68
-#, fuzzy
 msgid "ms"
 msgstr "ms"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:21
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:85
 #: packages/bitter_theme/themes/bitter_theme/register.php:229
-#, fuzzy
 msgid "Cancel"
 msgstr "Abbrechen"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:22
-#, fuzzy
 msgid "Choose"
 msgstr "Auswählen"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:24
-#, fuzzy
 msgid "Clear Color Selection"
 msgstr "Klare Farbauswahl"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:52
-#, fuzzy
 msgid "Label color"
 msgstr "Label - Textfarbe"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:57
-#, fuzzy
 msgid "Bar color"
 msgstr "Balkenfarbe"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:62
-#, fuzzy
 msgid "Background color"
 msgstr "Hintergrundfarbe"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:67
-#, fuzzy
 msgid "Label Position"
 msgstr "Beschriftungsposition"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:68
-#, fuzzy
 msgid "Above"
 msgstr "Oberhalb"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:68
-#, fuzzy
 msgid "Inline"
 msgstr "Inline"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:72
-#, fuzzy
 msgid "Thickness"
 msgstr "Dicke"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:73
-#, fuzzy
 msgid "Thin"
 msgstr "Dünn"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:73
-#, fuzzy
 msgid "Thick"
 msgstr "Dick"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:79
-#, fuzzy
 msgid "Animate"
 msgstr "Animieren"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:80
-#, fuzzy
 msgid "No"
 msgstr "Nein"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:80
-#, fuzzy
 msgid "Yes"
 msgstr "Ja"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:84
-#, fuzzy
 msgid "Animation duration"
 msgstr "Dauer der Animation"
 
 #: packages/bitter_theme/blocks/progressbar/form.php:95
-#, fuzzy
 msgid "The total duration of the animation."
 msgstr "Die Gesamtdauer der Animation."
 
@@ -452,18 +392,15 @@ msgid "Progressbar is disabled in edit mode."
 msgstr "Der Fortschrittsbalken ist im Bearbeitungsmodus deaktiviert."
 
 #: packages/bitter_theme/blocks/masonry_grid/controller.php:31
-#, fuzzy
 msgid "Easily display your file sets from the file manager in a grid!"
 msgstr ""
 "Zeigen Sie Ihre Dateisätze einfach über den Dateimanager in einem Raster an!"
 
 #: packages/bitter_theme/blocks/masonry_grid/controller.php:36
-#, fuzzy
 msgid "Masonry Grid"
 msgstr "Masonry Grid"
 
 #: packages/bitter_theme/blocks/masonry_grid/controller.php:236
-#, fuzzy
 msgid "No description available."
 msgstr "Keine Beschreibung vorhanden."
 
@@ -472,114 +409,93 @@ msgstr "Keine Beschreibung vorhanden."
 #: packages/bitter_theme/elements/dashboard/did_you_know.php:135
 #: packages/bitter_theme/elements/dashboard/help.php:32
 #: packages/bitter_theme/elements/dashboard/reminder.php:35
-#, fuzzy
 msgid "here"
 msgstr "hier"
 
 #: packages/bitter_theme/blocks/masonry_grid/edit.php:21
-#, fuzzy, php-format
+#, php-format
 msgid "You don't have any file sets. Click %s to create one."
 msgstr "Sie haben keine Dateisätze. Klicken Sie auf %s, um eine zu erstellen."
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:32
-#, fuzzy
 msgid "Masonry Grid is disabled in edit mode."
 msgstr "Masonry Grid ist im Bearbeitungsmodus deaktiviert."
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:39
-#, fuzzy
 msgid "View All"
 msgstr "Alle anzeigen"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:91
-#, fuzzy
 msgid "Close (Esc)"
 msgstr "Schließen (Esc)"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:92
-#, fuzzy
 msgid "Share"
 msgstr "Teilen"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:93
-#, fuzzy
 msgid "Toggle fullscreen"
 msgstr "Vollbildmodus ein/aus"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:94
-#, fuzzy
 msgid "Zoom in/out"
 msgstr "Zoom rein/raus"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:95
-#, fuzzy
 msgid "Previous (arrow left)"
 msgstr "Zurück (Pfeiltaste links)"
 
 #: packages/bitter_theme/blocks/masonry_grid/view.php:96
-#, fuzzy
 msgid "Next (arrow right)"
 msgstr "Vor (Pfeiltaste rechts)"
 
 #: packages/bitter_theme/blocks/counter/controller.php:26
-#, fuzzy
 msgid "Display animated numbers on your website."
 msgstr "Zeigen Sie animierte Zahlen auf Ihrer Website an."
 
 #: packages/bitter_theme/blocks/counter/controller.php:31
-#, fuzzy
 msgid "Counter"
 msgstr "Zähler"
 
 #: packages/bitter_theme/blocks/counter/controller.php:141
-#, fuzzy
 msgid "You must specify a valid duration."
 msgstr "Sie müssen eine gültige Dauer angeben."
 
 #: packages/bitter_theme/blocks/counter/controller.php:156
-#, fuzzy
 msgid "You must specify a valid counter value."
 msgstr "Sie müssen einen gültigen Leistungsindikatorwert angeben."
 
 #: packages/bitter_theme/blocks/counter/edit.php:28
-#, fuzzy
 msgid "Items"
 msgstr "Artikel"
 
 #: packages/bitter_theme/blocks/counter/edit.php:29
-#, fuzzy
 msgid "Options"
 msgstr "Optionen"
 
 #: packages/bitter_theme/blocks/counter/edit.php:43
-#, fuzzy
 msgid "Duration"
 msgstr "Dauer"
 
 #: packages/bitter_theme/blocks/counter/edit.php:60
-#, fuzzy
 msgid "Description"
 msgstr "Beschreibung"
 
 #: packages/bitter_theme/blocks/counter/view.php:23
-#, fuzzy
 msgid "Counter is disabled in edit mode."
 msgstr "Der Zähler ist im Bearbeitungsmodus deaktiviert."
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:58
-#, fuzzy
 msgid "Display images in a carousel."
 msgstr "Zeigen Sie Bilder in einem Karussell an."
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:63
-#, fuzzy
 msgid "Image Carousel"
 msgstr "Bilderkarussell"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:155
 #: packages/bitter_theme/blocks/image_carousel/edit.php:40
 #: packages/bitter_theme/src/Bitter/BitterTheme/Backup/ContentImporter/ValueInspector/Item/FileSetItem.php:22
-#, fuzzy
 msgid "File Set"
 msgstr "Dateialbum"
 
@@ -591,48 +507,41 @@ msgstr "Dateialbum"
 #: packages/bitter_theme/blocks/image_carousel/controller.php:175
 #: packages/bitter_theme/blocks/image_carousel/controller.php:179
 #: packages/bitter_theme/blocks/image_carousel/controller.php:183
-#, fuzzy, php-format
+#, php-format
 msgid "The value for field %s is invalid."
 msgstr "Der Wert für Feld%s ungültig ist."
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:159
-#, fuzzy
 msgid "Image Type"
 msgstr "Bildtyp"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:163
 #: packages/bitter_theme/blocks/image_carousel/edit.php:50
-#, fuzzy
 msgid "Speed"
 msgstr "Geschwindigkeit"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:167
 #: packages/bitter_theme/blocks/image_carousel/edit.php:62
-#, fuzzy
 msgid "Autoplay Speed"
 msgstr "Geschwindigkeit der automatischen Wiedergabe"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:171
 #: packages/bitter_theme/blocks/image_carousel/edit.php:76
-#, fuzzy
 msgid "Autoplay"
 msgstr "Autoplay"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:175
-#, fuzzy
 msgid "Infinite"
 msgstr "Unendlich"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:179
 #: packages/bitter_theme/blocks/image_carousel/controller.php:183
 #: packages/bitter_theme/blocks/image_carousel/edit.php:90
-#, fuzzy
 msgid "Show Dots"
 msgstr "Punkte anzeigen"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:194
 #: packages/bitter_theme/blocks/image_carousel/edit.php:100
-#, fuzzy
 msgid "Breakpoint"
 msgstr "Breakpoint"
 
@@ -645,28 +554,23 @@ msgstr "Der Wert für das Feld %s in der Zeile %s ungültig ist."
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:198
 #: packages/bitter_theme/blocks/image_carousel/edit.php:104
-#, fuzzy
 msgid "Slides to Show"
 msgstr "Slides anzeigen"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:202
 #: packages/bitter_theme/blocks/image_carousel/edit.php:108
-#, fuzzy
 msgid "Slides to Scroll"
 msgstr "Slides zum scrollen"
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:206
-#, fuzzy
 msgid "Breakpoints are missing."
 msgstr "Haltepunkte fehlen."
 
 #: packages/bitter_theme/blocks/image_carousel/controller.php:256
-#, fuzzy
 msgid "Original Size"
 msgstr "Original Größe"
 
 #: packages/bitter_theme/blocks/image_carousel/edit.php:36
-#, fuzzy
 msgid "File Manager"
 msgstr "Dateimanager"
 
@@ -676,12 +580,10 @@ msgid "Go to %s to create a file set."
 msgstr "Wechseln Sie zu %s, um ein Dateiset zu erstellen."
 
 #: packages/bitter_theme/blocks/image_carousel/edit.php:45
-#, fuzzy
 msgid "Thumbnail Type"
 msgstr "Stil des Vorschaubilds"
 
 #: packages/bitter_theme/blocks/image_carousel/edit.php:83
-#, fuzzy
 msgid "Loop Infinite"
 msgstr "Loop Infinite"
 
@@ -689,44 +591,41 @@ msgstr "Loop Infinite"
 msgid "Image Carousel is disabled in edit mode."
 msgstr "Das Bilderkarussell ist im Bearbeitungsmodus deaktiviert."
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:48
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:49
 msgid "General"
 msgstr "Allgemein"
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:52
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:57
+msgid "Enable Extended Footer"
+msgstr "Aktiviere Erweiterten Fußbereich"
+
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:63
 msgid "Logo"
 msgstr "Logo"
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:53
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:58
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:64
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:69
 msgid "Please select a file"
 msgstr "Bitte wählen Sie eine Datei"
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:57
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:68
 msgid "Logo Small"
 msgstr "Logo Klein"
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:62
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:73
 msgid "Privacy Page"
 msgstr "Datenschutzseite"
 
-#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:69
-#, fuzzy
+#: packages/bitter_theme/single_pages/dashboard/bitter_theme/settings.php:80
 msgid "Save"
 msgstr "Speichern"
 
 #: packages/bitter_theme/elements/dashboard/did_you_know.php:96
-#, fuzzy
 msgid "Did you know?"
 msgstr "Schon gewusst?"
 
 #: packages/bitter_theme/elements/dashboard/did_you_know.php:102
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "I have many other add-ons to power up your site. Maybe the following add-on "
 "sounds interesting to you? If you want to see a full list with all of my add-"
@@ -739,32 +638,28 @@ msgstr ""
 "%s. Als Bestandskunde erhalten Sie 10%% Rabatt auf Ihren nächsten Einkauf."
 
 #: packages/bitter_theme/elements/dashboard/did_you_know.php:120
-#, fuzzy
 msgid "Details"
 msgstr "Details"
 
 #: packages/bitter_theme/elements/dashboard/did_you_know.php:135
-#, fuzzy, php-format
+#, php-format
 msgid "Click %s to hide."
 msgstr "Klicken Sie %s zum ausblenden."
 
 #: packages/bitter_theme/elements/dashboard/help.php:28
-#, fuzzy, php-format
+#, php-format
 msgid "If you need support please click %s."
 msgstr "Wenn Sie Unterstützung benötigen, klicken Sie bitte auf %s."
 
 #: packages/bitter_theme/elements/dashboard/help.php:44
-#, fuzzy
 msgid "Support"
 msgstr "Support"
 
 #: packages/bitter_theme/elements/dashboard/install_post.php:24
-#, fuzzy
 msgid "Thank You for purchasing this add-on!"
 msgstr "Vielen Dank für den Kauf dieses Add-on!"
 
 #: packages/bitter_theme/elements/dashboard/install_post.php:28
-#, fuzzy
 msgid ""
 "Follow me on Twitter and Facebook to get the latest news and notifications "
 "about updates, new add-ons/themes and special offers."
@@ -774,12 +669,10 @@ msgstr ""
 "erhalten."
 
 #: packages/bitter_theme/elements/dashboard/install_post.php:37
-#, fuzzy
 msgid "Follow @fabian_bitter"
 msgstr "@fabian_bitter"
 
 #: packages/bitter_theme/elements/dashboard/license_check.php:36
-#, fuzzy
 msgid ""
 "You have not connected your site to the Marketplace. To benefit from "
 "updates, connect your site to the Marketplace and assign the purchased "
@@ -790,7 +683,7 @@ msgstr ""
 "Sie die erworbenen Lizenzen zu."
 
 #: packages/bitter_theme/elements/dashboard/reminder.php:32
-#, fuzzy, php-format
+#, php-format
 msgid ""
 "Rate this add-on on concrete5.org and as a thank-you gift you can choose "
 "another add-on of mine up to $35. This offer may only be claimed once. Click "
@@ -801,98 +694,79 @@ msgstr ""
 "kann nur einmal in Anspruch genommen werden. Klicken Sie %s, um jetzt zu "
 "bewerten."
 
-#: packages/bitter_theme/controllers/single_page/dashboard/bitter_theme/settings.php:44
-#, fuzzy
+#: packages/bitter_theme/controllers/single_page/dashboard/bitter_theme/settings.php:45
 msgid "The settings has been successfully updated."
 msgstr "Die Einstellungen wurden erfolgreich aktualisiert."
 
 #: packages/bitter_theme/controllers/dialog/support/create_ticket.php:56
-#, fuzzy
 msgid "Ticket Created"
 msgstr "Ticket erstellt"
 
 #: packages/bitter_theme/controllers/dialog/support/create_ticket.php:57
-#, fuzzy
 msgid "Your ticket has been successfully created."
 msgstr "Ihr Ticket wurde erfolgreich erstellt."
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:22
-#, fuzzy
 msgid "Bug"
 msgstr "Fehler"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:23
-#, fuzzy
 msgid "Enhancement"
 msgstr "Verbesserung"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:24
-#, fuzzy
 msgid "Proposal"
 msgstr "Vorschlag"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:25
-#, fuzzy
 msgid "Task"
 msgstr "Aufgabe"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:29
-#, fuzzy
 msgid "Trivial"
 msgstr "Trivial"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:30
-#, fuzzy
 msgid "Minor"
 msgstr "Gering"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:31
-#, fuzzy
 msgid "Major"
 msgstr "Groß"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:32
-#, fuzzy
 msgid "Critical"
 msgstr "Kritisch"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:33
-#, fuzzy
 msgid "Blocker"
 msgstr "Blocker"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:59
-#, fuzzy
 msgid "E-Mail"
 msgstr "E-Mail"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:69
-#, fuzzy
 msgid "Content"
 msgstr "Inhalt"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:74
-#, fuzzy
 msgid "Type"
 msgstr "Typ"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:79
-#, fuzzy
 msgid "Priority"
 msgstr "Priorität"
 
 #: packages/bitter_theme/views/dialogs/support/create_ticket.php:89
-#, fuzzy
 msgid "Create Ticket"
 msgstr "Ticket erstellen"
 
 #: packages/bitter_theme/themes/bitter_theme/elements/header.php:89
-#, fuzzy
 msgid "Toggle Navigation"
 msgstr "Menü ein- und ausklappen"
 
 #: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:70
-#, fuzzy
 msgid ""
 "This website uses cookies to ensure you get the best experience on our "
 "website."
@@ -901,93 +775,75 @@ msgstr ""
 "Durch die weitere Nutzung stimmen Sie der Verwendung von Cookies zu."
 
 #: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:73
-#, fuzzy
 msgid "Learn more"
 msgstr "Mehr erfahren"
 
 #: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:80
-#, fuzzy
 msgid "Deny Cookies"
 msgstr "Cookies verweigern"
 
 #: packages/bitter_theme/themes/bitter_theme/elements/header_top.php:84
-#, fuzzy
 msgid "Allow Cookies"
 msgstr "Cookies erlauben"
 
 #: packages/bitter_theme/themes/bitter_theme/login.php:128
-#, fuzzy
 msgid "Submit"
 msgstr "Senden"
 
 #: packages/bitter_theme/themes/bitter_theme/login.php:139
-#, fuzzy
 msgid "You are already logged in."
 msgstr "Sie sind bereits eingeloggt."
 
 #: packages/bitter_theme/themes/bitter_theme/login.php:156
-#, fuzzy
 msgid "or"
 msgstr "oder"
 
 #: packages/bitter_theme/themes/bitter_theme/page_forbidden.php:28
-#, fuzzy
 msgid "Forbidden"
 msgstr "Nicht erlaubt"
 
 #: packages/bitter_theme/themes/bitter_theme/page_forbidden.php:32
-#, fuzzy
 msgid "You are not allowed to access this page."
 msgstr "Du darfst auf diese Seite nicht zugreifen."
 
 #: packages/bitter_theme/themes/bitter_theme/page_not_found.php:28
-#, fuzzy
 msgid "Page not found"
 msgstr "Seite nicht gefunden"
 
 #: packages/bitter_theme/themes/bitter_theme/page_not_found.php:32
-#, fuzzy
 msgid "The requested page could not be found."
 msgstr "Die von Ihnen angeforderte Seite wurde nicht gefunden."
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:118
 #: packages/bitter_theme/themes/bitter_theme/register.php:131
-#, fuzzy
 msgid "Return to Home"
 msgstr "Zurück zur Startseite"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:146
-#, fuzzy
 msgid "Username"
 msgstr "Benutzername"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:152
-#, fuzzy
 msgid "Email Address"
 msgstr "E-Mail Adresse"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:157
-#, fuzzy
 msgid "Password"
 msgstr "Passwort"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:163
-#, fuzzy
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:233
-#, fuzzy
 msgid "Create Account"
 msgstr "Konto erstellen"
 
 #: packages/bitter_theme/themes/bitter_theme/register.php:246
-#, fuzzy
 msgid "Already have an account?"
 msgstr "Du hast bereits ein Konto?"
 
 #: packages/bitter_theme/themes/bitter_theme/css/presets/defaults.less:8
-#, fuzzy
 msgctxt "PresetName"
 msgid "Default"
 msgstr "Standard"
