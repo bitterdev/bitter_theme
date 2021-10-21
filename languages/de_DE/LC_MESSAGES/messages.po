@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: bitter_theme 2.0.7\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-18T10:47:40+02:00\n"
-"PO-Revision-Date: 2021-09-18 10:48+0200\n"
+"PO-Revision-Date: 2021-10-21 21:10+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.4\n"
+"X-Generator: Poedit 3.0\n"
 
 #: packages/bitter_theme/blocks/switch_language/templates/bitter_language_switcher
 msgctxt "TemplateFileName"
@@ -181,7 +181,7 @@ msgstr "Nutzungsbedingungen"
 
 #: packages/bitter_theme/data.xml:42 packages/bitter_theme/controller.php:34
 msgid "Bitter Theme"
-msgstr "Bitteres Thema"
+msgstr "Bitter Theme"
 
 #: packages/bitter_theme/data.xml:46
 msgid "Settings"
