@@ -113,7 +113,7 @@ $this->inc('elements/header_top.php');
                 $attribute_helper = new Attribute(); ?>
 
                 <div class="attribute-mode">
-                    <form action="<?php echo (new View)->action('fill_attributes'); ?>" method="post">
+                    <form action="<?php echo View::action('fill_attributes'); ?>" method="post">
                         <div data-handle="required_attributes"
                              class="authentication-type authentication-type-required-attributes">
 
