@@ -1,0 +1,15 @@
+{
+  "name": "bitter/bitter_theme",
+  "description": "Powerful Theme for ConcreteCMS.",
+  "type": "concrete5-package",
+  "autoload": {
+    "psr-4": {
+      "Bitter\\BitterTheme\\": "src/Bitter/BitterTheme"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "gajus/dindent": "^2.0",
+    "ext-simplexml": "*"
+  }
+}

@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+    <sociallinks>
+        <link service="facebook" url="#"/>
+        <link service="github" url="#"/>
+        <link service="twitter" url="#"/>
+    </sociallinks>
+    <filesets>
+        <fileset name="Best References">
+            <files>
+                <file>{ccm:export:file:placeholder_square_white_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_white_10.jpg}</file>
+            </files>
+        </fileset>
+        <fileset name="Other Projects">
+            <files>
+                <file>{ccm:export:file:placeholder_square_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_10.jpg}</file>
+            </files>
+        </fileset>
+        <fileset name="concrete5 Projects">
+            <files>
+                <file>{ccm:export:file:placeholder_square_01.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_02.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_03.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_04.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_05.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_06.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_07.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_08.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_09.jpg}</file>
+                <file>{ccm:export:file:placeholder_square_10.jpg}</file>
+            </files>
+        </fileset>
+    </filesets>
+    <attributekeys>
+        <attributekey handle="page_selector_redirect" name="Page Selector Redirect" package="bitter_theme"
+                      searchable="1"
+                      indexed="0" type="page_selector"
+                      category="collection"/>
+        <attributekey handle="main_area_number" name="Main Area Number" package="bitter_theme"
+                      searchable="1"
+                      indexed="0" type="number"
+                      category="collection"/>
+        <attributekey handle="exclude_breadcrumb_nav" name="Exclude Breadcrumb Navigation" package="bitter_theme" searchable="1" indexed="0" type="boolean" category="collection">
+            <type checked=""/>
+        </attributekey>
+    </attributekeys>
+    <themes>
+        <theme handle="bitter_theme" activated="1" package="bitter_theme"/>
+    </themes>
+    <blocktypes>
+        <blocktype handle="accordion" package="bitter_theme"/>
+        <blocktype handle="counter" package="bitter_theme"/>
+        <blocktype handle="image_carousel" package="bitter_theme"/>
+        <blocktype handle="masonry_grid" package="bitter_theme"/>
+        <blocktype handle="progressbar" package="bitter_theme"/>
+    </blocktypes>
+    <blocktypesets>
+        <blocktypeset handle="bitter_theme" name="Bitter Theme" package="bitter_theme">
+            <blocktype handle="accordion"/>
+            <blocktype handle="counter"/>
+            <blocktype handle="image_carousel"/>
+            <blocktype handle="masonry_grid"/>
+            <blocktype handle="progressbar"/>
+        </blocktypeset>
+    </blocktypesets>
+    <pagetemplates>
+        <pagetemplate icon="blank.png" name="Blank" handle="blank" package="bitter_theme" internal=""/>
+        <pagetemplate icon="full.png" name="Home" handle="home" package="bitter_theme" internal=""/>
+        <pagetemplate icon="left_sidebar.png" name="Left Sidebar" handle="left_sidebar" package="bitter_theme"
+                      internal=""/>
+        <pagetemplate icon="right_sidebar.png" name="Right Sidebar" handle="right_sidebar" package="bitter_theme"
+                      internal=""/>
+    </pagetemplates>
+    <pagetypes>
+        <pagetype name="Home" handle="home" package="" launch-in-composer="0">
+            <pagetemplates type="custom" default="home">
+                <pagetemplate handle="home"/>
+            </pagetemplates>
+            <target handle="all" package=""/>
+            <composer>
+                <formlayout>
+                    <set name="Basics" description="">
+                        <control custom-template="" required="1" custom-label="" description=""
+                                 type="core_page_property" handle="name"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="url_slug"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="page_template"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="publish_target"/>
+                    </set>
+                </formlayout>
+                <output/>
+            </composer>
+        </pagetype>
+        <pagetype name="Empty Page" handle="page" package="" launch-in-composer="0" is-frequently-added="1">
+            <pagetemplates type="except" default="full">
+                <pagetemplate handle="home"/>
+            </pagetemplates>
+            <target handle="all" package=""/>
+            <composer>
+                <formlayout>
+                    <set name="Basics" description="">
+                        <control custom-template="" required="1" custom-label="Page Name" description=""
+                                 type="core_page_property" handle="name"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="description"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="url_slug"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="page_template"/>
+                        <control custom-template="" custom-label="" description="" type="core_page_property"
+                                 handle="publish_target"/>
+                    </set>
+                </formlayout>
+                <output>
+                    <pagetemplate handle="full">
+                        <page name="" path="" filename="" pagetype="page" template="full" user="admin" description=""
+                              package="">
+                            <area name="Main">
+                                <blocks/>
+                            </area>
+                            <area name="Page Header">
+                                <blocks/>
+                            </area>
+                            <area name="Page Footer">
+                                <blocks/>
+                            </area>
+                        </page>
+                    </pagetemplate>
+                </output>
+            </composer>
+        </pagetype>
+    </pagetypes>
+    <stacks>
+        <stack name="Breadcrumb" type="global_area" path="/breadcrumb">
+            <area name="Main">
+                <blocks>
+                    <block type="autonav" name="" custom-template="bitter_breadcrumb">
+                        <data table="btNavigation">
+                            <record>
+                                <orderBy><![CDATA[display_asc]]></orderBy>
+                                <displayPages><![CDATA[top]]></displayPages>
+                                <displayPagesCID/>
+                                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+                                <displaySubPages><![CDATA[relevant_breadcrumb]]></displaySubPages>
+                                <displaySubPageLevels><![CDATA[enough]]></displaySubPageLevels>
+                                <displaySubPageLevelsNum><![CDATA[0]]></displaySubPageLevelsNum>
+                                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </stack>
+        <stack name="Footer Copyright" type="global_area" path="/footer-copyright">
+            <area name="Main">
+                <blocks>
+                    <block type="content" name="">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[
+                                    <p>© 2021 <a href="https://www.bitter.de/">Bitter Digital Solutions</a></p>]]></content>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="autonav" name="" custom-template="bitter_footer_nav">
+                        <data table="btNavigation">
+                            <record>
+                                <orderBy><![CDATA[display_asc]]></orderBy>
+                                <displayPages><![CDATA[custom]]></displayPages>
+                                <displayPagesCID>{ccm:export:page:/legal}</displayPagesCID>
+                                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+                                <displaySubPages><![CDATA[none]]></displaySubPages>
+                                <displaySubPageLevels><![CDATA[enough]]></displaySubPageLevels>
+                                <displaySubPageLevelsNum><![CDATA[0]]></displaySubPageLevelsNum>
+                                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </stack>
+        <stack name="Header Language Switcher" type="global_area" path="/header-language-switcher">
+            <area name="Main">
+                <blocks>
+                    <block type="switch_language" name="" custom-template="bitter_language_switcher">
+                        <data table="btSwitchLanguage">
+                            <record>
+                                <label><![CDATA[Choose Language]]></label>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </stack>
+        <stack name="Header Navigation" type="global_area" path="/header-navigation">
+            <area name="Main">
+                <blocks>
+                    <block type="autonav" name="" custom-template="bitter_header_nav" cache-output="0"
+                           cache-output-lifetime="300" cache-output-on-post="0" cache-output-for-registered-users="0">
+                        <data table="btNavigation">
+                            <record>
+                                <orderBy><![CDATA[display_asc]]></orderBy>
+                                <displayPages><![CDATA[top]]></displayPages>
+                                <displayPagesCID/>
+                                <displayPagesIncludeSelf><![CDATA[0]]></displayPagesIncludeSelf>
+                                <displaySubPages><![CDATA[all]]></displaySubPages>
+                                <displaySubPageLevels><![CDATA[custom]]></displaySubPageLevels>
+                                <displaySubPageLevelsNum><![CDATA[1]]></displaySubPageLevelsNum>
+                                <displayUnavailablePages><![CDATA[0]]></displayUnavailablePages>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </stack>
+    </stacks>
+    <pages>
+        <page name="Home" path="" public-date="2021-06-09 23:46:00" filename="" pagetype="page" template="full" user="admin"
+              description="" package="" root="true">
+            <attributes>
+                <attributekey handle="exclude_nav">
+                    <value>0</value>
+                </attributekey>
+                <attributekey handle="main_area_number">
+                    <value><![CDATA[2]]></value>
+                </attributekey>
+            </attributes>
+            <area name="Main">
+                <blocks>
+                    <block type="image_slider" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>50px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btImageSlider">
+                            <record>
+                                <navigationType><![CDATA[2]]></navigationType>
+                                <timeout><![CDATA[4000]]></timeout>
+                                <speed><![CDATA[500]]></speed>
+                                <noAnimate><![CDATA[0]]></noAnimate>
+                                <pause><![CDATA[1]]></pause>
+                                <maxWidth><![CDATA[0]]></maxWidth>
+                            </record>
+                        </data>
+                        <data table="btImageSliderEntries">
+                            <record>
+                                <id><![CDATA[42]]></id>
+                                <cID><![CDATA[0]]></cID>
+                                <fID>{ccm:export:file:slider.png}</fID>
+                                <linkURL><![CDATA[]]></linkURL>
+                                <internalLinkCID><![CDATA[0]]></internalLinkCID>
+                                <title><![CDATA[]]></title>
+                                <description><![CDATA[]]></description>
+                                <sortOrder><![CDATA[0]]></sortOrder>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="page_title" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment>center</alignment>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>15px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[1]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[Welcome To Our Website!]]></titleText>
+                                <formatting><![CDATA[h2]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="core_area_layout" name="">
+                        <arealayout type="theme-grid" columns="12">
+                            <columns>
+                                <column span="6" offset="0">
+                                    <block type="image" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom>15px</paddingBottom>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentImage">
+                                            <record>
+                                                <fID>{ccm:export:file:placeholder.jpg}</fID>
+                                                <fOnstateID/>
+                                                <cropImage><![CDATA[0]]></cropImage>
+                                                <maxWidth><![CDATA[0]]></maxWidth>
+                                                <maxHeight><![CDATA[0]]></maxHeight>
+                                                <externalLink><![CDATA[]]></externalLink>
+                                                <internalLinkCID/>
+                                                <fileLinkID/>
+                                                <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
+                                                <altText><![CDATA[]]></altText>
+                                                <title><![CDATA[]]></title>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="6" offset="0">
+                                    <block type="content" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom/>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p><ul><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li></ul>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                            </columns>
+                        </arealayout>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Custom Area 1">
+                <style>
+                    <backgroundColor/>
+                    <backgroundRepeat>no-repeat</backgroundRepeat>
+                    <backgroundSize>auto</backgroundSize>
+                    <backgroundPosition>0% 0%</backgroundPosition>
+                    <borderWidth/>
+                    <borderColor/>
+                    <borderStyle/>
+                    <borderRadius/>
+                    <baseFontSize/>
+                    <alignment/>
+                    <textColor/>
+                    <linkColor/>
+                    <paddingTop/>
+                    <paddingBottom/>
+                    <paddingLeft/>
+                    <paddingRight/>
+                    <marginTop/>
+                    <marginBottom/>
+                    <marginLeft/>
+                    <marginRight/>
+                    <rotate/>
+                    <boxShadowHorizontal/>
+                    <boxShadowVertical/>
+                    <boxShadowBlur/>
+                    <boxShadowSpread/>
+                    <boxShadowColor/>
+                    <customClass>area-gray</customClass>
+                    <customID/>
+                    <customElementAttribute/>
+                    <hideOnExtraSmallDevice/>
+                    <hideOnSmallDevice/>
+                    <hideOnMediumDevice/>
+                    <hideOnLargeDevice/>
+                </style>
+                <blocks>
+                    <block type="page_title" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment>center</alignment>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>15px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[1]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[Best Of Our Works]]></titleText>
+                                <formatting><![CDATA[h2]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="core_area_layout" name="">
+                        <arealayout type="theme-grid" columns="12">
+                            <columns>
+                                <column span="2" offset="0"/>
+                                <column span="8" offset="0">
+                                    <block type="content" name="">
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="2" offset="0"/>
+                            </columns>
+                        </arealayout>
+                    </block>
+                    <block type="image_carousel" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom/>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID>home</customID>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btImageCarousel">
+                            <record>
+                                <fileSetId>{ccm:export:file_set:Best References}</fileSetId>
+                                <thumbnailType><![CDATA[]]></thumbnailType>
+                                <speed><![CDATA[300]]></speed>
+                                <autoplaySpeed><![CDATA[2000]]></autoplaySpeed>
+                                <infinite><![CDATA[0]]></infinite>
+                                <dots><![CDATA[1]]></dots>
+                                <autoplay><![CDATA[1]]></autoplay>
+                            </record>
+                        </data>
+                        <data table="btImageCarouselBreakpoints">
+                            <record>
+                                <breakpoint><![CDATA[1024]]></breakpoint>
+                                <slidesToShow><![CDATA[4]]></slidesToShow>
+                                <slidesToScroll><![CDATA[3]]></slidesToScroll>
+                            </record>
+                            <record>
+                                <breakpoint><![CDATA[920]]></breakpoint>
+                                <slidesToShow><![CDATA[2]]></slidesToShow>
+                                <slidesToScroll><![CDATA[2]]></slidesToScroll>
+                            </record>
+                            <record>
+                                <breakpoint><![CDATA[480]]></breakpoint>
+                                <slidesToShow><![CDATA[1]]></slidesToShow>
+                                <slidesToScroll><![CDATA[1]]></slidesToScroll>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Custom Area 2">
+                <blocks>
+                    <block type="page_title" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment>center</alignment>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>15px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[1]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[More About Us]]></titleText>
+                                <formatting><![CDATA[h2]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="core_area_layout" name="">
+                        <arealayout type="theme-grid" columns="12">
+                            <columns>
+                                <column span="4" offset="0">
+                                    <block type="content" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom/>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <p><strong>Who we are </strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p><p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate&nbsp;Proin porta.</p><p>Sed hendrerit enim non justo posuere eget purus vel mauris tincidunt et nibhbus facilisis dolorus urabitur eget lorem diam ipsum glavrida!</p>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="4" offset="0">
+                                    <block type="content" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom/>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <p><strong>Features</strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p><ul><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li><li>Lorem ipsum dolor sit amet</li></ul>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="4" offset="0">
+                                    <block type="content" name="">
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[<p><strong>Our experience</strong></p>
+]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                    <block type="progressbar" name="">
+                                        <data table="btProgressbar">
+                                            <record>
+                                                <label><![CDATA[Development]]></label>
+                                                <value><![CDATA[90]]></value>
+                                                <duration><![CDATA[1000]]></duration>
+                                            </record>
+                                        </data>
+                                    </block>
+                                    <block type="progressbar" name="">
+                                        <data table="btProgressbar">
+                                            <record>
+                                                <label><![CDATA[Design]]></label>
+                                                <value><![CDATA[80]]></value>
+                                                <duration><![CDATA[1000]]></duration>
+                                            </record>
+                                        </data>
+                                    </block>
+                                    <block type="progressbar" name="">
+                                        <data table="btProgressbar">
+                                            <record>
+                                                <label><![CDATA[Photography]]></label>
+                                                <value><![CDATA[70]]></value>
+                                                <duration><![CDATA[1000]]></duration>
+                                            </record>
+                                        </data>
+                                    </block>
+                                    <block type="progressbar" name="">
+                                        <data table="btProgressbar">
+                                            <record>
+                                                <label><![CDATA[Video]]></label>
+                                                <value><![CDATA[60]]></value>
+                                                <duration><![CDATA[1000]]></duration>
+                                            </record>
+                                        </data>
+                                    </block>
+                                    <block type="progressbar" name="">
+                                        <data table="btProgressbar">
+                                            <record>
+                                                <label><![CDATA[Print]]></label>
+                                                <value><![CDATA[50]]></value>
+                                                <duration><![CDATA[1000]]></duration>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                            </columns>
+                        </arealayout>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="References" path="/references" public-date="2017-10-11 06:57:00" filename="" pagetype="page"
+              template="full" user="admin" description="" package="">
+            <attributes>
+                <attributekey handle="exclude_breadcrumb_nav">
+                    <value>1</value>
+                </attributekey>
+            </attributes>
+            <area name="Main">
+                <blocks>
+                    <block type="image_slider" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>50px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btImageSlider">
+                            <record>
+                                <navigationType><![CDATA[2]]></navigationType>
+                                <timeout><![CDATA[4000]]></timeout>
+                                <speed><![CDATA[500]]></speed>
+                                <noAnimate><![CDATA[0]]></noAnimate>
+                                <pause><![CDATA[1]]></pause>
+                                <maxWidth><![CDATA[0]]></maxWidth>
+                            </record>
+                        </data>
+                        <data table="btImageSliderEntries">
+                            <record>
+                                <id><![CDATA[44]]></id>
+                                <cID><![CDATA[0]]></cID>
+                                <fID>{ccm:export:file:slider.png}</fID>
+                                <linkURL><![CDATA[]]></linkURL>
+                                <internalLinkCID><![CDATA[0]]></internalLinkCID>
+                                <title><![CDATA[]]></title>
+                                <description><![CDATA[]]></description>
+                                <sortOrder><![CDATA[0]]></sortOrder>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="page_title" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment>center</alignment>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>15px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[1]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[Our Work]]></titleText>
+                                <formatting><![CDATA[h1]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="core_area_layout" name="">
+                        <arealayout type="theme-grid" columns="12">
+                            <columns>
+                                <column span="2" offset="0"/>
+                                <column span="8" offset="0">
+                                    <block type="content" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom>15px</paddingBottom>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <p style="text-align: center;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="2" offset="0"/>
+                            </columns>
+                        </arealayout>
+                    </block>
+                    <block type="masonry_grid" name="">
+                        <data table="btMasonryGridFileSets">
+                            <record>
+                                <fileSetId>{ccm:export:file_set:concrete5 Projects}</fileSetId>
+                            </record>
+                            <record>
+                                <fileSetId>{ccm:export:file_set:Other Projects}</fileSetId>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="About us" path="/about-us" public-date="2017-10-11 07:26:00" filename="" pagetype="page"
+              template="full" user="admin" description="" package="">
+            <attributes>
+                <attributekey handle="main_area_number">
+                    <value><![CDATA[2]]></value>
+                </attributekey>
+                <attributekey handle="exclude_breadcrumb_nav">
+                    <value>1</value>
+                </attributekey>
+            </attributes>
+            <area name="Main">
+                <blocks>
+                    <block type="image_slider" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>50px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btImageSlider">
+                            <record>
+                                <navigationType><![CDATA[2]]></navigationType>
+                                <timeout><![CDATA[4000]]></timeout>
+                                <speed><![CDATA[500]]></speed>
+                                <noAnimate><![CDATA[0]]></noAnimate>
+                                <pause><![CDATA[1]]></pause>
+                                <maxWidth><![CDATA[0]]></maxWidth>
+                            </record>
+                        </data>
+                        <data table="btImageSliderEntries">
+                            <record>
+                                <id><![CDATA[43]]></id>
+                                <cID><![CDATA[0]]></cID>
+                                <fID>{ccm:export:file:slider.png}</fID>
+                                <linkURL><![CDATA[]]></linkURL>
+                                <internalLinkCID><![CDATA[0]]></internalLinkCID>
+                                <title><![CDATA[]]></title>
+                                <description><![CDATA[]]></description>
+                                <sortOrder><![CDATA[0]]></sortOrder>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="core_area_layout" name="">
+                        <arealayout type="theme-grid" columns="12">
+                            <columns>
+                                <column span="6" offset="0">
+                                    <block type="image" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom>15px</paddingBottom>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentImage">
+                                            <record>
+                                                <fID>{ccm:export:file:placeholder.jpg}</fID>
+                                                <fOnstateID/>
+                                                <cropImage><![CDATA[0]]></cropImage>
+                                                <maxWidth><![CDATA[0]]></maxWidth>
+                                                <maxHeight><![CDATA[0]]></maxHeight>
+                                                <externalLink><![CDATA[]]></externalLink>
+                                                <internalLinkCID/>
+                                                <fileLinkID/>
+                                                <openLinkInNewWindow><![CDATA[0]]></openLinkInNewWindow>
+                                                <altText><![CDATA[]]></altText>
+                                                <title><![CDATA[]]></title>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                                <column span="6" offset="0">
+                                    <block type="content" name="">
+                                        <style>
+                                            <backgroundColor/>
+                                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                                            <backgroundSize>auto</backgroundSize>
+                                            <backgroundPosition>0% 0%</backgroundPosition>
+                                            <borderWidth/>
+                                            <borderColor/>
+                                            <borderStyle/>
+                                            <borderRadius/>
+                                            <baseFontSize/>
+                                            <alignment/>
+                                            <textColor/>
+                                            <linkColor/>
+                                            <paddingTop/>
+                                            <paddingBottom/>
+                                            <paddingLeft/>
+                                            <paddingRight/>
+                                            <marginTop/>
+                                            <marginBottom/>
+                                            <marginLeft/>
+                                            <marginRight/>
+                                            <rotate/>
+                                            <boxShadowHorizontal/>
+                                            <boxShadowVertical/>
+                                            <boxShadowBlur/>
+                                            <boxShadowSpread/>
+                                            <boxShadowColor/>
+                                            <customClass/>
+                                            <customID/>
+                                            <customElementAttribute/>
+                                            <hideOnExtraSmallDevice/>
+                                            <hideOnSmallDevice/>
+                                            <hideOnMediumDevice/>
+                                            <hideOnLargeDevice/>
+                                        </style>
+                                        <data table="btContentLocal">
+                                            <record>
+                                                <content><![CDATA[
+                                                    <h2>Who We Are</h2><p><strong>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. </strong></p><p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate</p>]]></content>
+                                            </record>
+                                        </data>
+                                    </block>
+                                </column>
+                            </columns>
+                        </arealayout>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Custom Area 1">
+                <style>
+                    <backgroundColor/>
+                    <backgroundRepeat>no-repeat</backgroundRepeat>
+                    <backgroundSize>auto</backgroundSize>
+                    <backgroundPosition>0% 0%</backgroundPosition>
+                    <borderWidth/>
+                    <borderColor/>
+                    <borderStyle/>
+                    <borderRadius/>
+                    <baseFontSize/>
+                    <alignment/>
+                    <textColor/>
+                    <linkColor/>
+                    <paddingTop/>
+                    <paddingBottom/>
+                    <paddingLeft/>
+                    <paddingRight/>
+                    <marginTop/>
+                    <marginBottom/>
+                    <marginLeft/>
+                    <marginRight/>
+                    <rotate/>
+                    <boxShadowHorizontal/>
+                    <boxShadowVertical/>
+                    <boxShadowBlur/>
+                    <boxShadowSpread/>
+                    <boxShadowColor/>
+                    <customClass>area-gray</customClass>
+                    <customID/>
+                    <customElementAttribute/>
+                    <hideOnExtraSmallDevice/>
+                    <hideOnSmallDevice/>
+                    <hideOnMediumDevice/>
+                    <hideOnLargeDevice/>
+                </style>
+                <blocks>
+                    <block type="counter" name="">
+                        <data table="btCounter">
+                            <record>
+                                <duration><![CDATA[1000]]></duration>
+                            </record>
+                        </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[10]]></value>
+                                <description><![CDATA[Experts]]></description>
+                            </record>
+                        </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[100]]></value>
+                                <description><![CDATA[Customers]]></description>
+                            </record>
+                        </data>
+                        <data table="btCounterItems">
+                            <record>
+                                <value><![CDATA[150]]></value>
+                                <description><![CDATA[Projects]]></description>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+            <area name="Custom Area 2">
+                <blocks>
+                    <block type="content" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom>15px</paddingBottom>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<h2>What we do</h2>
+]]></content>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="accordion" name="">
+                        <data table="btAccordion">
+                            <record/>
+                        </data>
+                        <data table="btAccordionItems">
+                            <record>
+                                <title><![CDATA[Web]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
+                            </record>
+                            <record>
+                                <title><![CDATA[Print]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
+                            </record>
+                            <record>
+                                <title><![CDATA[Video]]></title>
+                                <body><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>]]></body>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="Contact" path="/contact" public-date="2017-10-07 07:32:39" filename="" pagetype="page"
+              template="full" user="admin" description="" package="">
+            <area name="Main">
+                <blocks>
+                    <block type="page_title" name="">
+                        <style>
+                            <backgroundColor/>
+                            <backgroundRepeat>no-repeat</backgroundRepeat>
+                            <backgroundSize>auto</backgroundSize>
+                            <backgroundPosition>0% 0%</backgroundPosition>
+                            <borderWidth/>
+                            <borderColor/>
+                            <borderStyle/>
+                            <borderRadius/>
+                            <baseFontSize/>
+                            <alignment/>
+                            <textColor/>
+                            <linkColor/>
+                            <paddingTop/>
+                            <paddingBottom/>
+                            <paddingLeft/>
+                            <paddingRight/>
+                            <marginTop/>
+                            <marginBottom/>
+                            <marginLeft/>
+                            <marginRight/>
+                            <rotate/>
+                            <boxShadowHorizontal/>
+                            <boxShadowVertical/>
+                            <boxShadowBlur/>
+                            <boxShadowSpread/>
+                            <boxShadowColor/>
+                            <customClass/>
+                            <customID/>
+                            <customElementAttribute/>
+                            <hideOnExtraSmallDevice/>
+                            <hideOnSmallDevice/>
+                            <hideOnMediumDevice/>
+                            <hideOnLargeDevice/>
+                        </style>
+                        <data table="btPageTitle">
+                            <record>
+                                <useCustomTitle><![CDATA[1]]></useCustomTitle>
+                                <useFilterTitle><![CDATA[0]]></useFilterTitle>
+                                <useFilterTopic><![CDATA[0]]></useFilterTopic>
+                                <useFilterTag><![CDATA[0]]></useFilterTag>
+                                <useFilterDate><![CDATA[0]]></useFilterDate>
+                                <topicTextFormat><![CDATA[0]]></topicTextFormat>
+                                <tagTextFormat><![CDATA[upperWord]]></tagTextFormat>
+                                <dateTextFormat><![CDATA[0]]></dateTextFormat>
+                                <filterDateFormat><![CDATA[F Y]]></filterDateFormat>
+                                <titleText><![CDATA[Get In Touch!]]></titleText>
+                                <formatting><![CDATA[h2]]></formatting>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="content" name="">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+]]></content>
+                            </record>
+                        </data>
+                    </block>
+                    <block type="form" name="">
+                        <data table="btForm">
+                            <record>
+                                <questionSetId><![CDATA[1508187987]]></questionSetId>
+                                <surveyName><![CDATA[Contact]]></surveyName>
+                                <submitText><![CDATA[Submit]]></submitText>
+                                <thankyouMsg><![CDATA[Thanks!]]></thankyouMsg>
+                                <notifyMeOnSubmission><![CDATA[0]]></notifyMeOnSubmission>
+                                <recipientEmail><![CDATA[]]></recipientEmail>
+                                <displayCaptcha><![CDATA[0]]></displayCaptcha>
+                                <redirectCID/>
+                                <addFilesToSet><![CDATA[0]]></addFilesToSet>
+                            </record>
+                        </data>
+                        <data table="btFormQuestions">
+                            <record>
+                                <qID><![CDATA[9]]></qID>
+                                <msqID><![CDATA[1]]></msqID>
+                                <questionSetId><![CDATA[1508187987]]></questionSetId>
+                                <question><![CDATA[First Name]]></question>
+                                <inputType><![CDATA[field]]></inputType>
+                                <options><![CDATA[]]></options>
+                                <position><![CDATA[1000]]></position>
+                                <width><![CDATA[50]]></width>
+                                <height><![CDATA[3]]></height>
+                                <defaultDate><![CDATA[]]></defaultDate>
+                                <required><![CDATA[1]]></required>
+                            </record>
+                            <record>
+                                <qID><![CDATA[10]]></qID>
+                                <msqID><![CDATA[2]]></msqID>
+                                <questionSetId><![CDATA[1508187987]]></questionSetId>
+                                <question><![CDATA[Last Name]]></question>
+                                <inputType><![CDATA[field]]></inputType>
+                                <options><![CDATA[]]></options>
+                                <position><![CDATA[1000]]></position>
+                                <width><![CDATA[50]]></width>
+                                <height><![CDATA[3]]></height>
+                                <defaultDate><![CDATA[]]></defaultDate>
+                                <required><![CDATA[1]]></required>
+                            </record>
+                            <record>
+                                <qID><![CDATA[11]]></qID>
+                                <msqID><![CDATA[3]]></msqID>
+                                <questionSetId><![CDATA[1508187987]]></questionSetId>
+                                <question><![CDATA[Email Address]]></question>
+                                <inputType><![CDATA[field]]></inputType>
+                                <options><![CDATA[]]></options>
+                                <position><![CDATA[1000]]></position>
+                                <width><![CDATA[50]]></width>
+                                <height><![CDATA[3]]></height>
+                                <defaultDate><![CDATA[]]></defaultDate>
+                                <required><![CDATA[1]]></required>
+                            </record>
+                            <record>
+                                <qID><![CDATA[12]]></qID>
+                                <msqID><![CDATA[4]]></msqID>
+                                <questionSetId><![CDATA[1508187987]]></questionSetId>
+                                <question><![CDATA[Message]]></question>
+                                <inputType><![CDATA[text]]></inputType>
+                                <options><![CDATA[]]></options>
+                                <position><![CDATA[1000]]></position>
+                                <width><![CDATA[50]]></width>
+                                <height><![CDATA[3]]></height>
+                                <defaultDate><![CDATA[]]></defaultDate>
+                                <required><![CDATA[1]]></required>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="Legal" path="/legal" public-date="2021-06-20 01:23:00" filename="" pagetype="page" template="full"
+              user="admin" description="" package="">
+            <attributes>
+                <attributekey handle="exclude_nav">
+                    <value>1</value>
+                </attributekey>
+                <attributekey handle="page_selector_redirect">
+                    <value>/legal/privacy-policy</value>
+                </attributekey>
+            </attributes>
+        </page>
+        <page name="Privacy Policy" path="/legal/privacy-policy" public-date="2021-06-20 01:23:45" filename=""
+              pagetype="page" template="full" user="admin" description="" package="">
+            <area name="Main">
+                <blocks>
+                    <block type="content" name="">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&nbsp;</p>
+
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.&nbsp;</p>
+
+<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.&nbsp;</p>
+
+<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.&nbsp;</p>
+
+<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.&nbsp;</p>
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="Legal Information" path="/legal/legal-information" public-date="2021-06-20 01:23:55" filename=""
+              pagetype="page" template="full" user="admin" description="" package="">
+            <area name="Main">
+                <blocks>
+                    <block type="content" name="">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&nbsp;</p>
+
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.&nbsp;</p>
+
+<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.&nbsp;</p>
+
+<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.&nbsp;</p>
+
+<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.&nbsp;</p>
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+        <page name="Terms of Use" path="/legal/terms-use" public-date="2021-06-20 01:24:25" filename="" pagetype="page"
+              template="full" user="admin" description="" package="">
+            <area name="Main">
+                <blocks>
+                    <block type="content" name="">
+                        <data table="btContentLocal">
+                            <record>
+                                <content><![CDATA[<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.&nbsp;</p>
+
+<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.&nbsp;</p>
+
+<p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.&nbsp;</p>
+
+<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.&nbsp;</p>
+
+<p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.&nbsp;</p>
+
+<p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.&nbsp;</p>
+
+<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.&nbsp;</p>
+]]></content>
+                            </record>
+                        </data>
+                    </block>
+                </blocks>
+            </area>
+        </page>
+    </pages>
+</concrete5-cif>

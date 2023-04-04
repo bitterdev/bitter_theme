@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<concrete5-cif version="1.0">
+    <themes>
+        <theme handle="bitter_theme" activated="1" package="bitter_theme"/>
+    </themes>
+    <attributekeys>
+        <attributekey handle="page_selector_redirect" name="Page Selector Redirect" package="bitter_theme"
+                      searchable="1"
+                      indexed="0" type="page_selector"
+                      category="collection"/>
+        <attributekey handle="main_area_number" name="Main Area Number" package="bitter_theme"
+                      searchable="1"
+                      indexed="0" type="number"
+                      category="collection"/>
+        <attributekey handle="exclude_breadcrumb_nav" name="Exclude Breadcrumb Navigation" package="bitter_theme" searchable="1" indexed="0" type="boolean" category="collection">
+            <type checked=""/>
+        </attributekey>
+    </attributekeys>
+    <themes>
+        <theme handle="bitter_theme" activated="1" package="bitter_theme"/>
+    </themes>
+    <blocktypes>
+        <blocktype handle="accordion" package="bitter_theme"/>
+        <blocktype handle="counter" package="bitter_theme"/>
+        <blocktype handle="image_carousel" package="bitter_theme"/>
+        <blocktype handle="masonry_grid" package="bitter_theme"/>
+        <blocktype handle="progressbar" package="bitter_theme"/>
+    </blocktypes>
+    <blocktypesets>
+        <blocktypeset handle="bitter_theme" name="Bitter Theme" package="bitter_theme">
+            <blocktype handle="accordion"/>
+            <blocktype handle="counter"/>
+            <blocktype handle="image_carousel"/>
+            <blocktype handle="masonry_grid"/>
+            <blocktype handle="progressbar"/>
+        </blocktypeset>
+    </blocktypesets>
+    <singlepages>
+        <page name="Bitter Theme" path="/dashboard/bitter_theme"
+              filename="/dashboard/bitter_theme.php"
+              pagetype="" description=""
+              package="bitter_theme">
+        </page>
+        <page name="Settings" path="/dashboard/bitter_theme/settings"
+              filename="/dashboard/bitter_theme/settings.php" pagetype="" description=""
+              package="bitter_theme">
+        </page>
+    </singlepages>
+</concrete5-cif>
