@@ -21,6 +21,7 @@
     "production": "mix --production"
   },
   "dependencies": {
+    "@fontsource/open-sans": "^5.0.9",
     "@orestbida/iframemanager": "^1.2.5",
     "macy": "^2.0.0",
     "mmenu-light": "^3.2.2",

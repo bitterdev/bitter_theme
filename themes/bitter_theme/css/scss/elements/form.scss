@@ -60,7 +60,7 @@
     font-weight: 400 !important;
   }
 
-  input.ccm-input-text, .form-control {
+  input.ccm-input-text, .form-control, select {
     border-radius: 0;
     box-shadow: none !important;
     display: block;
@@ -68,7 +68,7 @@
     border: 1px solid #d1d1d1 !important;
     background-color: #ffffff;
     color: #555;
-    height: 36px;
+    height: 37px;
     line-height: 36px;
     margin-bottom: 15px;
     padding: 0 8px;

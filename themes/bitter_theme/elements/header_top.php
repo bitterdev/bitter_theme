@@ -31,19 +31,8 @@ $privacyPage = Page::getByID($config->get("bitter_theme.privacy_page_id"));
 $hasPrivacyPage = $privacyPage instanceof Page && !$privacyPage->isError();
 $language = substr(Localization::getInstance()->getLocale(), 0, 2);
 $siteName = $site->getSiteName();
+$cookieTable = $config->get("bitter_theme.cookie_table", []) || [];
 
-$cookieTable = [
-    [
-        "col1" => "_ga",
-        "col2" => "gutachter-engel.de",
-        "col3" => "2 Jahre"
-    ],
-    [
-        "col1" => "_gid",
-        "col2" => "gutachter-engel.de",
-        "col3" => "24 Stunden"
-    ]
-];
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo Localization::activeLanguage() ?>">
@@ -77,9 +66,9 @@ $cookieTable = [
                 "language" => $language,
                 "languages" => [
                     $language => [
-                        "notice" => "Dieser Inhalt wird von einem Dritten gehostet. Mit der Anzeige der externen Inhalte akzeptieren Sie die <a rel=\"noreferrer noopener\" href=\"https://cloud.google.com/maps-platform/terms\" target=\"_blank\">Datenschutzbestimmungen</a> von Google Maps.",
-                        "loadBtn" => t("Show Map"),
-                        "loadAllBtn" => "Immer anzeigen"
+                        "notice" => t("This content is hosted by 3rd party. By clicking the view maps button you agree to the <a rel=\"noreferrer noopener\" href=\"https://cloud.google.com/maps-platform/terms\" target=\"_blank\">privacy policy</a> of Google Maps."),
+                        "loadBtn" => t("Display Map"),
+                        "loadAllBtn" => t("Always Display")
                     ]
                 ]
             ],
@@ -88,41 +77,41 @@ $cookieTable = [
                 "languages" => [
                     $language => [
                         "consent_modal" => [
-                            "title" => "Wir benötigen Ihre Einwilligung",
-                            "description" => "Auf unserer Webseite kommen verschiedene Cookies zum Einsatz: technische, zu Marketing-Zwecken und solche zu Analyse-Zwecken; Sie können unsere Webseite grundsätzlich auch ohne das Setzen von Cookies besuchen. Hiervon ausgenommen sind die technisch notwendigen Cookies. Ihnen steht jederzeit ein Widerrufsrecht zu. Durch klicken auf <strong>Alle Akzeptieren</strong> erklären Sie sich einverstanden, dass wir die vorgenannten Cookies zu Marketing- und zu Analyse-Zwecken setzen.",
+                            "title" => t("We use cookies!"),
+                            "description" => t("We use multiple cookies on our website for technical, marketing and for analysis purposes; In principle, you can also visit our website without setting cookies. The technically necessary cookies are excluded from this. You have a right of withdrawal at any time. By clicking on the accept all button, you agree that we set the additional cookies for marketing and analysis purposes."),
                             "primary_btn" => [
-                                "text" => "Alle Akzeptieren",
+                                "text" => t("Accept all"),
                                 "role" => "accept_all"
                             ],
                             "secondary_btn" => [
-                                "text" => "Einstellungen",
+                                "text" => t("Manage cookie settings"),
                                 "role" => "settings"
                             ],
                         ],
                         "settings_modal" => [
-                            "title" => "Cookie Einstellungen",
-                            "save_settings_btn" => "Speichere aktuelle Auswahl",
-                            "accept_all_btn" => "Alle akzeptieren",
-                            "reject_all_btn" => "Alle ablehnen",
-                            "close_btn_label" => "Schließen",
+                            "title" => t("Cookie preferences"),
+                            "save_settings_btn" => t('Save settings'),
+                            "accept_all_btn" => t('Accept all'),
+                            "reject_all_btn" => t('Reject all'),
+                            "close_btn_label" => t('Close'),
                             "cookie_table_headers" => [
                                 [
-                                    "col1" => "Name"
+                                    "col1" => t("Name")
                                 ],
                                 [
-                                    "col2" => "Domain"
+                                    "col2" => t("Domain")
                                 ],
                                 [
-                                    "col3" => "Ablaufdatum"
+                                    "col3" => t("Expiration")
                                 ]
                             ],
                             "blocks" => [
                                 [
-                                    "description" => "Weitere Information zum Umgang mit Cookies finden Sie in unseren <a class=\"cc-link\" href=\"datenschutz.html\">Datenschutzbestimmungen</a>."
+                                    "description" => t("Further information you can find in our <a class=\"cc-link\" href=\"{0}\">privacy policy</a>.")
                                 ],
                                 [
-                                    "title" => "Technische notwendige Cookies",
-                                    "description" => "Diese Technologien sind für die grundlegenden Funktionen der Website erforderlich.",
+                                    "title" => t('Strictly necessary cookies'),
+                                    "description" => t('These cookies are essential for the proper functioning of our website. Without these cookies, the website would not work properly'),
                                     "toggle" => [
                                         "value" => "necessary",
                                         "enabled" => true,
@@ -130,8 +119,8 @@ $cookieTable = [
                                     ]
                                 ],
                                 [
-                                    "title" => "Analytics & Marketing Cookies",
-                                    "description" => "Mit diesen Cookies kann die Reichweite unseres eigenen Angebots gemessen werden. Die Cookies ermöglichen es uns unter anderem zu verfolgen, welche Website vor dem Zugriff auf unsere Website besucht wurde und wie unsere Website genutzt wurde. Diese Daten verwenden wir unter anderem zur Optimierung unserer Website durch Auswertung der von uns durchgeführten Kampagnen.",
+                                    "title" =>t( "Analytics & Marketing Cookies"),
+                                    "description" => t("These cookies allow the website to remember the choices you have made in the past."),
                                     "toggle" => [
                                         "value" => "analytics",
                                         "enabled" => false,
