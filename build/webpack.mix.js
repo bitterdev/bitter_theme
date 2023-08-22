@@ -46,4 +46,4 @@ mix
     .copy('node_modules/@orestbida/iframemanager/dist/iframemanager.js', '../js/iframemanager.js')
     .copy('node_modules/toastify-js/src/toastify.js', '../js/toastify.js')
     .copy('node_modules/toastify-js/src/toastify.css', '../css/toastify.css')
-    .copyDirectory('node_modules/@fontsource/open-sans', '../themes/bitter_theme/css/fonts/open-sans')
+    .copyDirectory('node_modules/@fontsource/open-sans/files', '../themes/bitter_theme/css/fonts')
