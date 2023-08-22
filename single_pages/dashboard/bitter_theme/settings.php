@@ -43,12 +43,9 @@ $pageSelector = $app->make(PageSelector::class);
         </legend>
 
         <div class="form-group">
-            <div class="checkbox">
-                <label>
-                    <?php echo $form->checkbox("enableExtendedFooter", 1, $enableExtendedFooter); ?>
-
-                    <?php echo t("Enable Extended Footer"); ?>
-                </label>
+            <div class="form-check">
+                <?php echo $form->checkbox("enableExtendedFooter", 1, $enableExtendedFooter); ?>
+                <?php echo $form->label("enableExtendedFooter", t("Enable Extended Footer"), ["class" => "form-check-label"]); ?>
             </div>
         </div>
 
@@ -70,11 +67,7 @@ $pageSelector = $app->make(PageSelector::class);
 
     <div class="ccm-dashboard-form-actions-wrapper">
         <div class="ccm-dashboard-form-actions">
-            <?php echo $form->submit('save', t('Save'), ['class' => 'btn btn-primary pull-right']); ?>
+            <?php echo $form->submit('save', t('Save'), ['class' => 'btn btn-primary float-end']); ?>
         </div>
     </div>
 </form>
-
-<?php
-/** @noinspection PhpUnhandledExceptionInspection */
-View::element('/dashboard/did_you_know', ["packageHandle" => "bitter_theme"], 'bitter_theme');

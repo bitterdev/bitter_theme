@@ -10,10 +10,6 @@
 
 defined('C5_EXECUTE') or die('Access denied');
 
-View::element('/dashboard/Help', null, 'progressbar');
-
-View::element('/dashboard/Reminder', array("packageHandle" => "progressbar", "rateUrl" => "https://www.concrete5.org/marketplace/addons/progressbar/reviews"), 'progressbar');
-
 $defaults = array(
     'className' => 'ccm-widget-colorpicker',
     'showInitial' => true,
@@ -25,8 +21,6 @@ $defaults = array(
 );
 
 ?>
-
-<?php \Concrete\Core\View\View::element('/dashboard/license_check', array("packageHandle" => "progressbar"), 'progressbar'); ?>
 
 <div class="edit-settings-form">
     <div class="form-group">
@@ -97,4 +91,3 @@ $defaults = array(
     </div>
 </div>
 
-<?php \Concrete\Core\View\View::element('/dashboard/did_you_know', array("packageHandle" => "progressbar"), 'progressbar'); ?>
