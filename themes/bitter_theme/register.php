@@ -253,5 +253,5 @@ $renderer->setContext(new FrontendFormContext());
 
 <?php
 /** @noinspection PhpUnhandledExceptionInspection */
-$this->inc('elements/footer_top.php');
+$this->inc('elements/footer_bottom.php');
 ?>

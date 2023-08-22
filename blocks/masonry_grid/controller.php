@@ -13,7 +13,9 @@ namespace Concrete\Package\BitterTheme\Block\MasonryGrid;
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Cache\Level\ExpensiveCache;
 use Concrete\Core\Database\Connection\Connection;
-use Concrete\Core\File\Image\BasicThumbnailer;
+use Concrete\Core\Entity\File\Image\Thumbnail\Type\Type as TypeEntity;
+use Concrete\Core\Entity\File\Version;
+use Concrete\Core\File\Image\Thumbnail\Type\Type;
 use Concrete\Core\File\Set\Set;
 use Concrete\Core\File\Set\SetList;
 use Concrete\Core\File\Type\Type as FileType;
@@ -25,6 +27,7 @@ class Controller extends BlockController
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 500;
     protected $btCacheBlockOutputLifetime = 300;
+    protected $btExportFileFolderColumns = ["fileSetId"];
 
     public function getBlockTypeDescription(): string
     {
@@ -213,44 +216,43 @@ class Controller extends BlockController
     {
         $images = [];
 
-        $ttl = 24 * 60 * 60 * 30;
+        $thumbnailType = Type::getByHandle("square_thumbnail");
 
-        /** @var $cache ExpensiveCache */
-        $cache = $this->app->make('cache/expensive');
+        foreach (array_keys($this->getSelectedFileSets()) as $fileSetId) {
+            foreach ($this->getAllImagesInFileSet($fileSetId) as $fileObject) {
+                $fileId = $fileObject->getFileID();
 
-        $cacheItem = $cache->getItem('bitter_theme.masonry_grid.images_' . $this->getBlockIdentifier());
+                $fileVersion = $fileObject->getApprovedVersion();
 
-        if ($cacheItem->isMiss()) {
-            /** @var BasicThumbnailer $imageHelper */
-            $imageHelper = $this->app->make(BasicThumbnailer::class);
+                $imageUrl = null;
 
-            foreach (array_keys($this->getSelectedFileSets()) as $fileSetId => $fileSetName) {
-                foreach ($this->getAllImagesInFileSet($fileSetName) as $fileObject) {
-                    $fileId = $fileObject->getFileID();
-
-                    if (isset($images[$fileId]) === false) {
-                        $images[$fileId] = [
-                            "fileId" => $fileId,
-                            "fileObject" => $fileObject,
-                            "title" => $fileObject->getTitle(),
-                            "description" => strlen($fileObject->getDescription()) > 0 ? $fileObject->getDescription() : t("No description available."),
-                            "url" => $fileObject->getURL(),
-                            "width" => (int)$fileObject->getAttribute('width'),
-                            "height" => (int)$fileObject->getAttribute('height'),
-                            "ratio" => (int)$fileObject->getAttribute('width') / (int)$fileObject->getAttribute('height'),
-                            "fileSets" => array($fileSetName),
-                            "thumbnail" => $imageHelper->getThumbnail($fileObject, 600, 600 * (int)$fileObject->getAttribute('width') / (int)$fileObject->getAttribute('height'), false)->src
-                        ];
+                if ($fileVersion instanceof Version) {
+                    if ($thumbnailType instanceof TypeEntity) {
+                        $imageUrl = $fileVersion->getThumbnailURL($thumbnailType->getBaseVersion());
                     } else {
-                        array_push($images[$fileId]["fileSets"], $fileSetId);
+                        $imageUrl = $fileVersion->getURL();
                     }
                 }
-            }
 
-            $cacheItem->lock();
-            $cache->save($cacheItem->set($images)->expiresAfter($ttl));
-        } else {
-            $images = $cacheItem->get();
+                if (isset($images[$fileId]) === false) {
+                    $images[$fileId] = [
+                        "title" => $fileObject->getTitle(),
+                        "description" => strlen($fileObject->getDescription()) > 0 ? $fileObject->getDescription() : t("No description available."),
+                        "url" => $fileObject->getURL(),
+                        "width" => (int)$fileObject->getAttribute('width'),
+                        "height" => (int)$fileObject->getAttribute('height'),
+                        "ratio" => (int)$fileObject->getAttribute('width') / (int)$fileObject->getAttribute('height'),
+                        "fileSets" => [$fileSetId],
+                        "thumbnail" => $imageUrl
+                    ];
+                } else {
+                    if (!isset($images[$fileId]["fileSets"])) {
+                        $images[$fileId]["fileSets"] = [];
+                    }
+
+                    $images[$fileId]["fileSets"][] = $fileSetId;
+                }
+            }
         }
 
         return $images;

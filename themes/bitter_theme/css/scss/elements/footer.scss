@@ -1,0 +1,140 @@
+/**
+ * $project:   Bitter Theme
+ *
+ * $author     Fabian Bitter (fabian$bitter.de)
+ * $copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * $version    X.X.X
+ */
+
+.ccm-page {
+  footer {
+    display: block;
+    width: 100%;
+    flex: none;
+    background-repeat: no-repeat;
+    background-position-y: -130px;
+    background-position-x: -90px;
+    background-color: var(--bs-gay-100);
+    margin-top: 15px;
+    font-size: 1em;
+
+    &.extended {
+      .copyrights {
+        margin-bottom: 0;
+      }
+    }
+
+    * {
+      color: #555 !important;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .extended-footer {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      background-color: var(--bs-gray-100);
+
+      ul.nav {
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+
+        li {
+          padding: 0;
+          margin: 0;
+          background-color: transparent;
+
+          a {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            line-height: 2.8em;
+          }
+        }
+      }
+    }
+
+    .copyrights {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-bottom: 15px;
+      background-color: var(--bs-gray-100);
+
+      p {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        font-weight: 600;
+      }
+
+      nav {
+        text-align: right;
+        display: inline-block;
+        float: right;
+
+        ul {
+          display: block;
+          margin: 0;
+          padding: 0;
+          list-style: none;
+
+          li {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background-color: transparent;
+
+            &:not(:first-child)::before {
+              content: " | ";
+              color: #adadad;
+              padding: 0 4px;
+              display: inline-block;
+            }
+
+            &.nav-selected, &.nav-path-selected {
+              a {
+                color: var(--bs-primary) !important;
+              }
+            }
+
+            a {
+              color: #7d7d7d;
+              background-color: transparent;
+              margin: 0;
+              padding: 0;
+              display: inline-block;
+
+              &:hover {
+                text-decoration: none;
+                color: var(--bs-primary) !important;
+              }
+            }
+          }
+        }
+      }
+
+
+      @media (max-width: 991px) {
+        p {
+          display: block;
+          text-align: center;
+        }
+
+        nav {
+          margin: auto;
+          float: none;
+          display: block;
+
+          ul {
+            text-align: center;
+          }
+        }
+
+      }
+    }
+  }
+}

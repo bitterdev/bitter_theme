@@ -101,6 +101,8 @@ class Controller extends BlockController
         /** @noinspection PhpUnhandledExceptionInspection */
         $db->executeQuery("DELETE FROM btCounterItems WHERE bID = ?", [$this->bID]);
 
+        $args["items"] = $args["items"] ?? null;
+
         if (is_array($args["items"])) {
             foreach ($args["items"] as $item) {
                 /** @noinspection SqlDialectInspection */

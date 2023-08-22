@@ -24,6 +24,8 @@ class PageTheme extends Theme
         getColorCollection as getBedrockColorCollection;
     }
 
+    protected $pThemeGridFrameworkHandle = 'bootstrap5';
+
     public function getThemeName()
     {
         return t('Bitter Theme');
@@ -59,14 +61,17 @@ class PageTheme extends Theme
     public function registerAssets()
     {
         $this->requireAsset('javascript', 'jquery');
+        $this->requireAsset('vue');
+        $this->requireAsset('moment');
         $this->requireAsset('bootstrap');
         $this->requireAsset('mmenu-light');
         $this->requireAsset('slick');
+        $this->requireAsset('toastify');
+        $this->requireAsset('cookieconsent');
+        $this->requireAsset('iframemanager');
         $this->requireAsset('css', 'font-awesome');
         $this->requireAsset('javascript', 'respond');
         $this->requireAsset('javascript', 'html5-shiv');
-        $this->requireAsset('javascript', 'particles');
-        $this->providesAsset('javascript', 'bootstrap/*');
         $this->requireAsset('core/lightbox');
         $this->requireAsset('jquery/ui');
         $this->requireAsset('javascript', 'macy');
@@ -87,6 +92,75 @@ class PageTheme extends Theme
             'sm' => '576px',
             'xs' => '0',
         ];
+    }
+
+    public function getThemeAreaLayoutPresets()
+    {
+        $presets = [
+            [
+                'handle' => 'left_sidebar',
+                'name' => 'Left Sidebar',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-8"></div>',
+                ],
+            ],
+            [
+                'handle' => 'right_sidebar',
+                'name' => 'Right Sidebar',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-8"></div>',
+                    '<div class="col-md-4"></div>',
+                ],
+            ],
+            [
+                'handle' => 'split',
+                'name' => '2 Columns 50/50',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-6"></div>',
+                    '<div class="col-md-6"></div>',
+                ],
+            ],
+            [
+                'handle' => 'three_columns',
+                'name' => '3 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-4"></div>',
+                    '<div class="col-md-4"></div>',
+                ],
+            ],
+            [
+                'handle' => 'four_columns',
+                'name' => '4 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                    '<div class="col-md-3"></div>',
+                ],
+            ],
+            [
+                'handle' => 'six_columns',
+                'name' => '6 Columns',
+                'container' => '<div class="row"></div>',
+                'columns' => [
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                    '<div class="col-md-2"></div>',
+                ],
+            ],
+        ];
+
+        return $presets;
     }
 
     /**
@@ -141,21 +215,6 @@ class PageTheme extends Theme
                 'attributes' => array('class' => 'table table-striped')
             ],
         ];
-    }
-
-
-    public function getDocumentationProvider(): ?DocumentationProviderInterface
-    {
-        return new AtomikDocumentationProvider($this);
-    }
-
-    public function getColorCollection(): ?ColorCollection
-    {
-        $collection = $this->getBedrockColorCollection();
-        $collection->add(new Color('light-accent', t('Light Accent')));
-        $collection->add(new Color('accent', t('Accent')));
-        $collection->add(new Color('dark-accent', t('Dark Accent')));
-        return $collection;
     }
 
 }

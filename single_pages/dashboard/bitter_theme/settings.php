@@ -32,13 +32,6 @@ $fileManager = $app->make(FileManager::class);
 /** @var PageSelector $pageSelector */
 $pageSelector = $app->make(PageSelector::class);
 
-/** @noinspection PhpUnhandledExceptionInspection */
-View::element('/dashboard/help', null, 'bitter_theme');
-/** @noinspection PhpUnhandledExceptionInspection */
-View::element('/dashboard/reminder', ["packageHandle" => "bitter_theme", "rateUrl" => "https://www.concrete5.org/marketplace/themes/bitter-theme/reviews"], 'bitter_theme');
-/** @noinspection PhpUnhandledExceptionInspection */
-View::element('/dashboard/license_check', ["packageHandle" => "bitter_theme"], 'bitter_theme');
-
 ?>
 
 <form action="#" method="post">´

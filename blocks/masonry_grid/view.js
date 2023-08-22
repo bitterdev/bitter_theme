@@ -215,7 +215,7 @@ var initPhotoSwipeFromDOM = function (gallerySelector) {
 var masonryGrid = function (settings) {
     if ($(".pswp").length === 0) {
         $("body").append(
-            "<div class=\"pswp\" tabindex=\"-1\" role=\"dialog\" aria-hidden=\"true\">" +
+            "<div class=\"pswp\" tabindex=\"-1\" role=\"dialog\" aria-d-none=\"true\">" +
             "    <div class=\"pswp__bg\"></div>" +
             "    <div class=\"pswp__scroll-wrap\">" +
             "        <div class=\"pswp__container\">" +
@@ -223,7 +223,7 @@ var masonryGrid = function (settings) {
             "            <div class=\"pswp__item\"></div>" +
             "            <div class=\"pswp__item\"></div>" +
             "        </div>" +
-            "        <div class=\"pswp__ui pswp__ui--hidden\">" +
+            "        <div class=\"pswp__ui pswp__ui--d-none\">" +
             "            <div class=\"pswp__top-bar\">" +
             "                <div class=\"pswp__counter\"></div>" +
             "                <button class=\"pswp__button pswp__button--close\" title=\"" + settings.i18n.close + "\"></button>" +
@@ -238,7 +238,7 @@ var masonryGrid = function (settings) {
             "                    </div>" +
             "                </div>" +
             "            </div>" +
-            "            <div class=\"pswp__share-modal pswp__share-modal--hidden pswp__single-tap\">" +
+            "            <div class=\"pswp__share-modal pswp__share-modal--d-none pswp__single-tap\">" +
             "                <div class=\"pswp__share-tooltip\"></div> " +
             "            </div>" +
             "            <button class=\"pswp__button pswp__button--arrow--left\" title=\"" + settings.i18n.prev + "\"></button>" +
@@ -285,18 +285,21 @@ var masonryGrid = function (settings) {
     $el.find(".filter li").bind("click", function () {
         var fileSetId = $(this).data("fileSetId");
 
-        if (fileSetId === "") {
-            $el.find(".image").removeClass("hidden");
+        if (fileSetId == "") {
+            $el.find(".image").removeClass("d-none");
         } else {
             $el.find(".image").each(function () {
                 var fileSetIds = $(this).data("fileSetIds");
-
                 if (typeof fileSetIds === "number" && parseInt(fileSetIds) === parseInt(fileSetId)) {
-                    $(this).removeClass("hidden");
-                } else if (typeof fileSetIds === "string" && $.inArray(fileSetId, fileSetIds.split(","))) {
-                    $(this).removeClass("hidden");
+                    $(this).removeClass("d-none");
+                } else if (typeof fileSetIds === "string") {
+                    for(var curFileSetId in fileSetIds.split(",")) {
+                        if (parseInt(curFileSetId) === parseInt(fileSetId)) {
+                            $(this).removeClass("d-none");
+                        }
+                    }
                 } else {
-                    $(this).addClass("hidden");
+                    $(this).addClass("d-none");
                 }
             });
         }

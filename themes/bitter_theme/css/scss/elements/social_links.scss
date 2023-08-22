@@ -1,0 +1,33 @@
+/**
+ * $project:   Bitter Theme
+ *
+ * $author     Fabian Bitter (fabian$bitter.de)
+ * $copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * $version    X.X.X
+ */
+
+.ccm-page {
+  .ccm-block-social-links {
+    ul {
+      li {
+        a {
+          display: block;
+          width: 30px;
+          height: 30px;
+          background: #555;
+          color: #ffffff;
+          text-align: center;
+          line-height: 30px;
+
+          &:hover {
+            background-color: var(--bs-primary);
+          }
+
+          i {
+            color: $primary !important;
+          }
+        }
+      }
+    }
+  }
+}

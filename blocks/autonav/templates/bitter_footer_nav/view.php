@@ -61,6 +61,10 @@ foreach ($navItems as $ni) {
 }
 
 echo '<li>'; //opens a nav item
+echo '<a href="#" data-cc="c-settings">' . t("Manage cookie settings") . '</a>';
+echo '</li>';
+
+echo '<li>'; //opens a nav item
 echo $navigation->getLogInOutLink();
 echo '</li>';
 

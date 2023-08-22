@@ -1,0 +1,213 @@
+/**
+ * $project:   Bitter Theme
+ *
+ * $author     Fabian Bitter (fabian$bitter.de)
+ * $copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * $version    X.X.X
+ */
+
+.ccm-page {
+  .toastify.error {
+    background: var(--bs-danger) !important;
+  }
+
+  .toastify.success {
+    background: var(--bs-success) !important;
+  }
+
+  .ccm-block-express-form, .ccm-block-type-form, form {
+    clear: both;
+    margin: 0;
+  }
+
+  fieldset {
+    display: block;
+    width: 100%;
+
+    legend {
+      margin-bottom: 5px;
+    }
+  }
+
+  .ccm-captcha-image {
+    margin-bottom: 15px;
+    margin-left: 0;
+  }
+
+  .alert, div.alert-error {
+    margin-bottom: 15px;
+    border-radius: 0;
+
+    &.alert-success {
+      color: #3c763d !important;
+      background-color: #dff0d8 !important;
+      border-color: #d6e9c6 !important;
+    }
+
+    &.alert-danger {
+      color: #a94442 !important;
+      background-color: #f2dede !important;
+      border-color: #ebccd1 !important;
+    }
+  }
+
+  label, label.control-label {
+    display: block;
+    width: 100%;
+    margin: 0;
+    color: #555;
+    padding: 0 0 5px;
+    font-weight: 400 !important;
+  }
+
+  input.ccm-input-text, .form-control {
+    border-radius: 0;
+    box-shadow: none !important;
+    display: block;
+    width: 100%;
+    border: 1px solid #d1d1d1 !important;
+    background-color: #ffffff;
+    color: #555;
+    height: 36px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding: 0 8px;
+    outline: none;
+
+    &:focus, &:active {
+      border-color: var(--bs-primary) !important;
+    }
+  }
+
+  textarea {
+    border-radius: 0;
+    box-shadow: none !important;
+    display: block;
+    width: 100%;
+    border: 1px solid #d1d1d1 !important;
+    background-color: #ffffff;
+    color: #555;
+    height: 40px;
+    margin-bottom: 15px;
+    outline: none;
+    min-height: 130px;
+    line-height: 1.7em !important;
+    padding: 0 8px;
+
+    &:focus, &:active {
+      border-color: var(--bs-primary) !important;
+    }
+  }
+
+  .btn, .btn.btn-success {
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    min-width: 200px;
+    border: none;
+    background-color: var(--bs-gray-100);
+    color: var(--bs-body-color);
+    height: 40px;
+    line-height: 40px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 15px;
+    text-align: center;
+
+    @media (max-width: 767px) {
+      display: block;
+      width: 100%;
+      clear: both;
+    }
+
+    &.btn-sm {
+      line-height: 21px;
+      height: 23px;
+      padding: 0 5px;
+      margin: 0;
+      display: inline-block;
+      border: 1px solid var(--bs-primary);
+      background-color: transparent;
+      color: var(--bs-primary);
+      min-width: 0;
+
+    }
+
+    &.btn-block {
+      min-width: 0;
+      width: 100%;
+    }
+
+    &.btn-primary, &.ccm-input-submit {
+      background-color: var(--bs-primary);
+      color: #ffffff !important;
+
+      &:hover {
+        background-color: var(--bs-primary);
+      }
+    }
+  }
+
+  .input-group {
+    input {
+      margin-bottom: 0;
+    }
+
+    .input-group-btn {
+      .btn {
+        height: 36px;
+        display: block;
+      }
+    }
+  }
+}
+
+.alert-dismissible .btn-close {
+  display: none !important;
+}
+
+.centered form {
+  label:not(.form-check-label), .col-form-label {
+
+  }
+
+  label, label.control-label {
+    padding: 0 !important;
+  }
+
+  .form-check-input {
+    margin-top: 0.4em;
+  }
+
+  .mb-3, .col-sm-9, .col-form-label {
+    margin: 0 !important;;
+    padding: 0 !important;
+    width: 100% !important;;
+    display: block !important;;
+
+    .text-end {
+      font-size: 0.9em;
+    }
+  }
+
+  div.float-right, div.text-end {
+    display: flex;
+    padding: 0 !important;
+    margin-top: 15px;
+
+    a:not(.btn-link) {
+      width: 50%;
+      min-width: 0;
+      margin-right: 15px;
+    }
+
+    button {
+      width: 50%;
+      min-width: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 15px;
+  }
+}

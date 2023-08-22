@@ -61,7 +61,7 @@ $id = "masonry-grid-" . $identifier->getString();
         <div class="images" itemscope itemtype="https://schema.org/ImageGallery">
             <?php foreach ($images as $image): ?>
                 <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject" class="image"
-                        data-file-set-ids="<?php echo h(implode(", ", $image["fileSets"])); ?>">
+                        data-file-set-ids="<?php echo h(implode(",", $image["fileSets"])); ?>">
                     <a href="<?php echo h($image["url"]); ?>" itemprop="contentUrl"
                        data-size="<?php echo h(sprintf("%sx%s", $image["width"], $image["height"])); ?>">
                         <img src="<?php echo h($image["thumbnail"]); ?>" itemprop="thumbnail"

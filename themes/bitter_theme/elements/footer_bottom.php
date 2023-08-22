@@ -24,8 +24,9 @@ $htmlHelper = $app->make(Html::class);
 ?>
 </div>
 
-<?php echo $htmlHelper->javascript($view->getThemePath() . "/js/main.js"); ?>
 <?php /** @noinspection PhpUnhandledExceptionInspection */
 View::element('footer_required'); ?>
+
+<?php echo $htmlHelper->javascript($view->getThemePath() . "/js/main.js"); ?>
 </body>
 </html>

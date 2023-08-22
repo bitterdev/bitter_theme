@@ -70,10 +70,10 @@ if (count($navItems) > 0) {
     echo '<ol class="breadcrumb">';
 
     foreach ($navItems as $ni) {
-        if ($ni->isCurrent) {
+        if (isset($ni->isCurrent) && $ni->isCurrent) {
             echo '<li class="active">' . $ni->name . '</li>';
         } else {
-            echo '<li><a href="' . $ni->url . '" target="' . $ni->target . '">' . $ni->name . '</a></li>';
+            echo '<li><a href="' . $ni->url . '" target="' . ($ni->target ?? "") . '">' . $ni->name . '</a></li>';
         }
     }
 

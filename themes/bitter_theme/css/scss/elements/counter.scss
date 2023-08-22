@@ -1,0 +1,36 @@
+/**
+ * $project:   Bitter Theme
+ *
+ * $author     Fabian Bitter (fabian$bitter.de)
+ * $copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * $version    X.X.X
+ */
+
+.ccm-page {
+  .counter-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 15px 0;
+
+    .counter-value {
+      font-size: 3.5em !important;
+      font-weight: 600 !important;
+    }
+
+    @media (max-width: 767px) {
+      display: block;
+
+      .counter {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+    }
+
+    .counter {
+      flex: 1;
+      text-align: center;
+    }
+  }
+}

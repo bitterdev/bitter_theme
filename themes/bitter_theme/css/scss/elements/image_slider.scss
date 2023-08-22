@@ -1,0 +1,69 @@
+/**
+ * $project:   Bitter Theme
+ *
+ * $author     Fabian Bitter (fabian$bitter.de)
+ * $copyright  (C) 2021 Fabian Bitter (www.bitter.de)
+ * $version    X.X.X
+ */
+
+.ccm-page {
+  .ccm-image-slider-container {
+    margin-top: 15px * -1;
+
+    .ccm-image-slider {
+      .ccm-image-slider-inner {
+        position: relative;
+
+        .rslides_nav {
+          display: none;
+        }
+
+        .rslides_tabs {
+          text-align: center;
+
+          li {
+            &.rslides_here {
+              a {
+                background-color: var(--bs-primary);
+              }
+            }
+
+            a {
+              border: 1px solid var(--bs-primary);
+              background-color: transparent;
+              width: 15px;
+              height: 15px;
+            }
+          }
+        }
+
+        .rslides {
+          background-color: var(--bs-gray-100);
+          margin-left: 0;
+
+          li {
+            img {
+              max-height: 600px;
+              display: block;
+              margin: auto;
+              width: auto;
+              float: none;
+              max-width: 100%;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    .slick-dots {
+      display: block;
+      overflow: hidden;
+      height: 32px;
+      width: calc(100% - 30px) !important;
+    }
+  }
+}

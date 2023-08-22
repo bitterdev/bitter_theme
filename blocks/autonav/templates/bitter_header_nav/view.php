@@ -40,20 +40,19 @@ if ($c instanceof Page && $c->isEditMode()) { ?>
         $classes = [];
 
         if ($ni->isCurrent) {
-            $classes[] = 'nav-selected';
+            $classes[] = 'active';
         }
         if ($ni->hasSubmenu) {
             $classes[] = 'has-suvnav';
         }
 
         if ($ni->inPath) {
-            $classes[] = 'nav-path-selected';
+            $classes[] = 'active';
         }
 
         $ni->classes = implode(" ", $classes);
     }
 
-    echo '<nav class="main">';
     echo '<ul class="nav">';
 
     foreach ($navItems as $ni) {
@@ -149,6 +148,5 @@ if ($c instanceof Page && $c->isEditMode()) { ?>
     }
 
     echo '</ul>';
-    echo '</nav>';
 
 }

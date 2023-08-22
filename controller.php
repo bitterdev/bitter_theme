@@ -18,7 +18,7 @@ class Controller extends Package
 {
     protected $pkgHandle = 'bitter_theme';
     protected $pkgVersion = '2.0.7';
-    protected $appVersionRequired = '8.5.4';
+    protected $appVersionRequired = '9.2.0';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderRegistries = [
         'src/Bitter/BitterTheme' => 'Bitter\BitterTheme',

@@ -26,7 +26,6 @@ use Doctrine\DBAL\DBALException;
 
 class Controller extends BlockController
 {
-    protected $btExportFileColumns = [];
     protected $btTable = 'btImageCarousel';
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 500;
@@ -35,6 +34,7 @@ class Controller extends BlockController
     protected $btCacheBlockOutputLifetime = 300;
     protected $btCacheBlockOutputOnPost = false;
     protected $btCacheBlockOutputForRegisteredUsers = false;
+    protected $btExportFileFolderColumns = ["fileSetId"];
 
     /** @var int */
     protected $thumbnailType;
@@ -129,7 +129,7 @@ class Controller extends BlockController
 
         parent::save($args);
 
-        $breakpoints = $args["breakpoints"];
+        $breakpoints = $args["breakpoints"] ?? null;
 
         if (!is_null($breakpoints)) {
             $this->setBreakpoints($breakpoints);

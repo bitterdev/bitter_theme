@@ -17,6 +17,8 @@ use Concrete\Core\Support\Facade\Url;
 /* @var int|null $activeLanguage */
 /* @var int $cID */
 
+$c = Page::getCurrentPage();
+
 ?>
 
 <?php if ($c instanceof Page && $c->isEditMode()) { ?>
@@ -24,7 +26,7 @@ use Concrete\Core\Support\Facade\Url;
         <?php echo t('Empty Auto-Nav Block.') ?>
     </div>
 <?php } elseif (count($languages) > 1) { ?>
-    <nav class="language-switcher" data-label="<?php echo h(t("Switch Langauge")); ?>">
+    <nav class="language-switcher" data-label="<?php echo h(t("Switch Language")); ?>">
         <ul>
             <?php foreach ($languages as $languageId => $languageName) { ?>
                 <li>
