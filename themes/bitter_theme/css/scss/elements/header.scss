@@ -253,3 +253,46 @@ body .mm-spn.mm-spn--navbar.mm-spn--main:after {
 .mm-spn a, .mm-spn span {
   padding: 10px 20px !important;
 }
+
+div.language-switcher {
+
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+
+  nav {
+    background-color: transparent !important;
+    margin-right: 15px;
+    margin-top: 6px;
+    font-size: 0.9em;
+
+    ul {
+      list-style: none;
+      display: block;
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style: none;
+        display: inline;
+        margin: 0;
+        padding: 0;
+
+        &:not(:first-child)::before {
+          content: " | ";
+          color: #adadad;
+          padding: 0 4px;
+          display: inline-block;
+        }
+
+        a {
+          color: #555 !important;
+        }
+      }
+    }
+  }
+}

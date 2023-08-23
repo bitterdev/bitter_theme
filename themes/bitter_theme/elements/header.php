@@ -125,16 +125,14 @@ $this->inc("elements/header_top.php"); ?>
                 </div>
             </div>
         </nav>
-    </header>
 
-    <!--
-    <div class="col-sm-6">
-        <?php
-        $a = new GlobalArea('Header Language Switcher');
-        $a->display();
-        ?>
-    </div>
-    -->
+        <div class="language-switcher">
+            <?php
+            $a = new GlobalArea('Header Language Switcher');
+            $a->display();
+            ?>
+        </div>
+    </header>
 
 
 <?php if ($c instanceof Page && !($c->getCurrentPage()->getCollectionId() == Page::getHomePageID() || $c->getAttribute("exclude_breadcrumb_nav"))) { ?>
