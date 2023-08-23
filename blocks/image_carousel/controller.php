@@ -99,6 +99,8 @@ class Controller extends BlockController
     {
         $this->initDefaults();
         $this->set("fileSets", $this->getFileSets());
+        $this->set("fileSetId", null);
+        $this->set("thumbnailType", null);
         $this->set("thumbnailTypes", $this->getThumbnailTypes());
         $this->set("breakpoints", $this->getInitialBreakpoints());
     }

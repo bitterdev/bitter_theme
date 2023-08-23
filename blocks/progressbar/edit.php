@@ -34,7 +34,7 @@ $form = $app->make(Form::class);
         <div class="input-group">
             <?php echo $form->number("value", $value); ?>
 
-            <span class="input-group-addon" id="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">
                 <?php echo t("%"); ?>
             </span>
         </div>
@@ -46,7 +46,7 @@ $form = $app->make(Form::class);
         <div class="input-group">
             <?php echo $form->number("duration", $duration); ?>
 
-            <span class="input-group-addon" id="basic-addon2">
+            <span class="input-group-text" id="basic-addon2">
                 <?php echo t("ms"); ?>
             </span>
         </div>

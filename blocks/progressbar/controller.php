@@ -13,26 +13,38 @@ namespace Concrete\Package\BitterTheme\Block\Progressbar;
 use Concrete\Core\Block\BlockController;
 use Concrete\Core\Error\ErrorList\ErrorList;
 
-class Controller extends BlockController {
+class Controller extends BlockController
+{
 
     protected $btTable = 'btProgressbar';
     protected $btInterfaceWidth = 400;
     protected $btInterfaceHeight = 500;
     protected $btCacheBlockOutputLifetime = 300;
 
-    public function getBlockTypeDescription() {
+    public function getBlockTypeDescription()
+    {
         return t("Add progress bars to your site.");
     }
 
-    public function getBlockTypeName() {
+    public function getBlockTypeName()
+    {
         return t("Progressbar");
     }
 
-    public function getSearchableContent() {
+    public function getSearchableContent()
+    {
         return sprintf("%s %s", $this->get("label"), $this->get("value"));
     }
 
-    public function validate($args) {
+    public function add()
+    {
+        $this->set("label", "");
+        $this->set("value", "");
+        $this->set("duration", 300);
+    }
+
+    public function validate($args)
+    {
         $errorList = new ErrorList();
 
         if (!is_numeric($args["duration"]) || intval($args["duration"]) < 0) {
