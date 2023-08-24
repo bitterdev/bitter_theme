@@ -23,6 +23,7 @@ use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Foundation\Service\Provider;
 use Concrete\Core\Html\Service\Navigation;
 use Concrete\Core\Http\Response;
+use Concrete\Core\Http\ResponseAssetGroup;
 use Concrete\Core\Http\ResponseFactory;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Routing\Router;
@@ -42,12 +43,12 @@ class ServiceProvider extends Provider
     protected $config;
 
     public function __construct(
-        Application $app,
+        Application              $app,
         EventDispatcherInterface $eventDispatcher,
-        ResponseFactory $responseFactory,
-        Navigation $navigationHelper,
-        ThemeRouteCollection $themeRouteCollection,
-        Repository $config
+        ResponseFactory          $responseFactory,
+        Navigation               $navigationHelper,
+        ThemeRouteCollection     $themeRouteCollection,
+        Repository               $config
     )
     {
         parent::__construct($app);
@@ -68,6 +69,34 @@ class ServiceProvider extends Provider
         $this->initializeRoutes();
         $this->beautifyHtmlOutput();
         $this->addImporterRoutines();
+        $this->addGdprFormSupport();
+    }
+
+    private function addGdprFormSupport()
+    {
+        $this->eventDispatcher->addListener('on_page_output', function ($event) {
+            /** @var $event GenericEvent */
+            $htmlCode = $event->getArgument('contents');
+
+            $googleMapsUrl = sprintf(
+                "https://maps.googleapis.com/maps/api/js?callback=concreteGoogleMapInit&key=%s",
+                $this->config->get('app.api_keys.google.maps')
+            );
+
+            $searchFor = sprintf(
+                '<script defer src="%s"></script>',
+                $googleMapsUrl
+            );
+
+            $replaceWith = sprintf(
+                '<script>var CCM_GOOGLE_MAPS_URL = %s</script>',
+                json_encode($googleMapsUrl)
+            );
+
+            $htmlCode = str_replace($searchFor, $replaceWith, $htmlCode);
+
+            $event->setArgument("contents", $htmlCode);
+        });
     }
 
     private function addImporterRoutines()
@@ -78,7 +107,7 @@ class ServiceProvider extends Provider
                 $importer = $app->make(ImporterManager::class);
                 // need to register this method before the core routines are registered
                 $importer->registerImporterRoutine($this->app->make(ImportFileSetsRoutine::class));
-                foreach($app->make('config')->get('app.importer_routines') as $routine) {
+                foreach ($app->make('config')->get('app.importer_routines') as $routine) {
                     $importer->registerImporterRoutine($app->make($routine));
                 }
                 $importer->registerImporterRoutine($this->app->make(ImportMultilingualContentRoutine::class));

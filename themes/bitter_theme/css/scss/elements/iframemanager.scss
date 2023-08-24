@@ -1,21 +1,21 @@
 :root {
   --im-font-family: $display-font-family !important;
 
-  --im-color: var(--bs-body-color);;
-  --im-bg: var(--bs-gray-100);
+  --im-color: var(--bs-body-color) !important;
+  --im-bg: var(--bs-gray-100) !important;
 
-  --im-link-color: var(--bs-body-color);
-  --im-link-hover-color: var(--bs-body-color);
+  --im-link-color: var(--bs-body-color) !important;
+  --im-link-hover-color: var(--bs-body-color) !important;
 
-  --im-btn-color: #fff;
-  --im-btn-bg: var(--bs-primary);
-  --im-btn-hover-bg: var(--bs-primary);
-  --im-btn-active-box-shadow: none;
+  --im-btn-color: #fff !important;
+  --im-btn-bg: var(--bs-primary) !important;
+  --im-btn-hover-bg: var(--bs-primary) !important;
+  --im-btn-active-box-shadow: none !important;
 
-  --im-btn-s-color: #fff;
-  --im-btn-s-bg: var(--bs-primary);
-  --im-btn-s-hover-bg: var(--bs-primary);
-  --im-btn-s-active-bg:var(--bs-primary);
+  --im-btn-s-color: #fff !important;
+  --im-btn-s-bg: var(--bs-primary) !important;
+  --im-btn-s-hover-bg: var(--bs-primary) !important;
+  --im-btn-s-active-bg:var(--bs-primary) !important;
 
-  --im-overlay-bg: transparent;
+  --im-overlay-bg: transparent !important;
 }

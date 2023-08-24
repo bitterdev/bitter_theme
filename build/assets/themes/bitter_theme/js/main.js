@@ -145,7 +145,6 @@ import './features/imagery/hero-image/offset-title';
 
         $(window).on("resize scroll", resize);
 
-
         var im = iframemanager();
 
         im.run({
@@ -156,7 +155,22 @@ import './features/imagery/hero-image/offset-title';
                     iframe: {
                         allow: 'picture-in-picture; fullscreen;'
                     },
+                    onAccept: async (div, setIframe) => {
+                        $(div)
+                            .html("")
+                            .removeProp("data-service")
+                            .removeProp("data-autoscale")
+                            .addClass("googleMapCanvas")
 
+                        let scriptEl = document.createElement("script");
+
+                        scriptEl.setAttribute("src", CCM_GOOGLE_MAPS_URL);
+                        scriptEl.setAttribute("type", "text/javascript");
+
+                        document.body.appendChild(scriptEl);
+
+                        //window.concreteGoogleMapInit(); // @todo: load map instead
+                    },
                     languages: window.bitterThemeConfig.iframeManager.languages
                 }
             }

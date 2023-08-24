@@ -14,13 +14,17 @@
     margin-top: 0 !important;
 
     @media (max-width: 767px) {
-      .pull-right {
+      .pull-right, .float-end {
         width: 100%;
       }
     }
 
     *:not(.btn) {
-      text-align: left !important;
+      text-align: left;
+    }
+
+    .nav-tabs, .nav-tabs * {
+      text-align: center !important;
     }
 
     .text-right {
