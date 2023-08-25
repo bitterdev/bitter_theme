@@ -20,7 +20,6 @@
         <theme handle="bitter_theme" activated="1" package="bitter_theme"/>
     </themes>
     <blocktypes>
-        <blocktype handle="accordion" package="bitter_theme"/>
         <blocktype handle="counter" package="bitter_theme"/>
         <blocktype handle="image_carousel" package="bitter_theme"/>
         <blocktype handle="masonry_grid" package="bitter_theme"/>
@@ -28,7 +27,6 @@
     </blocktypes>
     <blocktypesets>
         <blocktypeset handle="bitter_theme" name="Bitter Theme" package="bitter_theme">
-            <blocktype handle="accordion"/>
             <blocktype handle="counter"/>
             <blocktype handle="image_carousel"/>
             <blocktype handle="masonry_grid"/>

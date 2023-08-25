@@ -30,18 +30,20 @@ echo $ui->tabs([
 ]);
 ?>
 
-<div id="ccm-tab-content-items" class="ccm-tab-content">
-    <div id="items-container"></div>
+<div class="tab-content">
+    <div id="items" class="tab-pane active">
+        <div id="items-container"></div>
 
-    <a href="javascript:void(0);" class="btn btn-primary" id="ccm-add-item">
-        <?php echo t("Add Item"); ?>
-    </a>
-</div>
+        <a href="javascript:void(0);" class="btn btn-primary" id="ccm-add-item">
+            <?php echo t("Add Item"); ?>
+        </a>
+    </div>
 
-<div id="ccm-tab-content-options" class="ccm-tab-content">
-    <div class="form-group">
-        <?php echo $form->label("duration", t("Duration")); ?>
-        <?php echo $form->number("duration", $duration, ["min" => 0]); ?>
+    <div id="options" class="tab-pane">
+        <div class="form-group">
+            <?php echo $form->label("duration", t("Duration")); ?>
+            <?php echo $form->number("duration", $duration, ["min" => 0]); ?>
+        </div>
     </div>
 </div>
 

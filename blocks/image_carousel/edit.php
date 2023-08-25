@@ -52,7 +52,7 @@ $form = $app->make(Form::class);
     <div class="input-group">
         <?php echo $form->number("speed", $speed, ["min" => 0, "max" => 10000]); ?>
 
-        <span class="input-group-addon" id="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">
             <?php echo t("ms"); ?>
         </span>
     </div>
@@ -64,7 +64,7 @@ $form = $app->make(Form::class);
     <div class="input-group">
         <?php echo $form->number("autoplaySpeed", $autoplaySpeed, ["min" => 0, "max" => 10000]); ?>
 
-        <span class="input-group-addon" id="basic-addon2">
+        <span class="input-group-text" id="basic-addon2">
             <?php echo t("ms"); ?>
         </span>
     </div>
