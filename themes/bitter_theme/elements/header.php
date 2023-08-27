@@ -17,6 +17,7 @@ use Concrete\Core\Entity\File\Version;
 use Concrete\Core\File\File;
 use Concrete\Core\Package\PackageService;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Support\Facade\Url;
 use Concrete\Core\View\View;
@@ -26,13 +27,16 @@ use Concrete\Package\BitterTheme\Controller as PackageController;
 /** @var View $this */
 
 $app = Application::getFacadeApplication();
-/** @var Repository $config */
-$config = $app->make(Repository::class);
+/** @var Service $siteService */
+$siteService = $app->make(Service::class);
+$site = $siteService->getSite();
+$config = $site->getConfigRepository();
 /** @var PackageService $packageService */
 $packageService = $app->make(PackageService::class);
 /** @var PackageController $pkg */
 $pkg = $packageService->getByHandle("bitter_theme")->getController();
-$phoneNumber = $config->get("bitter_theme.phone_number", "") || "";
+$phoneNumber = (string)$config->get("bitter_theme.phone_number", "");
+
 $homePage = Page::getByID(Page::getHomePageID(Page::getCurrentPage()));
 
 ?>

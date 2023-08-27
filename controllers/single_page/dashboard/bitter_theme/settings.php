@@ -13,9 +13,9 @@ namespace Concrete\Package\BitterTheme\Controller\SinglePage\Dashboard\BitterThe
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Error\ErrorList\ErrorList;
 use Concrete\Core\Form\Service\Validation;
-use Concrete\Core\Page\Controller\DashboardPageController;
+use Concrete\Core\Page\Controller\DashboardSitePageController;
 
-class Settings extends DashboardPageController
+class Settings extends DashboardSitePageController
 {
     /** @var Repository */
     protected $config;
@@ -25,7 +25,7 @@ class Settings extends DashboardPageController
     public function on_start()
     {
         parent::on_start();
-        $this->config = $this->app->make(Repository::class);
+        $this->config = $this->getSite()->getConfigRepository();
         $this->formValidator = $this->app->make(Validation::class);
     }
 
@@ -39,6 +39,7 @@ class Settings extends DashboardPageController
                 $this->config->save("bitter_theme.regular_logo_file_id", (int)$this->request->request->get("regularLogoFileId"));
                 $this->config->save("bitter_theme.small_logo_file_id", (int)$this->request->request->get("smallLogoFileId"));
                 $this->config->save("bitter_theme.privacy_page_id", (int)$this->request->request->get("privacyPageId"));
+                $this->config->save("bitter_theme.phone_number", (string)$this->request->request->get("phoneNumber"));
                 $this->config->save("bitter_theme.enable_extended_footer", (bool)$this->request->request->has("enableExtendedFooter"));
 
                 if (!$this->error->has()) {
@@ -58,5 +59,6 @@ class Settings extends DashboardPageController
         $this->set("smallLogoFileId", (int)$this->config->get("bitter_theme.small_logo_file_id"));
         $this->set("privacyPageId", (int)$this->config->get("bitter_theme.privacy_page_id"));
         $this->set("enableExtendedFooter", (bool)$this->config->get("bitter_theme.enable_extended_footer"));
+        $this->set("phoneNumber", (string)$this->config->get("bitter_theme.phone_number"));
     }
 }

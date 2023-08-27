@@ -20,6 +20,8 @@ use Concrete\Core\Support\Facade\Application;
 $app = Application::getFacadeApplication();
 /** @var Form $form */
 $form = $app->make(Form::class);
+
+\Concrete\Core\View\View::element("dashboard/help_blocktypes", [], "bitter_theme");
 ?>
 
 <div class="edit-settings-form">

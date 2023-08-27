@@ -28,6 +28,8 @@ echo $ui->tabs([
     ['items', t('Items'), true],
     ['options', t('Options')],
 ]);
+
+\Concrete\Core\View\View::element("dashboard/help_blocktypes", [], "bitter_theme");
 ?>
 
 <div class="tab-content">

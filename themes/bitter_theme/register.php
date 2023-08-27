@@ -18,6 +18,7 @@ use Concrete\Core\Form\Service\Form;
 use Concrete\Core\Http\Request;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Page\Stack\Stack;
+use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Support\Facade\Url;
@@ -47,6 +48,10 @@ $app = Application::getFacadeApplication();
 $form = $app->make(Form::class);
 /** @var Repository $config */
 $config = $app->make(Repository::class);
+/** @var Service $siteService */
+$siteService = $app->make(Service::class);
+$site = $siteService->getSite();
+$siteConfig = $site->getConfigRepository();
 /** @var CaptchaInterface $captcha */
 $captcha = $app->make(CaptchaInterface::class);
 /** @var Request $request */
@@ -68,7 +73,7 @@ $renderer->setContext(new FrontendFormContext());
             <?php
             $logoUrl = $pkg->getRelativePath() . "/images/default_logo.svg";
 
-            $logoFileId = (int)$config->get("bitter_theme.regular_logo_file_id", 0);
+            $logoFileId = (int)$siteConfig->get("bitter_theme.regular_logo_file_id", 0);
             $logoFile = File::getByID($logoFileId);
 
             if ($logoFile instanceof FileEntity) {

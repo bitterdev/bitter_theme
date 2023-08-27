@@ -13,6 +13,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 use Concrete\Core\Area\GlobalArea;
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\View\View;
 
@@ -20,8 +21,10 @@ use Concrete\Core\View\View;
 /** @var View $view */
 
 $app = Application::getFacadeApplication();
-/** @var Repository $config */
-$config = $app->make(Repository::class);
+/** @var Service $siteService */
+$siteService = $app->make(Service::class);
+$site = $siteService->getSite();
+$config = $site->getConfigRepository();
 ?>
 
     <footer <?php if ($config->get("bitter_theme.enable_extended_footer")) { echo "class=\"extended\""; } ?>>

@@ -20,6 +20,7 @@ use /** @noinspection PhpDeprecationInspection */
 use Concrete\Core\Html\Service\Navigation;
 use Concrete\Core\Http\Request;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Support\Facade\Url;
 use Concrete\Core\User\User;
@@ -51,6 +52,10 @@ $config = $app->make(Repository::class);
 $packageService = $app->make(PackageService::class);
 /** @var PackageController $pkg */
 $pkg = $packageService->getByHandle("bitter_theme")->getController();
+/** @var Service $siteService */
+$siteService = $app->make(Service::class);
+$site = $siteService->getSite();
+$siteConfig = $site->getConfigRepository();
 
 if (isset($authType) && $authType) {
     $active = $authType;
@@ -83,7 +88,7 @@ $this->inc('elements/header_top.php');
                 <?php
                 $logoUrl = $pkg->getRelativePath() . "/images/default_logo.svg";
 
-                $logoFileId = (int)$config->get("bitter_theme.regular_logo_file_id", 0);
+                $logoFileId = (int)$siteConfig->get("bitter_theme.regular_logo_file_id", 0);
                 $logoFile = File::getByID($logoFileId);
 
                 if ($logoFile instanceof FileEntity) {

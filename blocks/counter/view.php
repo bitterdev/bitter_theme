@@ -16,6 +16,7 @@ use Concrete\Core\Page\Page;
 /** @var array $items */
 
 $c = Page::getCurrentPage();
+
 ?>
 
 <?php if ($c instanceof Page && $c->isEditMode()): ?>

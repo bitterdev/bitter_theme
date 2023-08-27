@@ -5,6 +5,7 @@ defined('C5_EXECUTE') or die("Access Denied.");
 use \Concrete\Block\Form\MiniSurvey;
 use Concrete\Core\Config\Repository\Repository;
 use Concrete\Core\Page\Page;
+use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
 use Concrete\Core\Support\Facade\Url;
 
@@ -63,8 +64,10 @@ $surveyBlockInfo = $miniSurvey->getMiniSurveyBlockInfoByQuestionId($qsID, $bID);
 $captcha = $surveyBlockInfo['displayCaptcha'] ? Loader::helper('validation/captcha') : false;
 
 $app = Application::getFacadeApplication();
-/** @var Repository $config */
-$config = $app->make(Repository::class);
+/** @var Service $siteService */
+$siteService = $app->make(Service::class);
+$site = $siteService->getSite();
+$config = $site->getConfigRepository();
 $privacyPageUrl = (string)Url::to(Page::getByID($config->get("bitter_theme.privacy_page_id")));
 
 ?>

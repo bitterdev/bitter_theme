@@ -18,6 +18,7 @@ use Concrete\Core\Validation\CSRF\Token;
 use Concrete\Core\View\View;
 
 /** @var bool $enableExtendedFooter */
+/** @var string $phoneNumber */
 /** @var int $regularLogoFileId */
 /** @var int $smallLogoFileId */
 /** @var int $privacyPageId */
@@ -34,6 +35,10 @@ $pageSelector = $app->make(PageSelector::class);
 
 ?>
 
+<div class="ccm-dashboard-header-buttons">
+    <?php \Concrete\Core\View\View::element("dashboard/help", [], "bitter_theme"); ?>
+</div>
+
 <form action="#" method="post">´
     <?php echo $token->output("update_settings"); ?>
 
@@ -47,6 +52,11 @@ $pageSelector = $app->make(PageSelector::class);
                 <?php echo $form->checkbox("enableExtendedFooter", 1, $enableExtendedFooter); ?>
                 <?php echo $form->label("enableExtendedFooter", t("Enable Extended Footer"), ["class" => "form-check-label"]); ?>
             </div>
+        </div>
+
+        <div class="form-group">
+            <?php echo $form->label("phoneNumber", t("Phone Number")); ?>
+            <?php echo $form->text("phoneNumber", $phoneNumber); ?>
         </div>
 
         <div class="form-group">
