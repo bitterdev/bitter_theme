@@ -6,6 +6,10 @@
  * $version    X.X.X
  */
 
+html main.centered img:not(.ccm-captcha-image) {
+  max-height: 200px;
+}
+
 .ccm-page {
   .toastify.error {
     background: var(--bs-danger) !important;

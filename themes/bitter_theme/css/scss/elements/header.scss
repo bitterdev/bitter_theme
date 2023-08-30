@@ -80,6 +80,10 @@
     margin-top: 40px;
     width: 80%;
     transition: all .5s ease-in-out;
+
+    img {
+      max-height: 140px;
+    }
   }
 
   #logo.small {

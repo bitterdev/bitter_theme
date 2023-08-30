@@ -121,27 +121,30 @@ import './features/imagery/hero-image/offset-title';
 
     $(document).ready(function () {
         resize();
-        $("#mobile-nav").html($("#desktop-nav .col").html());
 
-        const menu = new MmenuLight(
-            document.querySelector("#mobile-nav")
-        );
+        if ($("#desktop-nav li").length) {
+            $("#mobile-nav").html($("#desktop-nav .col").html());
 
-        const navigator = menu.navigation({
-            slidingSubmenus: true,
-            title: window.bitterThemeConfig.header.title,
-            selected: "active"
-        });
+            const menu = new MmenuLight(
+                document.querySelector("#mobile-nav")
+            );
 
-        const drawer = menu.offcanvas({
-            position: "right"
-        });
-
-        document.querySelector('a[href="#mobile-nav"]')
-            .addEventListener('click', (evnt) => {
-                evnt.preventDefault();
-                drawer.open();
+            const navigator = menu.navigation({
+                slidingSubmenus: true,
+                title: window.bitterThemeConfig.header.title,
+                selected: "active"
             });
+
+            const drawer = menu.offcanvas({
+                position: "right"
+            });
+
+            document.querySelector('a[href="#mobile-nav"]')
+                .addEventListener('click', (evnt) => {
+                    evnt.preventDefault();
+                    drawer.open();
+                });
+        }
 
         $(window).on("resize scroll", resize);
 

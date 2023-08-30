@@ -10,11 +10,18 @@ mix.webpackConfig({
     }
 });
 
-mix.setResourceRoot('../');
+mix.setResourceRoot('./');
 mix.setPublicPath('../themes/bitter_theme');
 
 mix
     .sass('../themes/bitter_theme/css/presets/default/main.scss', '../themes/bitter_theme/css/skins/default.css', {
+        sassOptions: {
+            includePaths: [
+                path.resolve(__dirname, './node_modules/')
+            ]
+        }
+    })
+    .sass('../themes/bitter_theme/css/scss/_fonts.scss', '../themes/bitter_theme/css/fonts.css', {
         sassOptions: {
             includePaths: [
                 path.resolve(__dirname, './node_modules/')
