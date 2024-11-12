@@ -178,27 +178,5 @@ import './features/imagery/hero-image/offset-title';
                 }
             }
         });
-
-        var cc = initCookieConsent();
-
-        cc.run({
-            current_lang: window.bitterThemeConfig.cookieDisclosure.language,
-            autoclear_cookies: true,
-            cookie_expiration: 365,
-            force_consent: true,
-            page_scripts: true,
-            gui_options: {
-                consent_modal: {
-                    layout: 'cloud',
-                    position: 'bottom center',
-                    transition: 'slide'
-                },
-                settings_modal: {
-                    layout: 'box',
-                    transition: 'slide'
-                }
-            },
-            languages: window.bitterThemeConfig.cookieDisclosure.languages
-        });
     });
 })(jQuery);

@@ -249,6 +249,7 @@ class ServiceProvider extends Provider
             ]
         );
 
+        /*
         $assetList->register('javascript', 'cookieconsent', "js/cookieconsent.js", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_FOOTER], "bitter_theme");
         $assetList->register('css', 'cookieconsent', "css/cookieconsent.css", ["version" => "4.1.3", "position" => Asset::ASSET_POSITION_HEADER], "bitter_theme");
 
@@ -259,6 +260,7 @@ class ServiceProvider extends Provider
                 ['css', 'cookieconsent']
             ]
         );
+        */
 
     }
 

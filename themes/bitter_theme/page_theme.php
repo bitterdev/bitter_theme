@@ -67,7 +67,7 @@ class PageTheme extends Theme
         $this->requireAsset('mmenu-light');
         $this->requireAsset('slick');
         $this->requireAsset('toastify');
-        $this->requireAsset('cookieconsent');
+        //$this->requireAsset('cookieconsent');
         $this->requireAsset('iframemanager');
         $this->requireAsset('css', 'font-awesome');
         $this->requireAsset('javascript', 'respond');

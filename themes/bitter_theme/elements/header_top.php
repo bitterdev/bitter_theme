@@ -71,67 +71,6 @@ $cookieTable = $config->get("bitter_theme.cookie_table", []) || [];
                         "loadAllBtn" => t("Always Display")
                     ]
                 ]
-            ],
-            "cookieDisclosure" => [
-                "language" => $language,
-                "languages" => [
-                    $language => [
-                        "consent_modal" => [
-                            "title" => t("We use cookies!"),
-                            "description" => t("We use multiple cookies on our website for technical, marketing and for analysis purposes; In principle, you can also visit our website without setting cookies. The technically necessary cookies are excluded from this. You have a right of withdrawal at any time. By clicking on the accept all button, you agree that we set the additional cookies for marketing and analysis purposes."),
-                            "primary_btn" => [
-                                "text" => t("Accept all"),
-                                "role" => "accept_all"
-                            ],
-                            "secondary_btn" => [
-                                "text" => t("Manage cookie settings"),
-                                "role" => "settings"
-                            ],
-                        ],
-                        "settings_modal" => [
-                            "title" => t("Cookie preferences"),
-                            "save_settings_btn" => t('Save settings'),
-                            "accept_all_btn" => t('Accept all'),
-                            "reject_all_btn" => t('Reject all'),
-                            "close_btn_label" => t('Close'),
-                            "cookie_table_headers" => [
-                                [
-                                    "col1" => t("Name")
-                                ],
-                                [
-                                    "col2" => t("Domain")
-                                ],
-                                [
-                                    "col3" => t("Expiration")
-                                ]
-                            ],
-                            "blocks" => [
-                                [
-                                    "description" => t("Further information you can find in our <a class=\"cc-link\" href=\"{0}\">privacy policy</a>.")
-                                ],
-                                [
-                                    "title" => t('Strictly necessary cookies'),
-                                    "description" => t('These cookies are essential for the proper functioning of our website. Without these cookies, the website would not work properly'),
-                                    "toggle" => [
-                                        "value" => "necessary",
-                                        "enabled" => true,
-                                        "readonly" => true
-                                    ]
-                                ],
-                                [
-                                    "title" =>t( "Analytics & Marketing Cookies"),
-                                    "description" => t("These cookies allow the website to remember the choices you have made in the past."),
-                                    "toggle" => [
-                                        "value" => "analytics",
-                                        "enabled" => false,
-                                        "readonly" => false
-                                    ],
-                                    "cookie_table" => $cookieTable
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
             ]
         ]);  ?>
     </script>
