@@ -39,7 +39,9 @@ $pageSelector = $app->make(PageSelector::class);
     <?php \Concrete\Core\View\View::element("dashboard/help", [], "bitter_theme"); ?>
 </div>
 
-<form action="#" method="post">´
+<?php \Concrete\Core\View\View::element("dashboard/did_you_know", [], "bitter_theme"); ?>
+
+<form action="#" method="post">
     <?php echo $token->output("update_settings"); ?>
 
     <fieldset>
