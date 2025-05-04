@@ -16,6 +16,9 @@ defined('C5_EXECUTE') or die('Access denied');
 /** @var array $selectedFileSets */
 
 \Concrete\Core\View\View::element("dashboard/help_blocktypes", [], "bitter_theme");
+
+/** @noinspection PhpUnhandledExceptionInspection */
+\Concrete\Core\View\View::element("dashboard/did_you_know", [], "bitter_theme");
 ?>
 
 <?php if (count($fileSets) === 0): ?>
