@@ -25,8 +25,8 @@
                         <th></th>
                         <th></th>
                         <th>{{ i18n.id }}</th>
-                        <th :class="getSortColumnClassName('fv.fvTitle')">
-                            <a v-if="enableSort" href="#" @click.prevent="sortBy('fv.fvTitle')">{{ i18n.name }}</a>
+                        <th :class="getSortColumnClassName('name')">
+                            <a v-if="enableSort" href="#" @click.prevent="sortBy('name')">{{ i18n.name }}</a>
                             <span v-else>{{ i18n.name }}</span>
                         </th>
                         <th :class="getSortColumnClassName(dateSortColumn)">
@@ -99,7 +99,7 @@ export default {
         fileList: [],
         selectedFiles: [],
         sortByColumn: '',
-        sortByDirection: 'desc',
+        sortByDirection: 'asc',
         pagination: null,
         queryParams: {
             pagination_page: 'ccm_paging_p',
@@ -300,7 +300,7 @@ export default {
             })
         },
         sortBy(column) {
-            if (column === this.sortByColumn || (this.sortByColumn === '' && column === this.dateSortColumn)) {
+            if (column === this.sortByColumn || (this.sortByColumn === '' && column === 'name')) {
                 this.sortByDirection = this.sortByDirection === 'asc' ? 'desc' : 'asc'
             }
 
@@ -309,7 +309,7 @@ export default {
         getSortColumnClassName(column) {
             let className = ''
             if (this.enableSort) {
-                if (column === this.sortByColumn || (this.sortByColumn === '' && column === this.dateSortColumn)) {
+                if (column === this.sortByColumn || (this.sortByColumn === '' && column === 'name')) {
                     className = `ccm-results-list-active-sort-${this.sortByDirection}`
                 }
             }
