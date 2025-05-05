@@ -101,6 +101,7 @@ jobs:
       - name: Upload release asset to GitHub
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: nightly
           files: release/${{ env.PACKAGE_NAME }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
