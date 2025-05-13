@@ -11,5 +11,13 @@
     "ext-json": "*",
     "gajus/dindent": "^2.0",
     "ext-simplexml": "*"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "sh ./cleanup-vendor-code.sh"
+    ],
+    "post-update-cmd": [
+      "sh ./cleanup-vendor-code.sh"
+    ]
   }
 }
