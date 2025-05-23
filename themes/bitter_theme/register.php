@@ -101,11 +101,18 @@ $renderer->setContext(new FrontendFormContext());
         <?php if (!empty($registerSuccess)) { ?>
             <div class="col-sm-12">
                 <?php switch ($registerSuccess) { ?>
-<?php case 'registered': ?>
-                        <?php
-                        $stack = Stack::getByName("Register Complete");
-                        $stack->display();
-                        ?>
+                    <?php case 'registered': ?>
+                        <p>
+                            <strong>
+                                <?php echo $successMsg; ?>
+                            </strong>
+
+                            <br/><br/>
+
+                            <a href="<?php echo $view->url('/'); ?>">
+                                <?php echo t('Return to Home'); ?>
+                            </a>
+                        </p>
 
                         <?php break; ?>
 
