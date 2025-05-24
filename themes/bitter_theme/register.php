@@ -100,53 +100,46 @@ $renderer->setContext(new FrontendFormContext());
 
         <?php if (!empty($registerSuccess)) { ?>
             <div class="col-sm-12">
-                <?php switch ($registerSuccess) { ?>
-                    <?php case 'registered': ?>
-                        <p>
-                            <strong>
-                                <?php echo $successMsg; ?>
-                            </strong>
-
-                            <br/><br/>
-
-                            <a href="<?php echo $view->url('/'); ?>">
-                                <?php echo t('Return to Home'); ?>
-                            </a>
-                        </p>
-
-                        <?php break; ?>
-
-                    <?php case 'validate': ?>
-                        <p>
-                            <?php echo $successMsg[0]; ?>
-                        </p>
-
-                        <p>
-                            <?php echo $successMsg[1]; ?>
-                        </p>
-
-                        <p>
-                            <a href="<?php echo $view->url('/'); ?>">
-                                <?php echo t('Return to Home'); ?>
-                            </a>
-                        </p>
-
-                        <?php break; ?>
-
-                    <?php case 'pending': ?>
-                        <p>
+                <?php if ($registerSuccess === "registered") { ?>
+                    <p>
+                        <strong>
                             <?php echo $successMsg; ?>
-                        </p>
+                        </strong>
 
-                        <p>
-                            <a href="<?php echo $view->url('/'); ?>">
-                                <?php echo t('Return to Home'); ?>
-                            </a>
-                        </p>
+                        <br/><br/>
 
-                        <?php break; ?>
+                        <a href="<?php echo $view->url('/'); ?>">
+                            <?php echo t('Return to Home'); ?>
+                        </a>
+                    </p>
 
-                    <?php } ?>
+                <?php } else if ($registerSuccess === "validate") { ?>
+                    <p>
+                        <?php echo $successMsg[0]; ?>
+                    </p>
+
+                    <p>
+                        <?php echo $successMsg[1]; ?>
+                    </p>
+
+                    <p>
+                        <a href="<?php echo $view->url('/'); ?>">
+                            <?php echo t('Return to Home'); ?>
+                        </a>
+                    </p>
+
+                <?php } else if ($registerSuccess === "pending") { ?>
+                    <p>
+                        <?php echo $successMsg; ?>
+                    </p>
+
+                    <p>
+                        <a href="<?php echo $view->url('/'); ?>">
+                            <?php echo t('Return to Home'); ?>
+                        </a>
+                    </p>
+
+                <?php } ?>
             </div>
         <?php } else { ?>
             <form method="post" action="<?php echo $view->url('/register', 'do_register'); ?>">
