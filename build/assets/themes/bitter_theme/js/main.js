@@ -148,35 +148,37 @@ import './features/imagery/hero-image/offset-title';
 
         $(window).on("resize scroll", resize);
 
-        var im = iframemanager();
+        if (typeof window.bitterThemeConfig !== "undefined") {
+            var im = iframemanager();
 
-        im.run({
-            currLang: window.bitterThemeConfig.iframeManager.language,
-            services: {
-                googlemaps: {
-                    embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.4670861637355!2d9.977333276827116!3d53.549428972348906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f11ccc3d609%3A0x141f297582a9908c!2sLudwig-Erhard-Stra%C3%9Fe%2018%2C%2020459%20Hamburg!5e0!3m2!1sde!2sde!4v1692424755610!5m2!1sde!2sde',
-                    iframe: {
-                        allow: 'picture-in-picture; fullscreen;'
-                    },
-                    onAccept: async (div, setIframe) => {
-                        $(div)
-                            .html("")
-                            .removeProp("data-service")
-                            .removeProp("data-autoscale")
-                            .addClass("googleMapCanvas")
+            im.run({
+                currLang: window.bitterThemeConfig.iframeManager.language,
+                services: {
+                    googlemaps: {
+                        embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.4670861637355!2d9.977333276827116!3d53.549428972348906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18f11ccc3d609%3A0x141f297582a9908c!2sLudwig-Erhard-Stra%C3%9Fe%2018%2C%2020459%20Hamburg!5e0!3m2!1sde!2sde!4v1692424755610!5m2!1sde!2sde',
+                        iframe: {
+                            allow: 'picture-in-picture; fullscreen;'
+                        },
+                        onAccept: async (div, setIframe) => {
+                            $(div)
+                                .html("")
+                                .removeProp("data-service")
+                                .removeProp("data-autoscale")
+                                .addClass("googleMapCanvas")
 
-                        let scriptEl = document.createElement("script");
+                            let scriptEl = document.createElement("script");
 
-                        scriptEl.setAttribute("src", CCM_GOOGLE_MAPS_URL);
-                        scriptEl.setAttribute("type", "text/javascript");
+                            scriptEl.setAttribute("src", CCM_GOOGLE_MAPS_URL);
+                            scriptEl.setAttribute("type", "text/javascript");
 
-                        document.body.appendChild(scriptEl);
+                            document.body.appendChild(scriptEl);
 
-                        //window.concreteGoogleMapInit(); // @todo: load map instead
-                    },
-                    languages: window.bitterThemeConfig.iframeManager.languages
+                            //window.concreteGoogleMapInit(); // @todo: load map instead
+                        },
+                        languages: window.bitterThemeConfig.iframeManager.languages
+                    }
                 }
-            }
-        });
+            });
+        }
     });
 })(jQuery);

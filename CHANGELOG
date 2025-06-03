@@ -1,3 +1,7 @@
+Version 3.1.8
+==================================================
+Add new options to make features such as the GDPR Map, custom login page, and others optional.
+
 Version 3.1.7
 ==================================================
 - Fix in registration view

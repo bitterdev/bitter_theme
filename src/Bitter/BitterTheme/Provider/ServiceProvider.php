@@ -69,7 +69,17 @@ class ServiceProvider extends Provider
         $this->initializeRoutes();
         $this->beautifyHtmlOutput();
         $this->addImporterRoutines();
-        $this->addGdprFormSupport();
+
+
+        if ((bool)$this->config->get("bitter_theme.enable_custom_login_page", true)) {
+            $this->registerThemePaths();
+        } else {
+            $this->registerDefaultThemePaths();
+        }
+
+        if ((bool)$this->config->get("bitter_theme.enable_gdpr_maps", true)) {
+            $this->addGdprFormSupport();
+        }
     }
 
     private function addGdprFormSupport()
@@ -154,6 +164,20 @@ class ServiceProvider extends Provider
     private function disableAccountMenu()
     {
         $this->config->set('user.display_account_menu', false);
+    }
+
+    private function registerDefaultThemePaths()
+    {
+        if (!$this->themeRouteCollection->getThemeByRoute('/account')) {
+            $this->themeRouteCollection->setThemeByRoute('/account', 'concrete');
+        }
+
+        if (!$this->themeRouteCollection->getThemeByRoute('/account/*')) {
+            $this->themeRouteCollection->setThemeByRoute('/account/*', 'concrete');
+        }
+
+        $this->themeRouteCollection->setThemeByRoute('/register', 'concrete');
+        $this->themeRouteCollection->setThemeByRoute('/login', 'concrete');
     }
 
     private function registerThemePaths()

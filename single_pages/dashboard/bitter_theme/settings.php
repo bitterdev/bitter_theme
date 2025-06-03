@@ -18,6 +18,9 @@ use Concrete\Core\Validation\CSRF\Token;
 use Concrete\Core\View\View;
 
 /** @var bool $enableExtendedFooter */
+/** @var bool $enableCookieBanner */
+/** @var bool $enableGdprMaps */
+/** @var bool $enableCustomLoginPage */
 /** @var string $phoneNumber */
 /** @var int $regularLogoFileId */
 /** @var int $smallLogoFileId */
@@ -53,6 +56,23 @@ $pageSelector = $app->make(PageSelector::class);
             <div class="form-check">
                 <?php echo $form->checkbox("enableExtendedFooter", 1, $enableExtendedFooter); ?>
                 <?php echo $form->label("enableExtendedFooter", t("Enable Extended Footer"), ["class" => "form-check-label"]); ?>
+            </div>
+
+            <!--
+            <div class="form-check">
+                <?php echo $form->checkbox("enableCookieBanner", 1, $enableCookieBanner); ?>
+                <?php echo $form->label("enableCookieBanner", t("Enable Cookie Banner"), ["class" => "form-check-label"]); ?>
+            </div>
+            -->
+
+            <div class="form-check">
+                <?php echo $form->checkbox("enableGdprMaps", 1, $enableGdprMaps); ?>
+                <?php echo $form->label("enableGdprMaps", t("Enable GDPR Maps"), ["class" => "form-check-label"]); ?>
+            </div>
+
+            <div class="form-check">
+                <?php echo $form->checkbox("enableCustomLoginPage", 1, $enableCustomLoginPage); ?>
+                <?php echo $form->label("enableCustomLoginPage", t("Enable Custom Login/Register Page"), ["class" => "form-check-label"]); ?>
             </div>
         </div>
 
