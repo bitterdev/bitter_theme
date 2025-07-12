@@ -1,3 +1,7 @@
+Version 3.1.9
+==================================================
+- Remove version number from file headers
+
 Version 3.1.8
 ==================================================
 Add new options to make features such as the GDPR Map, custom login page, and others optional.

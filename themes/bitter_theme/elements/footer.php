@@ -5,7 +5,6 @@
  *
  * @author     Fabian Bitter (fabian@bitter.de)
  * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
- * @version    X.X.X
  */
 
 defined('C5_EXECUTE') or die("Access Denied.");
@@ -61,10 +60,14 @@ $config = $site->getConfigRepository();
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <?php
-                        $a = new GlobalArea('Footer Copyright');
-                        $a->display();
-                        ?>
+                        <?php if (isset($_SERVER["SERVER_NAME"]) &&
+                            !str_contains(strtolower($_SERVER["SERVER_NAME"]), "bitter.de")) {
+                            $a = new GlobalArea('Footer Copyright (' . $_SERVER["SERVER_NAME"] . ')');
+                            $a->display();
+                        } else {
+                            $a = new GlobalArea('Footer Copyright');
+                            $a->display();
+                        } ?>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,6 @@
  *
  * @author     Fabian Bitter (fabian@bitter.de)
  * @copyright  (C) 2021 Fabian Bitter (www.bitter.de)
- * @version    X.X.X
  */
 
 namespace Concrete\Package\BitterTheme;
@@ -17,7 +16,7 @@ use Concrete\Theme\Concrete\PageTheme;
 class Controller extends Package
 {
     protected $pkgHandle = 'bitter_theme';
-    protected $pkgVersion = '3.1.8';
+    protected $pkgVersion = '3.1.9';
     protected $appVersionRequired = '9.2.0';
     protected $pkgAllowsFullContentSwap = true;
     protected $pkgAutoloaderRegistries = [

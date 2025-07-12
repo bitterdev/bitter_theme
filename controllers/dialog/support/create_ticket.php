@@ -5,7 +5,6 @@
  *
  * @author     Fabian Bitter (fabian@bitter.de)
  * @copyright  (C) 2020 Fabian Bitter (www.bitter.de)
- * @version    X.X.X
  */
 
 namespace Concrete\Package\BitterTheme\Controller\Dialog\Support;
