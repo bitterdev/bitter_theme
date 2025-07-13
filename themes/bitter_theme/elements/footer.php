@@ -10,7 +10,7 @@
 defined('C5_EXECUTE') or die("Access Denied.");
 
 use Concrete\Core\Area\GlobalArea;
-use Concrete\Core\Config\Repository\Repository;
+use Concrete\Core\Http\Request;
 use Concrete\Core\Page\Page;
 use Concrete\Core\Site\Service;
 use Concrete\Core\Support\Facade\Application;
@@ -22,6 +22,8 @@ use Concrete\Core\View\View;
 $app = Application::getFacadeApplication();
 /** @var Service $siteService */
 $siteService = $app->make(Service::class);
+/** @var Request $r */
+$r = $app->make(Request::class);
 $site = $siteService->getSite();
 $config = $site->getConfigRepository();
 ?>
@@ -60,9 +62,9 @@ $config = $site->getConfigRepository();
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <?php if (isset($_SERVER["SERVER_NAME"]) &&
-                            !str_contains(strtolower($_SERVER["SERVER_NAME"]), "bitter.de")) {
-                            $a = new GlobalArea('Footer Copyright (' . $_SERVER["SERVER_NAME"] . ')');
+                        <?php if ($r->server->has("SERVER_NAME") &&
+                            !str_contains(strtolower($r->server->get("SERVER_NAME")), "bitter.de")) {
+                            $a = new GlobalArea('Footer Copyright (' . $r->server->get("SERVER_NAME") . ')');
                             $a->display();
                         } else {
                             $a = new GlobalArea('Footer Copyright');
